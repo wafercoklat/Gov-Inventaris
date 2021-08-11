@@ -80,6 +80,7 @@ class AuthController extends Controller
             'email'                 => 'required|email|unique:users,email',
             'password'              => 'required'
         ];
+        
   
         $messages = [
             'name.required'         => 'Nama Lengkap wajib diisi',
