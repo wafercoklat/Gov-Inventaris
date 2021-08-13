@@ -6,8 +6,18 @@ use Illuminate\Http\Request;
   
 class HomeController extends Controller
 {
-    public function index()
+    public function main()
     {
         return view('pages/main');
+    }
+
+    public function barang()
+    {
+        return view('pages/barang');
+    }
+
+    public function tmbhbarang()
+    {
+        return view('pages/bdetail');
     }
 }
