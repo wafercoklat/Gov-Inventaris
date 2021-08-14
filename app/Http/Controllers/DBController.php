@@ -5,21 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\barang;
 
-class PostController extends Controller
+class DBController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        /// mengambil data terakhir dan pagination 10 list
-        $posts = barang::latest()->paginate(5);
-         
-        /// mengirimkan variabel $posts ke halaman views posts/index.blade.php
-        /// include dengan number index
-        return view('posts.index',compact('posts'))
+        $item = barang::latest()->paginate(5);
+        return view('pages.barang',compact('item'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -31,7 +27,7 @@ class PostController extends Controller
     public function create()
     {
         //// menampilkan halaman create
-        return view('posts.create');
+        return view('Barang.create');
     }
 
     /**
@@ -53,7 +49,7 @@ class PostController extends Controller
         barang::create($request->all());
          
         /// redirect jika sukses menyimpan data
-        return redirect()->route('posts.index')
+        return redirect()->route('pages.index')
                         ->with('success','Post created successfully.');
     }
 
@@ -63,12 +59,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(barang $item)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
-        /// href="{{ route('posts.show',$post->id) }}
-        return view('posts.show',compact('post'));
+        /// href="{{ route('item.show',$post->id) }}
+        return view('pages.bedit',compact('item'));
     }
 
     /**
@@ -77,12 +73,12 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(barang $item)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
-        /// href="{{ route('posts.edit',$post->id) }}
-        return view('posts.edit',compact('post'));
+        /// href="{{ route('item.edit',$item->id) }}
+        return view('pages.bedit',compact('item'));
     }
 
     /**
@@ -92,19 +88,19 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, barang $id)
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
-            'title' => 'required',
-            'content' => 'required',
+            'Name' => 'required',
+            'Code' => 'required'
         ]);
          
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
-        $post->update($request->all());
+        $id->update($request->all());
          
         /// setelah berhasil mengubah data
-        return redirect()->route('posts.index')
+        return redirect()->route('Barang.index')
                         ->with('success','Post updated successfully');
     }
 
@@ -114,13 +110,16 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($item)
     {
         /// melakukan hapus data berdasarkan parameter yang dikirimkan
-        $post->delete();
+        $del = barang::where('IdBarang',$item)->first();
   
-        return redirect()->route('posts.index')
-                        ->with('success','Post deleted successfully');
-  
+        if ($item != null) {
+            $del->delete();
+            return redirect()->route('Barang.index')->with('success','Barang berhasil di hapus');
+        }
+        return redirect()->route('Barang.index')->with('success','Gagal');
+
     }
 }

@@ -5,7 +5,7 @@
                 <a href="/"><i class="ti-menu-alt"></i><span class="right-nav-text">Transaksi</span> </a>
             </li>
             <li>
-                <a href="Barang"><i class="ti-menu-alt"></i><span class="right-nav-text">Barang</span> </a>
+                <a href="{{url('/Barang')}}"><i class="ti-menu-alt"></i><span class="right-nav-text">Barang</span> </a>
             </li>
             <li>
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard">
