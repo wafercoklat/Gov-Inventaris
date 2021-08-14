@@ -49,7 +49,7 @@ class DBController extends Controller
         barang::create($request->all());
          
         /// redirect jika sukses menyimpan data
-        return redirect()->route('pages.index')
+        return redirect()->route('pages.barang')
                         ->with('success','Post created successfully.');
     }
 
@@ -73,11 +73,12 @@ class DBController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(barang $item)
+    public function edit($id)
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
         /// href="{{ route('item.edit',$item->id) }}
+        $item = barang::where('IdBarang',$id)->first();
         return view('pages.bedit',compact('item'));
     }
 
@@ -88,16 +89,17 @@ class DBController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, barang $id)
+    public function update(Request $request, $item)
     {
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
             'Name' => 'required',
-            'Code' => 'required'
         ]);
          
+        var_dump($item);
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
-        $id->update($request->all());
+        $update = barang::where('IdBarang',$item)->first();
+        $update->update($request->all());
          
         /// setelah berhasil mengubah data
         return redirect()->route('Barang.index')
