@@ -15,7 +15,7 @@ class CreateTableBarang extends Migration
     {
         Schema::create('Barang', function (Blueprint $table) {
             $table->id('IdBarang');
-            $table->string('Code',25)->nullable()->default(NULL);
+            $table->string('Code',25)->unique();
             $table->string('Name',64);
             $table->string('NUP',25);
             $table->string('Keterangan',64);

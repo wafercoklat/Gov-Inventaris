@@ -28,6 +28,13 @@
                         </div>
                     </div>
                     <!-- main body -->
+
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
+                    @endif
+
                     <div class="row">
                         <div class="col-xl-12 mb-30">
                             <div class="card card-statistics h-100">
@@ -37,27 +44,40 @@
                                         <table class="mb-0 table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Firstname</th>
-                                                    <th>Lastname</th>
-                                                    <th>Email</th>
+                                                    <th>No</th>
+                                                    <th>Kode Barang</th>
+                                                    <th>Nama Barang</th>
+                                                    <th>NUP</th>
+                                                    <th>Ruangan</th>
+                                                    <th>Lantai</th>
+                                                    <th>Status</th>
+                                                    <th>Keterangan</th>
+                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                
+                                                @foreach ($item as $itemdetail)
                                                 <tr>
-                                                    <td>Default</td>
-                                                    <td>Defaultson</td>
-                                                    <td>def@somemail.com</td>
+                                                    <td>{{ ++$i }}</td>
+                                                    <td>{{ $itemdetail->Code }}</td>
+                                                    <td>{{ $itemdetail->Name }}</td>
+                                                    <td>{{ $itemdetail->NUP }}</td>
+                                                    <td>"-"</td>
+                                                    <td>"-"</td>
+                                                    <td>"-"</td>
+                                                    <td>{{ $itemdetail->Keterangan }}</td>
+                                                    <td class="text-center">
+                                                        <form action="{{ route('Barang.destroy', $itemdetail->IdBarang) }}" method="POST">
+                                                            <a class="btn btn-info btn-sm" href="{{ route('Barang.show',$itemdetail->IdBarang) }}">Show</a>
+                                                            <a class="btn btn-primary btn-sm" href="{{ route('Barang.edit',$itemdetail->IdBarang) }}">Edit</a>
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                                        </form>
+                                                    </td>
                                                 </tr>
-                                                <tr class="success">
-                                                    <td>Success</td>
-                                                    <td>Doe</td>
-                                                    <td>john@example.com</td>
-                                                </tr>
-                                                <tr class="danger">
-                                                    <td>Danger</td>
-                                                    <td>Moe</td>
-                                                    <td>mary@example.com</td>
-                                                </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>

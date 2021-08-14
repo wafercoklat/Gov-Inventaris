@@ -35,23 +35,24 @@
                             <div class="card card-statistics mb-30">
                                 <div class="card-body">
                                     <h5 class="card-title">Basic form</h5>
-                                    <form action="{{ route('Barang.store') }}" method="post">
+                                    <form action="{{ route('Barang.edit', $item->IdBarang) }}" method="post">
                                         @csrf
+                                        @method('put')
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Nama Barang</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" name="Code">
+                                            <label for="exampleInputEmail1">Code Barang</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" name="Code" value="{{$item->Code}}" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nama Barang</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" name="Name">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" name="Name" value="{{$item->Name}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">NUP Barang</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NUP" name="NUP">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NUP" name="NUP" value="{{$item->NUP}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Keterangan</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Keterangan" name="Keterangan">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Keterangan" name="Keterangan" value="{{$item->Keterangan}}">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
