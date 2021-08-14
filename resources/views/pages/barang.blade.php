@@ -69,7 +69,6 @@
                                                     <td>{{ $itemdetail->Keterangan }}</td>
                                                     <td class="text-center">
                                                         <form action="{{ route('Barang.destroy', $itemdetail->IdBarang) }}" method="POST">
-                                                            <a class="btn btn-info btn-sm" href="{{ route('Barang.show',$itemdetail->IdBarang) }}">Show</a>
                                                             <a class="btn btn-primary btn-sm" href="{{ route('Barang.edit',$itemdetail->IdBarang) }}">Edit</a>
                                                             @csrf
                                                             @method('DELETE')

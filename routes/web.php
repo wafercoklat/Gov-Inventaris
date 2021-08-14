@@ -26,8 +26,8 @@ Route::post('register', [AuthController::class, 'register']);
 Route::group(['middleware' => 'auth'], function () {
  
     Route::get('/', [HomeController::class, 'main'])->name('main');
-    Route::resource('Barang', DBController::class);
-    Route::get('Barang-Tambah', [HomeController::class, 'tmbhbarang'])->name('Barang#Tambah');
-    Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::resource('/Barang', DBController::class);
+    Route::get('/Barang-Tambah', [HomeController::class, 'tmbhbarang'])->name('Barang#Tambah');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
  
 });
