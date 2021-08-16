@@ -18,6 +18,6 @@ class HomeController extends Controller
 
     public function tmbhbarang()
     {
-        return view('pages/bdetail');
+        return view('pages/badd');
     }
 }

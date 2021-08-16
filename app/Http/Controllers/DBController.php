@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\barang;
+use App\Models\Ruangan;
+use App\Models\view_Barang;
+use App\Models\TransaksiUpdate;
 
 class DBController extends Controller
 {
@@ -14,8 +17,10 @@ class DBController extends Controller
      */
     public function index()
     {
-        $item = barang::latest()->paginate(5);
-        return view('pages.barang',compact('item'))
+        
+        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
+        $item = view_Barang::latest()->paginate(5);
+        return view('pages.barang',compact('item', 'Ruangan'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -41,15 +46,31 @@ class DBController extends Controller
         /// membuat validasi untuk title dan content wajib diisi
         $request->validate([
             'Name' => 'required',
-            'Code' => 'required'
+            'Code' => 'required',
+            'IdRuangan' => 'required'
         ]);
          
         /// insert setiap request dari form ke dalam database via model
         /// jika menggunakan metode ini, maka nama field dan nama form harus sama
+        
         barang::create($request->all());
-         
+        
+        // TransaksiUpdate::create();
+        if(empty(TransaksiUpdate::latest('IdTrans')->first()->IdTrans)){
+            $lastid = 1;
+        } else {
+            $lastid = (TransaksiUpdate::latest('IdTrans')->first()->IdTrans)+1;
+        }
+
+        $item = new TransaksiUpdate();
+        $item -> IdBarang = barang::latest('IdBarang')->first()->IdBarang;
+        $item -> IdRuangan = $request->IdRuangan;
+        $item -> Trans = "TR-" .$lastid;
+        $item -> Remark = "New";
+        $item -> save();
+
         /// redirect jika sukses menyimpan data
-        return redirect()->route('pages.barang')
+        return redirect()->route('Barang.index')
                         ->with('success','Post created successfully.');
     }
 
@@ -96,7 +117,7 @@ class DBController extends Controller
             'Name' => 'required',
         ]);
          
-        var_dump($item);
+        // var_dump($item);
         /// mengubah data berdasarkan request dan parameter yang dikirimkan
         $update = barang::where('IdBarang',$item)->first();
         $update->update($request->all());
@@ -122,6 +143,11 @@ class DBController extends Controller
             return redirect()->route('Barang.index')->with('success','Barang berhasil di hapus');
         }
         return redirect()->route('Barang.index')->with('success','Gagal');
-
     }
+    
+    public function dropdownAdd(Request $req){
+        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
+        return view('pages.badd',compact('Ruangan'));
+    }
+
 }

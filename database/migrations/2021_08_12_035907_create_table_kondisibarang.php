@@ -14,7 +14,8 @@ class CreateTableKondisibarang extends Migration
     public function up()
     {
         Schema::create('BarangDetail', function (Blueprint $table) {
-            $table->id('idBarang');
+            $table->id('IdBarangDetail');
+            $table->integer('IdBarang');
             $table->string('Kondisi',64);
             $table->string('Status',25);
             $table->string('Remark',64);
