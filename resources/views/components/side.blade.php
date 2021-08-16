@@ -2,7 +2,7 @@
     <div class="scrollbar side-menu-bg">
         <ul class="nav navbar-nav side-menu" id="sidebarnav">
             <li>
-                <a href="/"><i class="ti-menu-alt"></i><span class="right-nav-text">Transaksi</span> </a>
+                <a href="{{url('/Trans')}}"><i class="ti-menu-alt"></i><span class="right-nav-text">Transaksi</span> </a>
             </li>
             <li>
                 <a href="{{url('/Barang')}}"><i class="ti-menu-alt"></i><span class="right-nav-text">Barang</span> </a>

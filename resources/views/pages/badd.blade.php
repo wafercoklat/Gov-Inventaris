@@ -38,12 +38,20 @@
                                     <form action="{{ route('Barang.store') }}" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Nama Barang</label>
+                                            <label for="exampleInputEmail1">Code Barang</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" name="Code">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nama Barang</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" name="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Pilih Ruangan</label>
+                                            <select class="btn btn-secondary dropdown-toggle" name="IdRuangan" id="IdRuangan">
+                                                @foreach ($Ruangan as $IdRuangan => $Name)
+                                                    <option class="dropdown-menu-right" value="{{$IdRuangan}}">{{$Name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">NUP Barang</label>

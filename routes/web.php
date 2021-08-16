@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DBController;
- 
+use App\Http\Controllers\DTrans_Controller;
+use App\Model\Barang;
+
 Route::get('/', [AuthController::class, 'showFormLogin'])->name('login');
 Route::get('login', [AuthController::class, 'showFormLogin'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
@@ -25,9 +27,11 @@ Route::post('register', [AuthController::class, 'register']);
  
 Route::group(['middleware' => 'auth'], function () {
  
-    Route::get('/', [HomeController::class, 'main'])->name('main');
+    // Route::get('/', [HomeController::class, 'main'])->name('main');
+    Route::resource('/Trans', DTrans_Controller::class);
     Route::resource('/Barang', DBController::class);
     Route::get('/Barang-Tambah', [HomeController::class, 'tmbhbarang'])->name('Barang#Tambah');
+    Route::get('/Barang-Tambah', [DBController::class, 'dropdownAdd']);
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
  
 });
