@@ -21,8 +21,8 @@
                                 <h4 class="mb-0"> Data Barang </h4>
                             </div>
                             <div class="col-sm-6">
-                                <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
-                                    <a href="Barang-Tambah" class="btn btn-primary">Tambah Barang</a>
+                                <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
+                                    <a href="Barang-Tambah" class="btn btn-primary" disabled>Tambah Barang</a>
                                 </ol>
                             </div>
                         </div>

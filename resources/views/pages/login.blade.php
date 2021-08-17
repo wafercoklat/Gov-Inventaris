@@ -55,8 +55,8 @@
                         <div class="login-fancy pb-40 clearfix">
                             <h3 class="mb-30">Sign In</h3>
                             <div class="section-field mb-20">
-                                <label class="mb-10" for="name">Email* </label>
-                                <input id="username" class="web form-control" type="text" placeholder="Email" name="email">
+                                <label class="mb-10" for="name">Username* </label>
+                                <input id="username" class="web form-control" type="text" placeholder="Username" name="username">
                             </div>
                             <div class="section-field mb-20">
                                 <label class="mb-10" for="Password">Password* </label>

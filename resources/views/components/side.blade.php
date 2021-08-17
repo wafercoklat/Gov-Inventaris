@@ -22,7 +22,7 @@
                 <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">User</span> </a>
             </li>
             <li>
-                <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">Logout</span> </a>
+                <a href="{{url('/logout')}}"><i class="ti-menu-alt"></i><span class="right-nav-text">Logout</span> </a>
             </li>
         </ul>
     </div>
