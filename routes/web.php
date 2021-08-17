@@ -26,12 +26,15 @@ Route::get('register', [AuthController::class, 'showFormRegister'])->name('regis
 Route::post('register', [AuthController::class, 'register']);
  
 Route::group(['middleware' => 'auth'], function () {
- 
-    // Route::get('/', [HomeController::class, 'main'])->name('main');
     Route::resource('/Trans', DTrans_Controller::class);
-    Route::resource('/Barang', DBController::class);
-    Route::get('/Barang-Tambah', [HomeController::class, 'tmbhbarang'])->name('Barang#Tambah');
-    Route::get('/Barang-Tambah', [DBController::class, 'dropdownAdd']);
+    Route::group(['middleware' => 'checkRole:admin,operator'], function(){
+        Route::resource('/Barang', DBController::class);
+        Route::get('/Barang-Tambah', [HomeController::class, 'tmbhbarang'])->name('Barang#Tambah');
+        Route::get('/Barang-Tambah', [DBController::class, 'dropdownAdd']);
+    });
+    Route::group(['middleware' => 'checkRole:umum'], function(){
+        Route::get('/Barang', [DBController::class, 'index'])->name('Barang');
+    });
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
  
 });

@@ -17,7 +17,7 @@ class AuthController extends Controller
     {
         if (Auth::check()) { 
             //Login Success
-            return redirect()->route('/');
+            return redirect()->route('Trans.index');
         }
         return view('pages/login');
     }
@@ -25,18 +25,18 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $rules = [
-            'email'                 => 'required|email',
+            'username'              => 'required|string',
             'password'              => 'required|string'
         ];
   
         $messages = [
-            'email.required'        => 'Email wajib diisi',
-            'email.email'           => 'Email tidak valid',
+            'username.required'        => 'Email wajib diisi',
+            'username.username'           => 'Email tidak valid',
             'password.required'     => 'Password wajib diisi',
             'password.string'       => 'Password harus berupa string'
         ];
-  
-        $validator = Validator::make($request->all(), $rules, $messages);
+        $input=$request->all();
+        $validator = Validator::make($input, $rules, $messages);
   
         // Return the value of input when the pass or user is wrong
         if($validator->fails()){
@@ -44,20 +44,27 @@ class AuthController extends Controller
         }
   
         $data = [
-            'email'     => $request->input('email'),
+            'username'  => $request->input('username'),
             'password'  => $request->input('password'),
         ];
         
         // Check to database
         Auth::attempt($data);
 
-        // dd($data);
-        // dd( Auth::attempt($data));
-        // dd(Auth::check());
+        // $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+ 
+        // if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
+        // {
+        //     Auth::attempt($data);
+        //     return redirect()->route('/');
+        // }else{
+        //     return redirect()->route('login')
+        //         ->with('error', 'username atau password salah');
+        // }
 
         if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
-            return redirect()->route('/');
+            return redirect()->route('Trans.index');
   
         } else { // false
   
