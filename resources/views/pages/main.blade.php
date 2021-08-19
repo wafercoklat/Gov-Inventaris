@@ -112,8 +112,6 @@
                 </div>
             </div>
         </div>
-</body>
-
 @include('components.foot-script')
-
+</body>
 </html>

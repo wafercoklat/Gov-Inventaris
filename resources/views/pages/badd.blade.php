@@ -74,7 +74,6 @@
             </div>
         </div>
     </div>
+    @include('components.foot-script')
 </body>
-
-@include('components.foot-script')
 </html>

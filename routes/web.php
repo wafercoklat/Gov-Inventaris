@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DBController;
+use App\Http\Controllers\DRController;
+use App\Http\Controllers\DLController;
 use App\Http\Controllers\DTrans_Controller;
 use App\Model\Barang;
 
@@ -29,11 +31,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/Trans', DTrans_Controller::class);
     Route::group(['middleware' => 'checkRole:admin,operator'], function(){
         Route::resource('/Barang', DBController::class);
-        Route::get('/Barang-Tambah', [HomeController::class, 'tmbhbarang'])->name('Barang#Tambah');
-        Route::get('/Barang-Tambah', [DBController::class, 'dropdownAdd']);
+        Route::resource('/Lantai', DLController::class);
+        Route::resource('/Ruangan', DRController::class);
     });
     Route::group(['middleware' => 'checkRole:umum'], function(){
-        Route::get('/Barang', [DBController::class, 'index'])->name('Barang');
+        Route::get('/Barang#', [DBController::class, 'index'])->name('Barang#');
+        Route::get('/Ruangan#', [DBController::class, 'index'])->name('Ruangan#');
+        Route::get('/Lantai#', [DBController::class, 'index'])->name('Lantai#');
     });
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
  

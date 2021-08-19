@@ -17,9 +17,9 @@ class CreateTableRuangan extends Migration
             $table->id('IdRuangan');
             $table->string('Code',25);
             $table->string('Name',64);
-            $table->string('NUP',25);
-            $table->string('Keterangan',64);
-            $table->integer('Counter');
+            $table->string('NUP',25)->nullable()->default(NULL);
+            $table->string('Keterangan',64)->nullable()->default(NULL);
+            $table->integer('Counter')->nullable()->default(NULL);
             $table->timestamps();
         });
     }
