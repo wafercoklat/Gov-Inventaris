@@ -18,7 +18,7 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h4 class="mb-0"> Input Barang </h4>
+                                <h4 class="mb-0"> Input Lantai </h4>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
@@ -35,24 +35,16 @@
                             <div class="card card-statistics mb-30">
                                 <div class="card-body">
                                     <h5 class="card-title">Basic form</h5>
-                                    <form action="{{ route('Barang.update', $item->IdBarang) }}" method="POST">
+                                    <form action="{{ route('Lantai.update', $item->IdLokasi) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Code Barang</label>
+                                            <label for="exampleInputEmail1">Code Lantai</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama" name="Code" value="{{$item->Code}}" disabled>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Nama Barang</label>
+                                            <label for="exampleInputEmail1">Nama Lantai</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama" name="Name" value="{{$item->Name}}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">NUP Barang</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NUP" name="NUP" value="{{$item->NUP}}">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Keterangan</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="Keterangan" value="{{$item->Keterangan}}">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>

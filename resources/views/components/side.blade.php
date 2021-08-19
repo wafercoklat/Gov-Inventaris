@@ -14,8 +14,8 @@
                     <div class="clearfix"></div>
                 </a>
                 <ul id="dashboard" class="collapse" data-parent="#sidebarnav">
-                    <li> <a href="index.html">Ruangan</a> </li>
-                    <li> <a href="index-02.html">Lantai</a> </li>
+                    <li> <a href="{{url('/Ruangan')}}">Ruangan</a> </li>
+                    <li> <a href="{{url('/Lantai')}}">Lantai</a> </li>
                 </ul>
             </li>
             <li>

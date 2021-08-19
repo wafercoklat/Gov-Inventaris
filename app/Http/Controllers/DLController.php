@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Ruangan;
+use App\Models\view_Lantai;
+use App\Models\Lantai;
 
 class DLController extends Controller
 {
@@ -14,8 +15,8 @@ class DLController extends Controller
      */
     public function index()
     {
-        $ruangan = Ruangan::latest()->paginate(5);
-        return view('pages.barang',compact('item'))
+        $data = view_Lantai::latest()->paginate(5);
+        return view('pages.Lantai.Lview',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -26,7 +27,7 @@ class DLController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.Lantai.Ladd');
     }
 
     /**
@@ -37,7 +38,15 @@ class DLController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Name' => 'required',
+            'Code' => 'required'
+        ]);
+
+        Lantai::create($request->all());
+
+        return redirect()->route('Lantai.index')
+                        ->with('success','Post created successfully.');         
     }
 
     /**
@@ -46,9 +55,9 @@ class DLController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Lantai $id)
     {
-        //
+        return view('pages.Lantai.Ledit',compact('id'));
     }
 
     /**
@@ -59,7 +68,8 @@ class DLController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Lantai::where('IdLokasi',$id)->first();
+        return view('pages.Lantai.Ledit',compact('data'));
     }
 
     /**
@@ -69,9 +79,17 @@ class DLController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $data)
     {
-        //
+        $request->validate([
+            'Name' => 'required',
+        ]);
+         
+        $update = barang::where('IdBarang',$data)->first();
+        $update->update($request->all());
+         
+        return redirect()->route('Lantai.index')
+                        ->with('success','Post updated successfully');
     }
 
     /**
@@ -80,8 +98,15 @@ class DLController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($data)
     {
-        //
+        /// melakukan hapus data berdasarkan parameter yang dikirimkan
+        $del = barang::where('IdBarang',$data)->first();
+  
+        if ($data != null) {
+            $del->delete();
+            return redirect()->route('Lantai.index')->with('success','Lantai berhasil di hapus');
+        }
+        return redirect()->route('Lantai.index')->with('success','Gagal');
     }
 }

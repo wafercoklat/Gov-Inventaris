@@ -18,7 +18,7 @@ class CreateTableKondisibarang extends Migration
             $table->integer('IdBarang');
             $table->string('Kondisi',64);
             $table->string('Status',25);
-            $table->string('Remark',64);
+            $table->string('Remark',64)->nullable()->default(NULL);
             $table->string('Pelapor',64);
             $table->integer('Counter');
             $table->timestamps();

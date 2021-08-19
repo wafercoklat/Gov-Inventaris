@@ -19,6 +19,8 @@ class DBController extends Controller
     {
         
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
+        // $item = new View();
+        // $item->Barang();
         $item = view_Barang::latest()->paginate(5);
         return view('pages.barang',compact('item', 'Ruangan'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -32,7 +34,8 @@ class DBController extends Controller
     public function create()
     {
         //// menampilkan halaman create
-        return view('Barang.create');
+        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
+        return view('pages.badd',compact('Ruangan'));
     }
 
     /**
@@ -143,11 +146,6 @@ class DBController extends Controller
             return redirect()->route('Barang.index')->with('success','Barang berhasil di hapus');
         }
         return redirect()->route('Barang.index')->with('success','Gagal');
-    }
-    
-    public function dropdownAdd(Request $req){
-        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
-        return view('pages.badd',compact('Ruangan'));
     }
 
 }

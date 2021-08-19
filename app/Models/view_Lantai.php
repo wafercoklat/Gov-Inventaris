@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lantai extends Model
+class view_Lantai extends Model
 {
     use HasFactory;
-    protected $table = 'lokasi';
+    protected $table = 'view_lantai';
     protected $primaryKey = 'IdLokasi';
-    protected $fillable = [
-         'Code', 'Name'
-    ];  
 }
