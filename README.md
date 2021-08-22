@@ -13,6 +13,13 @@ Install seluruh packages yang dibutuhkan
 Siapkan database dan atur file .env sesuai dengan konfigurasi Anda
      
     cp .env.example .env
+    
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=dbinventaris
+    DB_USERNAME=root
+    DB_PASSWORD=
      
 Jika sudah, migrate seluruh migrasi dan seeding data
 
