@@ -12,7 +12,7 @@ Install seluruh packages yang dibutuhkan
 
 Siapkan database dan atur file .env sesuai dengan konfigurasi Anda
      
-     cp .env.example .env
+    cp .env.example .env
      
 Jika sudah, migrate seluruh migrasi dan seeding data
 
