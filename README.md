@@ -21,5 +21,5 @@ Jalankan local server
 
 User default aplikasi untuk login
 
-Email       : admin
-Password    : 12345
+    Email       : admin
+    Password    : 12345
