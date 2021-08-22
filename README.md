@@ -11,6 +11,9 @@ Install seluruh packages yang dibutuhkan
     composer install
 
 Siapkan database dan atur file .env sesuai dengan konfigurasi Anda
+     
+     cp .env.example .env
+     
 Jika sudah, migrate seluruh migrasi dan seeding data
 
     php artisan migrate --seed
