@@ -18,6 +18,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DBController;
 use App\Http\Controllers\DRController;
 use App\Http\Controllers\DLController;
+use App\Http\Controllers\DKController;
+use App\Http\Controllers\DKondisiController;
 use App\Http\Controllers\DTrans_Controller;
 use App\Model\Barang;
 
@@ -33,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/Barang', DBController::class);
         Route::resource('/Lantai', DLController::class);
         Route::resource('/Ruangan', DRController::class);
+        Route::resource('/Lapor', DKController::class);
+        Route::get('/Kondisi/{var}', [DBController::class, 'kondisi'])->name('Kondisi');
     });
     Route::group(['middleware' => 'checkRole:umum'], function(){
         Route::get('/Barang#', [DBController::class, 'index'])->name('Barang#');
