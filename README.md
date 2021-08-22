@@ -14,6 +14,7 @@ Siapkan database dan atur file .env sesuai dengan konfigurasi Anda
      
     cp .env.example .env
     
+Atur Koneksi database seperti ini pada file .env
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
     DB_PORT=3306
