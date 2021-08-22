@@ -2,25 +2,24 @@
  Laravel 8
  
 
-    Clone repository ini
+Clone repository ini
 
-https://github.com/wafercoklat/Inventaris.git
+    https://github.com/wafercoklat/Inventaris.git
 
+Install seluruh packages yang dibutuhkan
 
-    Install seluruh packages yang dibutuhkan
+    composer install
 
-composer install
+Siapkan database dan atur file .env sesuai dengan konfigurasi Anda
+Jika sudah, migrate seluruh migrasi dan seeding data
 
-    Siapkan database dan atur file .env sesuai dengan konfigurasi Anda
-    Jika sudah, migrate seluruh migrasi dan seeding data
+    php artisan migrate --seed
 
-php artisan migrate --seed
+Jalankan local server
 
-    Jalankan local server
+    php artisan serve
 
-php artisan serve
+User default aplikasi untuk login
 
-    User default aplikasi untuk login
-
-Email       : admin@mail.com
-Password    : admin
+Email       : admin
+Password    : 12345
