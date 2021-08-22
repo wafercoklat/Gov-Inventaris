@@ -31,9 +31,8 @@
                         <div class="col-xl-12 mb-30">
                             <div class="card card-statistics h-100">
                                 <div class="card-body">
-                                    <h5 class="card-title border-0 pb-0">Table hover</h5>
                                     <div class="table-responsive">
-                                        <table class="mb-0 table table-hover">
+                                        <table id="datatable" class="mb-0 table table-striped p-0">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
@@ -41,6 +40,7 @@
                                                     <th>Nama Barang</th>
                                                     <th>Ruangan</th>
                                                     <th>Lantai</th>
+                                                    <th>Pemindah</th>
                                                     <th>Pemindah</th>
                                                 </tr>
                                             </thead>
