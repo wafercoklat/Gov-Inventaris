@@ -25,6 +25,10 @@ Jika sudah, migrate seluruh migrasi dan seeding data
 
     php artisan migrate --seed
 
+Genereate Key
+
+    php artisan key:generate 
+
 Jalankan local server
 
     php artisan serve
