@@ -1,5 +1,9 @@
 # Inventaris
  Laravel 8
+    - MultiRole (Per Ruangan)
+    - Multi Access (Admin, Operator, Umum)
+    - Approve (Pindah)
+    - Boostrap Implement
  
 
 Clone repository ini
