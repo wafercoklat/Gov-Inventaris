@@ -7,6 +7,7 @@ use App\Models\view_Ruangan;
 use App\Models\Ruangan;
 use App\Models\Lantai;
 use App\Models\RuanganUpdate;
+use DB;
 
 class DRController extends Controller
 {
@@ -83,7 +84,8 @@ class DRController extends Controller
     public function edit($id)
     {
         $data = Ruangan::where('IdRuangan',$id)->first();
-        return view('pages.Ruangan.Redit',compact('data'));
+        $Lantai = Lantai::Pluck('Name', 'IdLokasi');
+        return view('pages.Ruangan.Redit',compact('data', 'Lantai'));
     }
 
     /**
@@ -101,7 +103,13 @@ class DRController extends Controller
          
         $update = Ruangan::where('IdRuangan',$data)->first();
         $update->update($request->all());
-         
+        
+        DB::table('ruangandetail')->where('IdRuangan', $data)->update(
+            [
+                'IdLokasi' => $request->IdLokasi
+            ]
+        );
+
         return redirect()->route('Ruangan.index')
                         ->with('success','Post updated successfully');
     }

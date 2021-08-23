@@ -21,6 +21,12 @@ class CreateTableTransaksipindahbarang extends Migration
             $table->string('User',64);
             $table->string('Remark',64);
             $table->integer('Counter');
+            $table->enum('Req', ['Y', 'N'])->default('N');
+            $table->string('ReqBy',25);
+            $table->timestamp('ReqTime')->nullable();
+            $table->enum('Verified', ['Y', 'N'])->default('N');
+            $table->string('VerifyBy',25);
+            $table->timestamp('VerifedTime')->nullable();
             $table->timestamps();
         });
     }

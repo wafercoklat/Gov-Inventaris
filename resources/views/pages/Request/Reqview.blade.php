@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
-                                    <a href="{{route('Ruangan.create')}}" class="btn btn-primary" disabled>Tambah Barang</a>
+                                    <a href="{{route('Ruangan.create')}}" class="btn btn-primary" disabled> </a>
                                 </ol>
                             </div>
                         </div>
@@ -50,9 +50,6 @@
                                                     <th>NUP</th>
                                                     <th>Lantai</th>
                                                     <th>Keterangan</th>
-                                                    @if(Auth::User()->role != 'umum')
-                                                        <th>Setting</th>
-                                                    @endif
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -65,17 +62,14 @@
                                                     <td>{{ $itemdetail->NUP }}</td>
                                                     <td>{{ $itemdetail->Lantai }}</td>
                                                     <td>{{ $itemdetail->Keterangan }}</td>
-
-                                                    @if(Auth::User()->role != 'umum')
-                                                        <td class="text-center">
-                                                            <form action="{{ route('Ruangan.destroy', $itemdetail->IdRuangan) }}" method="POST">
-                                                                <a class="btn btn-primary btn-sm" href="{{ route('Ruangan.edit',$itemdetail->IdRuangan) }}">Edit</a>
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                                            </form>
-                                                        </td>
-                                                    @endif
+                                                    <td class="text-center">
+                                                        <form action="{{ route('Ruangan.destroy', $itemdetail->IdRuangan) }}" method="POST">
+                                                            <a class="btn btn-primary btn-sm" href="{{ route('Ruangan.edit',$itemdetail->IdRuangan) }}">Edit</a>
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                                        </form>
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

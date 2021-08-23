@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     use HasFactory;
-    protected $table = 'view_transaksi';
+    protected $table = 'transaksi';
     protected $primaryKey = 'IdTrans';
     protected $fillable = [
-        'IdBarang', 'IdRuangan', 'Counter'
+        'IdBarang', 'IdRuangan', 'Counter', 'VerifiedTime'
    ];  
 }

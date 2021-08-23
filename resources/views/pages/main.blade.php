@@ -41,7 +41,7 @@
                                                     <th>Ruangan</th>
                                                     <th>Lantai</th>
                                                     <th>Pemindah</th>
-                                                    <th>Pemindah</th>
+                                                    <th>Approve</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -53,7 +53,11 @@
                                                     <td>{{$item->ruangan}}</td>
                                                     <td>{{$item->Lantai}}</td>
                                                     <td>{{$item->User}}</td>
-                                                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Launch demo modal </button></td>
+                                                    <td>
+                                                    <a href="{{ route('Update', $item->IdTrans) }}"">
+                                                        <button type="button" class="btn btn-success btn-sm mt-1 mb-1" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Approve</button>
+                                                    </a>
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

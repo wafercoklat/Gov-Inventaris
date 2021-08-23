@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/Ruangan', DRController::class);
         Route::resource('/Lapor', DKController::class);
         Route::get('/Kondisi/{var}', [DBController::class, 'kondisi'])->name('Kondisi');
+        Route::get('/Trans/Update/{var}', [DTrans_Controller::class, 'create'])->name('Update');
     });
     Route::group(['middleware' => 'checkRole:umum'], function(){
         Route::get('/Barang#', [DBController::class, 'index'])->name('Barang#');
