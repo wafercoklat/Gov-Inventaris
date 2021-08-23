@@ -1,5 +1,6 @@
 # Inventaris
- Laravel 8
+Laravel 8
+    
     - MultiRole (Per Ruangan)
     - Multi Access (Admin, Operator, Umum)
     - Approve (Pindah)
