@@ -5,19 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\barang;
 use App\Models\Ruangan;
+use App\Models\userRole;
 use App\Models\view_Barang;
 use DB;
+use App\Http\Controllers\AdditionalFunc;
+use Illuminate\Support\Facades\Auth;
 use App\Models\TransaksiUpdate;
 
 class DBController extends Controller
 {
     public function index()
     {
+        $clause = $this->Checkrole();
         
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
-        // $item = new View();
-        // $item->Barang();
-        $item = view_Barang::latest()->paginate(5);
+        // $item = view_Barang::latest()->paginate(5);
+        
+        $item = DB::select('SELECT br.IdBarang, ru.IdRuangan, br.Code, br.Name barang, br.nup, ru.Name ruangan, lt.Name Lantai, brd.Kondisi, brd.`Status`, brd.Remark , br.created_at, br.updated_at, tr.Req FROM barang br LEFT JOIN ( SELECT IdBarang, Kondisi, `Status`, Remark , created_at, updated_at FROM barangdetail ORDER BY counter DESC LIMIT 1) brd ON brd.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi LEFT JOIN 
+        ( SELECT IdBarang, Req FROM transaksi ORDER BY counter DESC LIMIT 1) tr on tr.IdBarang = br.IdBarang '.$clause);
+
         return view('pages.barang',compact('item', 'Ruangan'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -37,24 +43,16 @@ class DBController extends Controller
             'Code' => 'required',
             'IdRuangan' => 'required'
         ]);
-         
-        /// insert setiap request dari form ke dalam database via model
-        /// jika menggunakan metode ini, maka nama field dan nama form harus sama
-        
-        barang::create($request->all());
-        
-        // TransaksiUpdate::create();
-        if(empty(TransaksiUpdate::latest('IdTrans')->first()->IdTrans)){
-            $lastid = 1;
-        } else {
-            $lastid = (TransaksiUpdate::latest('IdTrans')->first()->IdTrans)+1;
-        }
 
+        barang::create($request->all());
+
+        $lastid = AdditionalFunc::getLastId("", 'IdTrans');
         $item = new TransaksiUpdate();
         $item -> IdBarang = barang::latest('IdBarang')->first()->IdBarang;
         $item -> IdRuangan = $request->IdRuangan;
         $item -> Trans = "TR-" .$lastid;
         $item -> Remark = "New";
+        $item -> Counter = 1;
         $item -> save();
 
         /// redirect jika sukses menyimpan data
@@ -115,4 +113,19 @@ class DBController extends Controller
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function Checkrole(){
+        $userid = Auth::user()->id;
+        $data = DB::select('SELECT IdRuangan FROM userrole WHERE userid =(?)',array($userid));
+        $flag = true;
+        $clause = "";
+        for ($i=0; $i < count($data) ; $i++) {
+            if ($flag) {
+                $clause = "Where ru.IdRuangan = ".$data[$i]->IdRuangan;
+                $flag = false;
+            } 
+            $clause .= " Or ru.IdRuangan = ".$data[$i]->IdRuangan;
+        }
+
+        return $clause;
+    }
 }

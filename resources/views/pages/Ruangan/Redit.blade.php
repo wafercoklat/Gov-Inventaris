@@ -35,24 +35,32 @@
                             <div class="card card-statistics mb-30">
                                 <div class="card-body">
                                     <h5 class="card-title">Basic form</h5>
-                                    <form action="{{ route('Barang.update', $item->IdBarang) }}" method="POST">
+                                    <form action="{{ route('Ruangan.update', $data->IdRuangan) }}" method="POST">
                                         @csrf
                                         @method('PUT')
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Code Barang</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama" name="Code" value="{{$item->Code}}" disabled>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama" name="Code" value="{{$data->Code}}" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nama Barang</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama" name="Name" value="{{$item->Name}}">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nama" name="Name" value="{{$data->Name}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Pilih Lantai</label>
+                                            <select class="btn btn-secondary dropdown-toggle" name="IdLokasi" id="IdLokasi">
+                                                @foreach ($Lantai as $IdLokasi => $Name)
+                                                    <option class="dropdown-menu-right" value="{{$IdLokasi}}">{{$Name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">NUP Barang</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NUP" name="NUP" value="{{$item->NUP}}">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="NUP" name="NUP" value="{{$data->NUP}}">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Keterangan</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="Keterangan" value="{{$item->Keterangan}}">
+                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Keterangan" name="Keterangan" value="{{$data->Keterangan}}">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>

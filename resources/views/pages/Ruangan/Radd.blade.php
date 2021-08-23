@@ -18,7 +18,7 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h4 class="mb-0"> Input Barang </h4>
+                                <h4 class="mb-0"> Input Ruangan </h4>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
@@ -38,11 +38,11 @@
                                     <form action="{{ route('Ruangan.store') }}" method="post">
                                         @csrf
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Code Barang</label>
+                                            <label for="exampleInputEmail1">Code Ruangan</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" name="Code">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Nama Barang</label>
+                                            <label for="exampleInputEmail1">Nama Ruangan</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama" name="Name">
                                         </div>
                                         <div class="form-group">
@@ -54,7 +54,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">NUP Barang</label>
+                                            <label for="exampleInputEmail1">NUP</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NUP" name="NUP">
                                         </div>
                                         <div class="form-group">

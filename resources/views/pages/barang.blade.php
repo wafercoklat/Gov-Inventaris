@@ -51,8 +51,10 @@
                                                     <th>Lantai</th>
                                                     <th>Status</th>
                                                     <th>Keterangan</th>
-                                                    <th>Modify</th>
-                                                    <th>Pindah</th>
+                                                    @if(Auth::User()->role != 'umum')
+                                                        <th>Modify</th>
+                                                        <th>Pindah</th>
+                                                    @endif
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -65,20 +67,37 @@
                                                     <td>{{ $itemdetail->nup }}</td>
                                                     <td>{{ $itemdetail->ruangan }}</td>
                                                     <td>{{ $itemdetail->Lantai }}</td>
-                                                    <td ><label class="badge badge-success mb-auto">{{ $itemdetail->Status }}</label></td>
+                                                    <td>   
+                                                        @if ($itemdetail->Req == 'Y')
+                                                        <label class="badge badge-success mb-auto">Requesting</label>
+                                                        @endif
+                                                    </td>
                                                     <td>{{ $itemdetail->Remark }}</td>
-                                                    <td class="text-center">
-                                                        <form class="ml-auto pt-3" action="{{ route('Barang.destroy', $itemdetail->IdBarang) }}" method="POST">
-                                                            <a class="btn btn-primary btn-sm" href="{{ route('Barang.edit',$itemdetail->IdBarang) }}">Edit</a>
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                                        </form>
-                                                    </td>
-                                                    <td class="text-center"> 
-                                                        <a type="button" class="btn btn-outline-secondary btn-sm" href="{{ route('Kondisi',$itemdetail->IdBarang) }}">View</a>
-                                                        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#Pindah{{$itemdetail->IdBarang}}">Pindah</button>
-                                                    </td>
+                                                    @if(Auth::User()->role != 'umum')
+                                                            @if ($itemdetail->Req == 'N' or $itemdetail->Req == "")
+                                                            <td class="text-center">
+                                                                <form class="ml-auto pt-3" action="{{ route('Barang.destroy', $itemdetail->IdBarang) }}" method="POST">
+                                                                    <a class="btn btn-primary btn-sm" href="{{ route('Barang.edit',$itemdetail->IdBarang) }}">Edit</a>
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                                                </form>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#Pindah{{$itemdetail->IdBarang}}">Pindah</button>
+                                                                
+                                                                @else
+                                                                <td class="text-center ml-auto pt-3">
+                                                                        <button class="btn btn-primary btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Edit</button>
+                                                                        <button class="btn btn-danger btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Delete</button>
+                                                                </td>
+                                                                <td class="text-center">                                                        
+                                                                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Pindah</button>
+                                                                @endif
+
+                                                                    <a type="button" class="btn btn-outline-secondary btn-sm" href="{{ route('Kondisi',$itemdetail->IdBarang) }}">View</a>
+                                                            </td>
+                                                    @endif
                                                 </tr>
                                                  {{-- Modal --}}
                                                  <div class="modal fade" id="Pindah{{$itemdetail->IdBarang}}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -88,7 +107,7 @@
                                                                 <div class="modal-title">
                                                                     <div class="mb-10">
                                                                         <h5>PINDAH BARANG</h5>
-                                                                        <h2>{{$itemdetail->Name}}</h2>
+                                                                        <h2>{{$itemdetail->barang}}</h2>
                                                                     </div>
                                                                 </div>
                                                             </div>
