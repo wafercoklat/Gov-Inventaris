@@ -18,9 +18,11 @@ class CreateTableTransaksipindahbarang extends Migration
             $table->string('Trans',25);
             $table->integer('IdBarang');
             $table->integer('IdRuangan');
+            $table->integer('IdRuangan2')->nullable()->default(NULL);
             $table->string('User',64);
             $table->string('Remark',64);
             $table->integer('Counter');
+            $table->integer('CounterNo');
             $table->enum('Req', ['Y', 'N'])->default('N');
             $table->string('ReqBy',25);
             $table->timestamp('ReqTime')->nullable();

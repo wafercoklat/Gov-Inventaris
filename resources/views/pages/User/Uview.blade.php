@@ -18,11 +18,11 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h4 class="mb-0"> Data Ruangan </h4>
+                                <h4 class="mb-0"> Data User </h4>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
-                                    <a href="{{route('Ruangan.create')}}" class="btn btn-primary" disabled>Tambah Barang</a>
+                                    <a href="{{route('Ruangan.create')}}" class="btn btn-primary" disabled>Tambah User</a>
                                 </ol>
                             </div>
                         </div>
@@ -45,37 +45,26 @@
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Kode Ruangan</th>
-                                                    <th>Nama Ruangan</th>
-                                                    <th>NUP</th>
-                                                    <th>Lantai</th>
-                                                    <th>Keterangan</th>
-                                                    @if(Auth::User()->role != 'umum')
-                                                        <th>Setting</th>
-                                                    @endif
+                                                    <th>User</th>
+                                                    <th>Non Aktif</th>
+                                                    <th>Role</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 
-                                                @foreach ($data as $itemdetail)
+                                                @foreach ($d as $detail)
                                                 <tr>
                                                     <td>{{ ++$i }}</td>
-                                                    <td>{{ $itemdetail->Code }}</td>
-                                                    <td>{{ $itemdetail->Ruangan }}</td>
-                                                    <td>{{ $itemdetail->NUP }}</td>
-                                                    <td>{{ $itemdetail->Lantai }}</td>
-                                                    <td>{{ $itemdetail->Keterangan }}</td>
-
-                                                    @if(Auth::User()->role != 'umum')
-                                                        <td class="text-center">
-                                                            <form action="{{ route('Ruangan.destroy', $itemdetail->IdRuangan) }}" method="POST">
-                                                                <a class="btn btn-primary btn-sm" href="{{ route('Ruangan.edit',$itemdetail->IdRuangan) }}">Edit</a>
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                                            </form>
-                                                        </td>
-                                                    @endif
+                                                    <td>{{ $detail->name }}</td>
+                                                    <td>@if ($detail->NA == 'Y') Tidak Aktif @else Aktif @endif</td>
+                                                    <td>
+                                                        <a class="btn btn-primary btn-sm" href="{{ route('User.show',$detail->id) }}">Lihat Role</a>
+                                                        @if ($detail->NA == 'Y')
+                                                            <a class="btn btn-primary btn-sm" href="{{ route('Active',$detail->id)}}">Aktifkan</a> 
+                                                        @else
+                                                        <a class="btn btn-primary btn-sm" href="{{ route('NActive', $detail->id) }}">Non-Aktifkan</a>
+                                                        @endif
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

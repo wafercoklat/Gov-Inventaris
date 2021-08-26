@@ -20,15 +20,11 @@ class DTrans_Controller extends Controller
      */
     public function index()
     {
-        // $trans= Transaksi::latest()->paginate(5);
-
         $clause = $this->Checkrole();
         
-        $trans = DB::select("SELECT tr.IdTrans, tr.trans transaksi, br.Name barang, ru.Name ruangan, lt.Name Lantai, brd.Kondisi, brd.`Status`, brd.Remark, tr.created_at, tr.updated_at, tr.User FROM transaksi tr LEFT JOIN barang br ON br.IdBarang = tr.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = tr.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi  lt ON lt.IdLokasi = rud.idLokasi where (tr.Req = 'Y') and (".$clause.")");
+        $trans = DB::select("SELECT tr.IdTrans, tr.trans transaksi, br.Name barang, ru.Name ruangan, ru2.Name ruangan2, lt.Name Lantai, brd.Kondisi, brd.`Status`, brd.Remark, tr.created_at, tr.updated_at, tr.User FROM transaksi tr LEFT JOIN barang br ON br.IdBarang = tr.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = tr.IdRuangan LEFT JOIN ruangan ru2 ON ru2.IdRuangan = tr.IdRuangan2 LEFT JOIN ruangandetail rud ON rud.idRuangan = ru2.IdRuangan LEFT JOIN lokasi  lt ON lt.IdLokasi = rud.idLokasi where (tr.Req = 'Y') ".$clause);
 
-        // dd($trans);
-
-        return view('pages.main',compact('trans'))-> with ('i', (request()->input('page', 1) - 1) * 5);
+        return view('pages.main',compact('trans'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**
@@ -50,22 +46,26 @@ class DTrans_Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($request)
+    public function store(Request $Req, $IdBarang)
     {
-        // dd($request);
-        if(empty(TransaksiUpdate::latest('IdTrans')->first()->IdTrans)){
+
+        if(empty(TransaksiUpdate::latest('CounterNo')->first()->CounterNo)){
             $lastid = 1;
         } else {
-            $lastid = (TransaksiUpdate::latest('IdTrans')->first()->IdTrans)+1;
+            $lastid = (TransaksiUpdate::latest('CounterNo')->first()->CounterNo)+1;
         }
         
-        $counter = (TransaksiUpdate::latest('Counter')->first()->IdBarang)+1;
-        $update = barang::where('IdBarang',$request)->first();
+        $counter = (TransaksiUpdate::where('IdBarang', $IdBarang)->latest('Counter')->first()->Counter)+1;
+        // dd($counter);
+        $update = barang::where('IdBarang', $IdBarang)->first();
+
         $item = new TransaksiUpdate();
-        $item -> IdBarang = $request; 
+        $item -> IdBarang = $IdBarang; 
         $item -> IdRuangan = $update->IdRuangan;
+        $item -> IdRuangan2 = $Req ->IdRuangan; 
         $item -> Trans = "TR-" .$lastid;
         $item -> Counter = $counter;
+        $item -> CounterNo = $lastid;
         $item -> Remark = "Pindah";
         $item -> Req = 'Y';
         $item -> ReqTime = now();
@@ -109,10 +109,10 @@ class DTrans_Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($request)
+    public function update(Request $request, $IdBarang)
     {   
-        $this->store($request);
-        /// setelah berhasil mengubah data
+        $this->store($request, $IdBarang);
+
         return redirect()->route('Barang.index')
                         ->with('success','Post updated successfully');
     }
@@ -135,22 +135,20 @@ class DTrans_Controller extends Controller
         $clause = "";
         for ($i=0; $i < count($data) ; $i++) {
             if ($flag) {
-                $clause = "ru.IdRuangan = ".$data[$i]->IdRuangan;
+                $clause = "ru2.IdRuangan = ".$data[$i]->IdRuangan;
                 $flag = false;
             } 
-            $clause .= " Or ru.IdRuangan = ".$data[$i]->IdRuangan;
+            $clause .= " Or ru2.IdRuangan = ".$data[$i]->IdRuangan;
         }
-
-        return $clause;
+        return ($clause == "") ? "" : " and ".$clause;
     }
 
     public function updateDate($var){
 
-        $get = DB::select('SELECT IdBarang, IdRuangan, Req, Verified, VerifedTime FROM transaksi where IdTrans = '.$var);
-
+        $get = DB::select('SELECT IdBarang, IdRuangan, IdRuangan2, Req, Verified, VerifedTime FROM transaksi where IdTrans = '.$var);
+        
         $barang = barang::where('IdBarang',$get[0]->IdBarang)->first();
-        $barang->IdRuangan = $get[0]->IdRuangan;
-        $barang->Req = 'N';
+        $barang->IdRuangan = $get[0]->IdRuangan2;
         $barang->save();
 
         $trans = Transaksi::where('IdTrans', $var)->first();

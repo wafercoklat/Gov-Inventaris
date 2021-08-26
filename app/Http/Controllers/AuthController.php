@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use Hash;
+use DB;
 use Session;
 use App\Models\User;
+use App\Models\userdetail;
   
 
 class AuthController extends Controller
@@ -114,7 +116,7 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->email_verified_at = \Carbon\Carbon::now();
         $simpan = $user->save();
-  
+        
         if($simpan){
             Session::flash('success', 'Register berhasil! Silahkan login untuk mengakses data');
             return redirect()->route('login');

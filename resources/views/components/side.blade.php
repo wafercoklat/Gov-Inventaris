@@ -25,7 +25,7 @@
                 </ul>
             </li>
             <li>
-                <a href="todo-list.html"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">User</span> </a>
+                <a href="{{url('/User')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">User</span> </a>
             </li>
             <li>
                 <a href="{{url('/logout')}}"><i class="fa fa-sign-out"></i><span class="right-nav-text">Logout</span> </a>
