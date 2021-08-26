@@ -22,12 +22,52 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
-                                    <a href="{{route('Ruangan.create')}}" class="btn btn-primary" disabled>Tambah User</a>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#CreateUser">Tambah User</a>
                                 </ol>
                             </div>
                         </div>
                     </div>
                     <!-- main body -->
+
+                     {{-- Modal --}}
+                     <div class="modal fade" id="CreateUser" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content pl-30 pr-30 pt-20">
+                                <div class="modal-header">
+                                    <div class="modal-title">
+                                        <div class="mb-10">
+                                            <h5>TAMBAH USER</h5>
+                                            <h6>Description Here</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{route('register')}}" method="POST">
+                                        @csrf 
+                                        <div class="btn-group ml-10 mb-1">
+                                            <div class="row">
+                                                <div class="section-field mb-20 col-sm-12">
+                                                    <label class="mb-10" for="">Name* </label>
+                                                    <input type="text" placeholder="Name*" id="email" class="form-control" name="name">
+                                                </div>
+                                                <div class="section-field mb-20 col-sm-12">
+                                                    <label class="mb-10" for="">Email* </label>
+                                                    <input type="email" placeholder="Email*" id="email" class="form-control" name="email">
+                                                </div>
+                                                <div class="section-field mb-20 col-sm-12">
+                                                    <label class="mb-10" for="">Password* </label>
+                                                    <input class="Password form-control" id="password" type="password" placeholder="Password" name="password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success">Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     @if ($message = Session::get('success'))
                     <div class="alert alert-success">

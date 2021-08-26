@@ -68,10 +68,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $user = User::where('id', $id)->first();;
         $role = userRole::where('userId', $id);
         $ruangan = DB::select("SELECT a.IdRuangan, a.Name, b.userId  FROM ruangan a LEFT JOIN userrole b ON a.IdRuangan = b.IdRuangan AND b.userId = ".$id." ORDER BY IdRuangan ASC");
 
-        return view('pages.User.Uset',compact('role', 'ruangan', 'id')) ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('pages.User.Uset',compact('role', 'ruangan', 'id', 'user')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
