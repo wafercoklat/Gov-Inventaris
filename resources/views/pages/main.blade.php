@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
-                                    <a href="Barang-Tambah" class="btn btn-primary">Pindah Barang</a>
+                                    <a href="{{route('Barang.index')}}" class="btn btn-primary">Pindah Barang</a>
                                 </ol>
                             </div>
                         </div>
@@ -38,7 +38,8 @@
                                                     <th>No</th>
                                                     <th>Transaksi</th>
                                                     <th>Nama Barang</th>
-                                                    <th>Ruangan</th>
+                                                    <th>Dari</th>
+                                                    <th>Ke</th>
                                                     <th>Lantai</th>
                                                     <th>Pemindah</th>
                                                     <th>Approve</th>
@@ -51,6 +52,7 @@
                                                     <td>{{$item->transaksi}}</td>
                                                     <td>{{$item->barang}}</td>
                                                     <td>{{$item->ruangan}}</td>
+                                                    <td>{{$item->ruangan2}}</td>
                                                     <td>{{$item->Lantai}}</td>
                                                     <td>{{$item->User}}</td>
                                                     <td>
@@ -69,7 +71,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- ------------------------------------------------------------------------------ --}}
             </div>
         </div>
 

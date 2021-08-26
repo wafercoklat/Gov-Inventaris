@@ -67,7 +67,7 @@
                                                     <td>{{ $itemdetail->nup }}</td>
                                                     <td>{{ $itemdetail->ruangan }}</td>
                                                     <td>{{ $itemdetail->Lantai }}</td>
-                                                    <td>   
+                                                    <td>
                                                         @if ($itemdetail->Req == 'Y')
                                                         <label class="badge badge-success mb-auto">Requesting</label>
                                                         @endif
@@ -124,7 +124,7 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="submit" class="btn btn-success" >Simpan</button>
+                                                                        <button type="submit" class="btn btn-success">Simpan</button>
                                                                     </div>
                                                                 </form>
                                                             </div>
