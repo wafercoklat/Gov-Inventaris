@@ -1,29 +1,20 @@
 <div class="side-menu-fixed">
     <div class="scrollbar side-menu-bg">
         <ul class="nav navbar-nav side-menu" id="sidebarnav">
-            <li>
-                <a href="javascript:void(0);" data-toggle="collapse" data-target="#barang">
-                    <div class="pull-left"><i class="ti-package"></i><span class="right-nav-text">Barang</span></div>
-                    <div class="pull-right"><i class="ti-more-alt"></i></div>
-                    <div class="clearfix"></div>
-                </a>
-                <ul id="barang" class="collapse" data-parent="#sidebarnav">
-                    <li> <a href="{{url('/Barang')}}">Daftar Barang</a> </li>
-                    <li> <a href="{{url('/Trans')}}">Pindah Barang</a> </li>
-                    <li> <a href="{{route('Lapor.create')}}">Lapor Barang</a> </li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:void(0);" data-toggle="collapse" data-target="#lokasi">
-                    <div class="pull-left"><i class="fa fa-list"></i><span class="right-nav-text">Lokasi</span></div>
-                    <div class="pull-right"><i class="ti-more-alt"></i></div>
-                    <div class="clearfix"></div>
-                </a>
-                <ul id="lokasi" class="collapse" data-parent="#sidebarnav">
-                    <li> <a href="{{url('/Ruangan')}}">Ruangan</a> </li>
-                    <li> <a href="{{url('/Lantai')}}">Lantai</a> </li>
-                </ul>
-            </li>
+            
+            <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Barang </li>
+            
+            <li> <a href="{{url('/Barang')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">Daftar Barang</span></a> </li>
+            <li> <a href="{{url('/Trans')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">Pindah Barang</span></a> </li>
+            <li> <a href="{{route('Lapor.create')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">Lapor Barang</span></a> </li>
+
+            <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Lokasi</li>
+    
+            <li> <a href="{{url('/Ruangan')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">Ruangan</span></a> </li>
+            <li> <a href="{{url('/Lantai')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">Lantai</span></a> </li>
+    
+            <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Akun</li>
+    
             <li>
                 <a href="{{url('/User')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">User</span> </a>
             </li>

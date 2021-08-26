@@ -39,8 +39,8 @@
                         <div class="col-xl-12 mb-30">
                             <div class="card card-statistics h-100">
                                 <div class="card-body">
-                                    <h5 class="card-title border-0 pb-0">User :  Nama User</h5>
-                                    <h5 class="card-title border-0 pb-0">Status : Aktif</h5>
+                                    <h5 class="card-title border-0 pb-0">User :  {{$user->name}}</h5>
+                                    <h5 class="card-title border-0 pb-0">Status : @if ($user->NA == 'Y') Tidak Aktif @else Aktif @endif</h5>
                                     <form action="{{route('User.store')}}" method="POST">
                                     @csrf
                                     <div class="table-responsive">
@@ -58,7 +58,9 @@
                                                 <tr class="p-10">
                                                     <td>{{ ++$i }}</td>
                                                     <td>{{ $detail->Name }}</td>
-                                                    <td><input value="{{$detail->IdRuangan}}" type="checkbox" name="role[]" class="form-check-input m-auto " id="exampleCheck1" @if($detail->userId != NULL or $detail->userId != "") checked="true" @endif>
+                                                    <td><input value="{{$detail->IdRuangan}}" type="checkbox" name="role[]" class="form-check-input m-auto " id="exampleCheck1" 
+                                                        @if($detail->userId != NULL or $detail->userId != "") checked="true" @endif
+                                                        @if($user->NA == "Y") disabled @endif>
                                                     </td>
                                                 </tr>
                                                 @endforeach
