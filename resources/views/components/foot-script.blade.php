@@ -36,3 +36,7 @@
  
 <!-- custom -->
 <script src="{{asset('js/custom.js')}}"></script>
+
+<!-- Scanner -->
+<script src="{{asset('js/instascan.min.js')}}"></script>
+<script src="{{asset('js/JSQRScanner.js')}}"></script>

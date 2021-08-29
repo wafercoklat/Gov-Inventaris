@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
-                                    <a href="{{route('Barang.index')}}" class="btn btn-primary">Pindah Barang</a>
+                                    <a data="toggle" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Pindah Barang</a>
                                 </ol>
                             </div>
                         </div>
@@ -74,44 +74,21 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-6 mb-30">
-                <div class="card card-statistics h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Vertically centered</h5>
-                        <!-- Large modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Launch demo modal </button>
-
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content pl-30 pr-30 pt-20">
-                                    <div class="modal-header">
-                                        <div class="modal-title">
-                                            <div class="mb-10">
-                                                <h5>PINDAH BARANG</h5>
-                                                <h2>Nama Barang</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <label><h5>Ke Ruangan</h5></label>
-                                        <div class="btn-group ml-10 mb-1">
-                                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                              Right-aligned menu
-                                            </button>
-                                            <div class="dropdown-menu dropdown-menu-right">
-                                                <button class="dropdown-item" type="button">Action</button>
-                                                <button class="dropdown-item" type="button">Another action</button>
-                                                <button class="dropdown-item" type="button">Something else here</button>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content pl-30 pr-30 pt-20">
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            <div class="mb-10">
+                                <h5>Pilih Metode Pindah</h5>
+                                <h2>Nama Barang</h2>
                             </div>
-
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-footer">
+                            <a class="btn btn-primary" href="{{route('Scan')}}">SCAN</a>
+                            <a class="btn btn-success" href="{{route('Barang.index')}}">Daftar Barang</a>
                         </div>
                     </div>
                 </div>

@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
   
 class HomeController extends Controller
 {
-    public function main()
+    public function error()
     {
-        return view('pages/main');
+        return view('pages.error');
     }
 
-    public function barang()
+    public function scan()
     {
-        return view('pages/barang');
+        return view('pages.scanQr');
     }
 
     public function tmbhbarang()

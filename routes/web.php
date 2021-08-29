@@ -38,7 +38,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/Lapor', DKController::class);
     Route::get('/Kondisi/{var}', [DBController::class, 'kondisi'])->name('Kondisi');
     Route::get('/Trans/Update/{var}', [DTrans_Controller::class, 'create'])->name('Update');
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout'); 
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/Error', [HomeController::class, 'error'])->name('error'); 
+    Route::get('/ScanQR', [HomeController::class, 'scan'])->name('Scan'); 
 
     Route::group(['middleware' => 'checkRole:admin'], function(){
         Route::resource('/User', UserController::class);

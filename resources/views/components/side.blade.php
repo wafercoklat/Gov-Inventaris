@@ -14,10 +14,12 @@
             <li> <a href="{{url('/Lantai')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">Lantai</span></a> </li>
     
             <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Akun</li>
-    
+            
+            @if (Auth::User()->role == 'admin')
             <li>
                 <a href="{{url('/User')}}"><i class="fa fa-user-circle-o"></i><span class="right-nav-text">User</span> </a>
-            </li>
+            </li>    
+            @endif
             <li>
                 <a href="{{url('/logout')}}"><i class="fa fa-sign-out"></i><span class="right-nav-text">Logout</span> </a>
             </li>

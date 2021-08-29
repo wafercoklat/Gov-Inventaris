@@ -17,6 +17,7 @@ class CreateTableLokasi extends Migration
             $table->id('IdLokasi');
             $table->string('Code',25);
             $table->string('Name',64);
+            $table->string('CreatedBy', 50)->nullable()->default(NULL);
             $table->timestamps();
         });
     }

@@ -7,6 +7,7 @@ use App\Models\view_Ruangan;
 use App\Models\Ruangan;
 use App\Models\Lantai;
 use App\Models\RuanganUpdate;
+use App\Models\barang;
 use DB;
 
 class DRController extends Controller
@@ -124,11 +125,20 @@ class DRController extends Controller
     {
         /// melakukan hapus data berdasarkan parameter yang dikirimkan
         $del = Ruangan::where('IdRuangan',$data)->first();
-  
         if ($data != null) {
-            $del->delete();
-            return redirect()->route('Ruangan.index')->with('success','Ruangan berhasil di hapus');
+            $flag = $this->checkRuangan($data);
+            if(!$flag){
+                return redirect()->route('Ruangan.index')->with('success','Tidak bisa di hapus karena ada beberapa barang di Ruangan ini');
+            } else {
+                $del->delete();
+                return redirect()->route('Ruangan.index')->with('success','Ruangan berhasil di hapus');
+            }
         }
         return redirect()->route('Ruangan.index')->with('success','Gagal');
+    }
+
+    protected function checkRuangan($d){
+        $check = barang::where('IdRuangan', $d)->first();
+        return ($check == NULL or $check == "") ? true : false;
     }
 }
