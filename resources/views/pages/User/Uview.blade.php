@@ -41,6 +41,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div>{!!DNS2D::getBarcodeHTML('335553', 'QRCODE')!!}</div>
                                 <div class="modal-body">
                                     <form action="{{route('register')}}" method="POST">
                                         @csrf 
@@ -88,6 +89,7 @@
                                                     <th>User</th>
                                                     <th>Non Aktif</th>
                                                     <th>Role</th>
+                                                    <th>Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -104,6 +106,13 @@
                                                         @else
                                                         <a class="btn btn-primary btn-sm" href="{{ route('NActive', $detail->id) }}">Non-Aktifkan</a>
                                                         @endif
+                                                    </td>
+                                                    <td>
+                                                        <form action="{{ route('User.destroy', $detail->id) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                                 @endforeach

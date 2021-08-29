@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\barang;
 use App\Models\Kondisi;
 use App\Models\TransaksiUpdate;
+use Illuminate\Support\Facades\Auth;
+use DB;
 
 class DKController extends Controller
 {
@@ -28,7 +30,10 @@ class DKController extends Controller
     public function create()
     {
         //// menampilkan halaman create
-        $data = barang::Pluck('Name', 'IdBarang');
+        $clause = $this->Checkrole();
+
+        $data = DB::select('SELECT br.IdBarang, br.Name FROM barang br LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan '.$clause);
+
         return view('pages.Kondisi.Kadd',compact('data'));
     }
 
@@ -127,6 +132,21 @@ class DKController extends Controller
             return redirect()->route('Barang.index')->with('success','Barang berhasil di hapus');
         }
         return redirect()->route('Barang.index')->with('success','Gagal');
+    }
+
+    public function Checkrole(){
+        $userid = Auth::user()->id;
+        $data = DB::select('SELECT IdRuangan FROM userrole WHERE userid =(?)',array($userid));
+        $flag = true;
+        $clause = "";
+        for ($i=0; $i < count($data) ; $i++) {
+            if ($flag) {
+                $clause = "Where ru.IdRuangan = ".$data[$i]->IdRuangan;
+                $flag = false;
+            } 
+            $clause .= " Or ru.IdRuangan = ".$data[$i]->IdRuangan;
+        }
+        return $clause;
     }
 
 }

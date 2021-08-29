@@ -21,7 +21,7 @@ class DBController extends Controller
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
         // $item = view_Barang::latest()->paginate(5);
         
-        $item = DB::select('SELECT br.IdBarang, ru.IdRuangan, br.Code, br.Name barang, br.nup, ru.Name ruangan, lt.Name Lantai, brd.Kondisi, brd.`Status`, brd.Remark , br.created_at, br.updated_at, tr.Req FROM barang br LEFT JOIN ( SELECT IdBarang, Kondisi, `Status`, Remark , created_at, updated_at FROM barangdetail ORDER BY counter DESC LIMIT 1) brd ON brd.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi LEFT JOIN ( SELECT IdBarang, Req FROM transaksi ORDER BY counter DESC LIMIT 1) tr on tr.IdBarang = br.IdBarang '.$clause);
+        $item = DB::select('SELECT br.IdBarang, ru.IdRuangan, br.Code, br.Name barang, br.nup, ru.Name ruangan, lt.Name Lantai, brd.Kondisi, brd.`Status`, brd.Remark , br.created_at, br.updated_at, tr.Req FROM barang br LEFT JOIN ( SELECT IdBarang, Kondisi, `Status`, Remark , created_at, updated_at FROM barangdetail ORDER BY counter DESC LIMIT 1) brd ON brd.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi LEFT JOIN ( SELECT IdBarang, Req FROM transaksi ORDER BY counter DESC LIMIT 1) tr on tr.IdBarang = br.IdBarang '.$clause.' Order By br.IdBarang desc');
 
         return view('pages.barang',compact('item', 'Ruangan'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -43,8 +43,10 @@ class DBController extends Controller
             'IdRuangan' => 'required'
         ]);
 
+        $user = Auth::user()->username;
+        $request->merge(["CreatedBy" => $user]);
         barang::create($request->all());
-
+        
         $lastid = AdditionalFunc::getLastId("", 'IdTrans');
         $item = new TransaksiUpdate();
         $item -> IdBarang = barang::latest('IdBarang')->first()->IdBarang;
@@ -52,6 +54,7 @@ class DBController extends Controller
         $item -> Trans = "TR-" .$lastid;
         $item -> Remark = "New";
         $item -> Counter = 1;
+        $item -> ReqBy = $user;
         $item -> save();
 
         /// redirect jika sukses menyimpan data
@@ -124,7 +127,6 @@ class DBController extends Controller
             } 
             $clause .= " Or ru.IdRuangan = ".$data[$i]->IdRuangan;
         }
-
         return $clause;
     }
 }

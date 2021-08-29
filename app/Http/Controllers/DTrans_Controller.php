@@ -23,6 +23,8 @@ class DTrans_Controller extends Controller
         $clause = $this->Checkrole();
         
         $trans = DB::select("SELECT tr.IdTrans, tr.trans transaksi, br.Name barang, ru.Name ruangan, ru2.Name ruangan2, lt.Name Lantai, brd.Kondisi, brd.`Status`, brd.Remark, tr.created_at, tr.updated_at, tr.User FROM transaksi tr LEFT JOIN barang br ON br.IdBarang = tr.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = tr.IdRuangan LEFT JOIN ruangan ru2 ON ru2.IdRuangan = tr.IdRuangan2 LEFT JOIN ruangandetail rud ON rud.idRuangan = ru2.IdRuangan LEFT JOIN lokasi  lt ON lt.IdLokasi = rud.idLokasi where (tr.Req = 'Y') ".$clause);
+        // dd($clause);
+        // echo $clause;
 
         return view('pages.main',compact('trans'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
@@ -140,7 +142,7 @@ class DTrans_Controller extends Controller
             } 
             $clause .= " Or ru2.IdRuangan = ".$data[$i]->IdRuangan;
         }
-        return ($clause == "") ? "" : " and ".$clause;
+        return ($clause == "") ? "" : " and (".$clause.")";
     }
 
     public function updateDate($var){

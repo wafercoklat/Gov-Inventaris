@@ -40,8 +40,8 @@
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Pilih Barang</label>
                                             <select class="btn btn-secondary dropdown-toggle" name="IdBarang" id="IdBarang">
-                                                @foreach ($data as $IdBarang => $Name)
-                                                    <option class="dropdown-menu-right" value="{{$IdBarang}}">{{$Name}}</option>
+                                                @foreach ($data as $item)
+                                                    <option class="dropdown-menu-right" value="{{$item->IdBarang}}">{{$item->Name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

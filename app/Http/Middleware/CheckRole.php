@@ -23,7 +23,7 @@ class CheckRole
             if( $user == $role){
                 return $next($request);
             } else {
-                return abort(404);
+                return redirect()->route('error');
             }
         }
     

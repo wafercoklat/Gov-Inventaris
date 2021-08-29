@@ -32,8 +32,8 @@ class AuthController extends Controller
         ];
   
         $messages = [
-            'username.required'        => 'Email wajib diisi',
-            'username.username'           => 'Email tidak valid',
+            'username.required'     => 'Email wajib diisi',
+            'username.username'     => 'Email tidak valid',
             'password.required'     => 'Password wajib diisi',
             'password.string'       => 'Password harus berupa string'
         ];
@@ -48,6 +48,7 @@ class AuthController extends Controller
         $data = [
             'username'  => $request->input('username'),
             'password'  => $request->input('password'),
+            'NA'        => 'N',
         ];
         
         // Check to database

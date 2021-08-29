@@ -57,7 +57,7 @@
                                                     <td>{{ $datadetail->Code }}</td>
                                                     <td>{{ $datadetail->Lantai }}</td>
                                                     <td class="text-center">
-                                                        <form action="{{ route('Ruangan.destroy', $datadetail->IdLokasi) }}" method="POST">
+                                                        <form action="{{ route('Lantai.destroy', $datadetail->IdLokasi) }}" method="POST">
                                                             <a class="btn btn-primary btn-sm" href="{{ route('Lantai.edit',$datadetail->IdLokasi) }}">Edit</a>
                                                             @csrf
                                                             @method('DELETE')

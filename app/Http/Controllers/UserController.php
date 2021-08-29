@@ -106,15 +106,13 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del = User::where('id',$id)->first(); 
+        if ($id != null) {
+            $del->delete();
+            return redirect()->route('User.index')->with('success','Lantai berhasil di hapus');
+        }
+        return redirect()->route('User.index')->with('success','Gagal');   
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     
     public function NActive($id)
     {

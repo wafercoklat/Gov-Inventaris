@@ -11,6 +11,6 @@ class barang extends Model
     protected $table = 'barang';
     protected $primaryKey = 'IdBarang';
     protected $fillable = [
-         'IdRuangan', 'Code', 'Name', 'NUP', 'Keterangan', 'Counter', 'Req'
+         'IdRuangan', 'Code', 'Name', 'NUP', 'Keterangan', 'Counter', 'Req', 'CreatedBy'
     ];  
 }

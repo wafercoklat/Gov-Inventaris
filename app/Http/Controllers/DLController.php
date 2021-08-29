@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\view_Lantai;
 use App\Models\Lantai;
+use DB;
 
 class DLController extends Controller
 {
@@ -101,12 +102,23 @@ class DLController extends Controller
     public function destroy($data)
     {
         /// melakukan hapus data berdasarkan parameter yang dikirimkan
-        $del = barang::where('IdBarang',$data)->first();
+        $del = Lantai::where('IdLokasi',$data)->first();
   
         if ($data != null) {
-            $del->delete();
-            return redirect()->route('Lantai.index')->with('success','Lantai berhasil di hapus');
+            $flag = $this->checkLantai($data);
+            if (!$flag) {
+                return redirect()->route('Lantai.index')->with('success','Tidak bisa di hapus karena Item sedang digunakan');
+            } else {
+                $del->delete();
+                return redirect()->route('Lantai.index')->with('success','Lantai berhasil di hapus');
+            }
         }
         return redirect()->route('Lantai.index')->with('success','Gagal');
     }
+
+    protected function checkLantai($d){
+        $check = DB::select('Select idRuangan from ruangandetail where idLokasi = '.$d.' Limit 1');
+        return ($check == NULL or $check == "") ? true : false;
+    }
+
 }

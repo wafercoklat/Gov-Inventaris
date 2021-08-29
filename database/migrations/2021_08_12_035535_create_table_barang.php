@@ -21,6 +21,7 @@ class CreateTableBarang extends Migration
             $table->string('NUP',25)->nullable()->default(NULL);
             $table->string('Keterangan',64)->nullable()->default(NULL);
             $table->integer('Counter')->nullable()->default(NULL);
+            $table->string('CreatedBy', 50)->nullable()->default(NULL);
             $table->timestamps();
         });
     }
