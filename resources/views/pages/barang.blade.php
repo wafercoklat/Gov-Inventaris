@@ -12,8 +12,7 @@
 
         <div class="container-fluid">
             <div class="row">
-                @include('components.side')
-{{-- ------------------------------------------------------------------------------ --}}
+                @include('components.side') {{-- ------------------------------------------------------------------------------ --}}
                 <div class="content-wrapper">
                     <div class="page-title">
                         <div class="row">
@@ -51,14 +50,12 @@
                                                     <th>Lantai</th>
                                                     <th>Status</th>
                                                     <th>Keterangan</th>
-                                                    @if(Auth::User()->role != 'umum')
-                                                        <th>Modify</th>
-                                                        <th>Pindah</th>
-                                                    @endif
+                                                    <th>Modify</th>
+                                                    <th>Test</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                
+
                                                 @foreach ($item as $itemdetail)
                                                 <tr>
                                                     <td>{{ ++$i }}</td>
@@ -67,40 +64,60 @@
                                                     <td>{{ $itemdetail->nup }}</td>
                                                     <td>{{ $itemdetail->ruangan }}</td>
                                                     <td>{{ $itemdetail->Lantai }}</td>
-                                                    <td>
-                                                        @if ($itemdetail->Req == 'Y')
-                                                        <label class="badge badge-success mb-auto">Requesting</label>
-                                                        @endif
-                                                    </td>
+                                                    <td class="badge badge-success mb-auto">{{ $itemdetail->Stat }}</td>
                                                     <td>{{ $itemdetail->Remark }}</td>
-                                                    @if(Auth::User()->role != 'umum')
-                                                            @if ($itemdetail->Req == 'N' or $itemdetail->Req == "")
-                                                            <td class="text-center">
-                                                                <form class="ml-auto pt-3" action="{{ route('Barang.destroy', $itemdetail->IdBarang) }}" method="POST">
-                                                                    <a class="btn btn-primary btn-sm" href="{{ route('Barang.edit',$itemdetail->IdBarang) }}">Edit</a>
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                                                </form>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                    <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#Pindah{{$itemdetail->IdBarang}}">Pindah</button>
-                                                                
-                                                                @else
-                                                                <td class="text-center ml-auto pt-3">
-                                                                        <button class="btn btn-primary btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Edit</button>
-                                                                        <button class="btn btn-danger btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Delete</button>
-                                                                </td>
-                                                                <td class="text-center">                                                        
-                                                                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Pindah</button>
-                                                                @endif
-
-                                                                    <a type="button" class="btn btn-outline-secondary btn-sm" href="{{ route('Kondisi',$itemdetail->IdBarang) }}">View</a>
-                                                            </td>
-                                                    @endif
+                                                    <td class="text-center">
+                                                        <form class="ml-auto pt-3" action="{{ route('Barang.destroy', $itemdetail->IdBarang) }}" method="POST">
+                                                            <a class="btn btn-primary btn-sm" href="{{ route('Barang.edit',$itemdetail->IdBarang) }}">Edit</a> @csrf @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                                        </form>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#Pindah{{$itemdetail->IdBarang}}">Pindah</button>
+                                                    </td>
+                                                    @if ($itemdetail->Req == 'N' or $itemdetail->Req == "") {{--
+                                                    <td class="text-center">
+                                                        <form class="ml-auto pt-3" action="{{ route('Barang.destroy', $itemdetail->IdBarang) }}" method="POST">
+                                                            <a class="btn btn-primary btn-sm" href="{{ route('Barang.edit',$itemdetail->IdBarang) }}">Edit</a> @csrf @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                                        </form>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#Pindah{{$itemdetail->IdBarang}}">Pindah</button>
+                                                    </td> --}} @else {{--
+                                                    <td class="text-center ml-auto pt-3">
+                                                        <button class="btn btn-primary btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Edit</button>
+                                                        <button class="btn btn-danger btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Delete</button>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="return confirm('Barang ini sedang dalam proses Request, Mohon untuk menge-check kembali?')">Pindah</button>
+                                                    </td> --}} @endif {{--
+                                                    <td>
+                                                        <button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#Barcode{{$itemdetail->barang}}">Barcode</button>
+                                                    </td> --}}
                                                 </tr>
-                                                 {{-- Modal --}}
-                                                 <div class="modal fade" id="Pindah{{$itemdetail->IdBarang}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                {{-- Modal --}}
+
+                                                <div class="modal fade" id="Barcode{{$itemdetail->barang}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content pl-30 pr-30 pt-20">
+                                                            <div class="modal-header">
+                                                                <div class="modal-title">
+                                                                    <div class="mb-10">
+                                                                        <h5>Barcode</h5>
+                                                                        <h2>{{$itemdetail->barang}}</h2>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div>{!!DNS2D::getBarcodeHTML(strval($itemdetail->IdBarang), 'QRCODE')!!}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="modal fade" id="Pindah{{$itemdetail->IdBarang}}" tabindex="-1" role="dialog" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                                         <div class="modal-content pl-30 pr-30 pt-20">
                                                             <div class="modal-header">
@@ -113,8 +130,7 @@
                                                             </div>
                                                             <div class="modal-body">
                                                                 <form action="{{route('Trans.update', $itemdetail->IdBarang)}}" method="POST">
-                                                                    @csrf 
-                                                                    @method('PUT')
+                                                                    @csrf @method('PUT')
                                                                     <label><h5>Ke Ruangan</h5></label>
                                                                     <div class="btn-group ml-10 mb-1">
                                                                         <select class="btn btn-secondary dropdown-toggle" name="IdRuangan" id="IdRuangan">
@@ -139,10 +155,10 @@
                                 </div>
                             </div>
                             @include('components.footer')
-                        </div>  
+                        </div>
                     </div>
                 </div>
-{{-- ------------------------------------------------------------------------------ --}}
+                {{-- ------------------------------------------------------------------------------ --}}
             </div>
         </div>
     </div>

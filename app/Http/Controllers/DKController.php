@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\barang;
 use App\Models\Kondisi;
+use App\Models\statusbarang;
 use App\Models\TransaksiUpdate;
 use Illuminate\Support\Facades\Auth;
 use DB;
@@ -18,8 +19,11 @@ class DKController extends Controller
      */
     public function index()
     {
-        
-     return route('Barang.index');
+        $clause = $this->Checkrole();
+
+        $data = DB::select('SELECT br.Code, br.IdBarang, br.Name barang, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and brd.IdBarangDetail is not null and brd.Status != 3 and brd.Status != 4');
+        $kondisi = statusbarang::Pluck('status', 'id');
+        return view('pages.Kondisi.Kview',compact('data', 'kondisi'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
 
     /**
@@ -32,9 +36,10 @@ class DKController extends Controller
         //// menampilkan halaman create
         $clause = $this->Checkrole();
 
-        $data = DB::select('SELECT br.IdBarang, br.Name FROM barang br LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan '.$clause);
+        $data = DB::select('SELECT br.IdBarang, br.Name FROM barang br left join gatebk g on br.IdBarang = g.IdBarang left join barangdetail brd on brd.IdBarangDetail = g.IdKondisi LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and (brd.IdBarang is NULL or brd.Status = 3)');
 
-        return view('pages.Kondisi.Kadd',compact('data'));
+        $kondisi = statusbarang::Pluck('status', 'id');
+        return view('pages.Kondisi.Kadd', compact('data', 'kondisi'));
     }
 
     /**
@@ -50,16 +55,11 @@ class DKController extends Controller
             'Remark' => 'required',
             'Kondisi' => 'required'
         ]);
-        
-        $item = new Kondisi();
-        $item -> IdBarang = $request->IdBarang;
-        $item -> Status = "On Going";
-        $item -> Kondisi = $request->Kondisi;
-        $item -> Remark = $request->Remark;
-        $item -> save();
+
+        $this -> addKondisi($request);
         
         /// redirect jika sukses menyimpan data
-        return redirect()->route('Barang.index')
+        return redirect()->route('Kondisi.index')
                         ->with('success','Post created successfully.');
     }
 
@@ -69,12 +69,10 @@ class DKController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(barang $item)
+    public function show()
     {
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
-        /// berdasarkan id yang dipilih
-        /// href="{{ route('item.show',$post->id) }}
-        return view('pages.Kondisi.bedit',compact('item'));
+
     }
 
     /**
@@ -99,20 +97,15 @@ class DKController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $item)
-    {
-        /// membuat validasi untuk title dan content wajib diisi
-        $request->validate([
-            'Name' => 'required',
-        ]);
-         
-        // var_dump($item);
-        /// mengubah data berdasarkan request dan parameter yang dikirimkan
-        $update = Kondisi::where('IdBarangDetail',$item)->first();
-        $update->update($request->all());
-         
+    public function update(Request $request, $data)
+    {   
+     
+        $data = Kondisi::where('IdBarangDetail', $data)->first();
+        $request->merge(['IdBarang' => $data->IdBarang]);
+        $this -> addKondisi($request);
+
         /// setelah berhasil mengubah data
-        return redirect()->route('Barang.index')
+        return redirect()->route('Kondisi.index')
                         ->with('success','Post updated successfully');
     }
 
@@ -141,12 +134,41 @@ class DKController extends Controller
         $clause = "";
         for ($i=0; $i < count($data) ; $i++) {
             if ($flag) {
-                $clause = "Where ru.IdRuangan = ".$data[$i]->IdRuangan;
+                $clause = "ru.IdRuangan = ".$data[$i]->IdRuangan;
                 $flag = false;
             } 
             $clause .= " Or ru.IdRuangan = ".$data[$i]->IdRuangan;
         }
         return $clause;
     }
+
+    public function addKondisi($request){
+        if(empty(Kondisi::latest('Counter')->first()->$request->IdBarang)){
+            $lastid = 1;
+        } else {
+            $lastid = (Kondisi::latest('Counter')->first()->$request->IdBarang)+1;
+        }
+        
+        $item = new Kondisi();
+        $item -> IdBarang = $request->IdBarang;
+        $item -> Status = $request->Kondisi;
+        $item -> Kondisi = $request->Kondisi;
+        $item -> Remark = $request->Remark;
+        $item -> Pelapor = Auth::user()->name;
+        $item -> Counter = $lastid;
+        $item -> save();
+
+        DB::table('gateBK')->where('IdBarang',$request->IdBarang)->update(['IdKondisi'=> $item->IdBarangDetail]);
+    }
+
+    public function BarangRusak()
+    {
+        $clause = $this->Checkrole();
+
+        $data = DB::select('SELECT br.Code, br.IdBarang, br.Name barang, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and brd.IdBarangDetail is not null and brd.Status = 4');
+
+        return view('pages.Kondisi.KRusak',compact('data'))-> with ('i', (request()->input('page', 1) - 1) * 100);
+    }
+
 
 }

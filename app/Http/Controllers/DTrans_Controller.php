@@ -57,12 +57,16 @@ class DTrans_Controller extends Controller
             $lastid = (TransaksiUpdate::latest('CounterNo')->first()->CounterNo)+1;
         }
         
-        $counter = (TransaksiUpdate::where('IdBarang', $IdBarang)->latest('Counter')->first()->Counter)+1;
+        $counter = (TransaksiUpdate::where('IdBarang', $IdBarang)
+                                    ->where('Type', "PI")
+                                    ->latest('Counter')
+                                    ->first()->Counter)+1;
         // dd($counter);
         $update = barang::where('IdBarang', $IdBarang)->first();
 
         $item = new TransaksiUpdate();
         $item -> IdBarang = $IdBarang; 
+        $item -> Type = "PI";
         $item -> IdRuangan = $update->IdRuangan;
         $item -> IdRuangan2 = $Req ->IdRuangan; 
         $item -> Trans = "TR-" .$lastid;
@@ -125,9 +129,15 @@ class DTrans_Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($item)
     {
-        //
+        $del = TransaksiUpdate::where('IdTrans',$item)->first();
+  
+        if ($item != null) {
+            $del->delete();
+            return redirect()->route('Trans.index')->with('success','Barang berhasil di hapus');
+        }
+        return redirect()->route('Trans.index')->with('success','Gagal');
     }
 
     public function Checkrole(){

@@ -19,6 +19,7 @@ use App\Http\Controllers\DBController;
 use App\Http\Controllers\DRController;
 use App\Http\Controllers\DLController;
 use App\Http\Controllers\DKController;
+use App\Http\Controllers\BarangRusak;
 use App\Http\Controllers\DKondisiController;
 use App\Http\Controllers\DTrans_Controller;
 use App\Http\Controllers\UserController;
@@ -35,8 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/Barang', DBController::class);
     Route::resource('/Lantai', DLController::class);
     Route::resource('/Ruangan', DRController::class);
-    Route::resource('/Lapor', DKController::class);
-    Route::get('/Kondisi/{var}', [DBController::class, 'kondisi'])->name('Kondisi');
+    Route::resource('/Kondisi', DKController::class);
+    Route::resource('/Daftar-Barang-Rusak', BarangRusak::class);
     Route::get('/Trans/Update/{var}', [DTrans_Controller::class, 'create'])->name('Update');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/Error', [HomeController::class, 'error'])->name('error'); 

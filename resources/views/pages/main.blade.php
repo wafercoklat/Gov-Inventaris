@@ -59,6 +59,11 @@
                                                     <a href="{{ route('Update', $item->IdTrans) }}"">
                                                         <button type="button" class="btn btn-success btn-sm mt-1 mb-1" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Approve</button>
                                                     </a>
+                                                    <form action="{{ route('Trans.destroy',  $item->IdTrans) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Reject</button>
+                                                    </form>
                                                     </td>
                                                 </tr>
                                                 @endforeach
