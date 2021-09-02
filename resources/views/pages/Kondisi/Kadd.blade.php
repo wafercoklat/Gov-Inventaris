@@ -35,7 +35,7 @@
                             <div class="card card-statistics mb-30">
                                 <div class="card-body">
                                     <h5 class="card-title">Basic form</h5>
-                                    <form action="{{ route('Lapor.store') }}" method="post">
+                                    <form action="{{ route('Kondisi.store') }}" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Pilih Barang</label>
@@ -47,7 +47,11 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Kondisi Barang</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kondisi" name="Kondisi">
+                                            <select class="btn btn-secondary dropdown-toggle" name="Kondisi" id="Kondisi">
+                                                @foreach ($kondisi as $id => $status)
+                                                    <option class="dropdown-menu-right" value="{{$id}}">{{$status}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Keterangan</label>

@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-sm-5">
                 <!-- Capture Gambar -->
-                <!-- <input type="file" accept="image/*" capture="camera" />  -->
+                <input type="file" accept="image/*" capture="camera" />
                 <script src="js/instascan.min.js"></script>
                 <div class="col-sm-12">
                     <video id="preview" class="p-1 border" style="width:100%;"></video>
@@ -56,29 +56,6 @@
                         console.error(e);
                         alert(e);
                     });
-                    // navigator.getUserMedia(
-                    //     // constraints
-                    //     {
-                    //         video: true,
-                    //         audio: true
-                    //     },
-
-                    //     // successCallback
-                    //     function(localMediaStream) {
-                    //         var video = document.querySelector('video');
-                    //         video.src = window.URL.createObjectURL(localMediaStream);
-                    //         video.onloadedmetadata = function(e) {
-                    //             // Do something with the video here.
-                    //         };
-                    //     },
-
-                    //     // errorCallback
-                    //     function(err) {
-                    //         if (err === PERMISSION_DENIED) {
-                    //             // Explain why you need permission and how to update the permission setting
-                    //         }
-                    //     }
-                    // );
                 </script>
                 <div class="btn-group btn-group-toggle mb-5" data-toggle="buttons">
                     <label class="btn btn-primary active">

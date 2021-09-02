@@ -53,21 +53,9 @@ class AuthController extends Controller
         
         // Check to database
         Auth::attempt($data);
-
-        // $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
- 
-        // if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password'])))
-        // {
-        //     Auth::attempt($data);
-        //     return redirect()->route('/');
-        // }else{
-        //     return redirect()->route('login')
-        //         ->with('error', 'username atau password salah');
-        // }
-
         if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
-            return redirect()->route('Trans.index');
+            return redirect()->route('Barang.index');
   
         } else { // false
   

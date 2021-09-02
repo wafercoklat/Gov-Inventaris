@@ -15,14 +15,15 @@ class CreateTableTransaksipindahbarang extends Migration
     {
         Schema::create('Transaksi', function (Blueprint $table) {
             $table->id('IdTrans');
+            $table->string('Type',10);
             $table->string('Trans',25);
             $table->integer('IdBarang');
             $table->integer('IdRuangan');
             $table->integer('IdRuangan2')->nullable()->default(NULL);
             $table->string('User',64)->nullable()->default(NULL);
             $table->string('Remark',64)->nullable()->default(NULL);
-            $table->integer('Counter');
-            $table->integer('CounterNo');
+            $table->integer('Counter')->nullable()->default(NULL);
+            $table->integer('CounterNo')->nullable()->default(NULL);
             $table->enum('Req', ['Y', 'N'])->default('N');
             $table->string('ReqBy',25)->nullable()->default(NULL);
             $table->timestamp('ReqTime')->nullable();
