@@ -2,8 +2,10 @@
 Laravel 8
     
     - MultiRole (Per Ruangan)
-    - Multi Access (Admin, Operator, Umum)
+    - Multi Access (Admin, Operator, Pegawai)
     - Approve (Pindah)
+    - Lapor Barang (Kondisi)
+    - Barcode Scan
     - Boostrap Implement
  
 
@@ -39,8 +41,3 @@ Genereate Key
 Jalankan local server
 
     php artisan serve
-
-User default aplikasi untuk login
-
-    Email       : admin
-    Password    : 12345
