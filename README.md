@@ -1,5 +1,5 @@
 # Inventaris
-Laravel 8
+Laravel 8 - Fitur
     
     - MultiRole (Per Ruangan)
     - Multi Access (Admin, Operator, Pegawai)
