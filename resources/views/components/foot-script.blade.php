@@ -37,6 +37,9 @@
 <!-- custom -->
 <script src="{{asset('js/custom.js')}}"></script>
 
+<!-- Select -->
+<script src="{{asset('js/select2.min.js')}}"></script>
+
 <!-- Scanner -->
 <script src="{{asset('js/instascan.min.js')}}"></script>
 <script src="{{asset('js/JSQRScanner.js')}}"></script>

@@ -21,7 +21,7 @@ class DKController extends Controller
     {
         $clause = $this->Checkrole();
 
-        $data = DB::select('SELECT br.Code, br.IdBarang, br.Name barang, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and brd.IdBarangDetail is not null and brd.Status != 3 and brd.Status != 4');
+        $data = DB::select('SELECT br.Code, br.IdBarang, br.Name barang, br.NUP, brd.Pelapor, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and brd.IdBarangDetail is not null and brd.Status != 3 and brd.Status != 4');
         $kondisi = statusbarang::Pluck('status', 'id');
         return view('pages.Kondisi.Kview',compact('data', 'kondisi'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }

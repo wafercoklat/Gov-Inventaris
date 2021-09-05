@@ -45,11 +45,11 @@
                                                     <th>No</th>
                                                     <th>Kode</th>
                                                     <th>Barang</th>
+                                                    <th>NUP</th>
                                                     <th>Ruangan</th>
                                                     <th>Kondisi</th>
-                                                    <th>Keterangan</th>
-                                                    <th>Status</th>
-                                                    <th>Update</th>
+                                                    <th>Pelapor</th>
+                                                    <th>Approval</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -58,10 +58,10 @@
                                                     <td>{{ ++$i }}</td>
                                                     <td>{{ $itemdetail->Code }}</td>
                                                     <td>{{ $itemdetail->barang }}</td>
+                                                    <td>{{ $itemdetail->NUP }}</td>
                                                     <td>{{ $itemdetail->ruangan }}</td>
-                                                    <td></td>
-                                                    <td>{{ $itemdetail->Remark }}</td>
                                                     <td>{{ $itemdetail->Status}}</td>
+                                                    <td>{{ $itemdetail->Pelapor }}</td>
                                                     <td><button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#Update{{$itemdetail->IdBarangDetail}}">Update Kondisi</button>
                                                 </tr>
 
