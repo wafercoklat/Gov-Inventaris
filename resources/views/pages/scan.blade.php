@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en-US">
 
+@include('components.head-meta')
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +18,7 @@
             <div class="col-sm-5">
                 <!-- Capture Gambar -->
                 <input type="file" accept="image/*" capture="camera" />
-                <script src="js/instascan.min.js"></script>
+                <script src="{{asset('js/instascan.min.js')}}"></script>
                 <div class="col-sm-12">
                     <video id="preview" class="p-1 border" style="width:100%;"></video>
                 </div>

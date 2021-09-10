@@ -23,9 +23,9 @@ class DTrans_Controller extends Controller
         $clause = $this->Checkrole();
         $clause2 = $this->Checkrole2();
 
-        $trans = DB::select("SELECT tr.Req, tr.IdTrans, tr.trans transaksi, br.Code, br.NUP, br.Name barang, ru.Name ruangan, ru2.Name ruangan2, lt.Name Lantai, tr.created_at, tr.ReqBy User FROM transaksi tr LEFT JOIN barang br ON br.IdBarang = tr.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = tr.IdRuangan LEFT JOIN ruangan ru2 ON ru2.IdRuangan = tr.IdRuangan2 LEFT JOIN ruangandetail rud ON rud.idRuangan = ru2.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi where $clause order by tr.created_at DESC");
+        $trans = DB::select("SELECT tr.Req, tr.IdTrans, tr.trans transaksi, br.Code, br.NUP, br.Name barang, ru.Name ruangan, ru2.Name ruangan2, lt.Name Lantai, tr.created_at, tr.ReqBy User FROM transaksi tr LEFT JOIN barang br ON br.IdBarang = tr.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = tr.IdRuangan LEFT JOIN ruangan ru2 ON ru2.IdRuangan = tr.IdRuangan2 LEFT JOIN ruangandetail rud ON rud.idRuangan = ru2.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause order by tr.created_at DESC");
        
-        $data = DB::select("SELECT br.IdBarang, br.Name, br.IdRuangan FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN (SELECT IdBarang, Req from transaksi ORDER BY Counter DESC LIMIT 1) tr ON tr.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ($clause2) and (brd.IdBarangDetail is null or brd.Status = 3) and (tr.Req = 'N' OR tr.Req IS NULL)");
+        $data = DB::select("SELECT br.IdBarang, br.Name, br.IdRuangan FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN (SELECT IdBarang, Req from transaksi ORDER BY Counter DESC LIMIT 1) tr ON tr.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan $clause2 (brd.IdBarangDetail is null or brd.Status = 3) and (tr.Req = 'N' OR tr.Req IS NULL)");
        
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
 
@@ -138,17 +138,18 @@ class DTrans_Controller extends Controller
     public function Checkrole(){
         $userid = Auth::user()->id;
         $data = DB::select('SELECT IdRuangan FROM userrole WHERE userid =(?)',array($userid));
+
         $flag = true;
         $clause = "";
-        for ($i=0; $i < count($data) ; $i++) {
-            if ($flag) {
-                $clause = "ru2.IdRuangan = ".$data[$i]->IdRuangan;
-                $flag = false;
-            } else {
-                $clause .= " Or ru2.IdRuangan = ".$data[$i]->IdRuangan;
+            for ($i=0; $i < count($data) ; $i++) {
+                if ($flag) {
+                    $clause = "ru2.IdRuangan = ".$data[$i]->IdRuangan;
+                    $flag = false;
+                } else {
+                    $clause .= " Or ru2.IdRuangan = ".$data[$i]->IdRuangan;
+                }
             }
-        }
-        return ($clause == "") ? "" : ".$clause.";
+            return ($clause == "") ? "" : "where $clause ";
     }
 
     public function Checkrole2(){
@@ -164,7 +165,7 @@ class DTrans_Controller extends Controller
                 $clause .= " Or ru.IdRuangan = ".$data[$i]->IdRuangan;
             } 
         }
-        return $clause;
+        return (empty($clause)) ? "" : "where ($clause) and";
     }
 
     public function updateDate($var){

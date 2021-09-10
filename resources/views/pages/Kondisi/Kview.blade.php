@@ -49,6 +49,7 @@
                                                     <th>Ruangan</th>
                                                     <th>Kondisi</th>
                                                     <th>Pelapor</th>
+                                                    <th>Tanggal</th>
                                                     <th>Approval</th>
                                                 </tr>
                                             </thead>
@@ -61,8 +62,13 @@
                                                     <td>{{ $itemdetail->NUP }}</td>
                                                     <td>{{ $itemdetail->ruangan }}</td>
                                                     <td>{{ $itemdetail->Status}}</td>
-                                                    <td>{{ $itemdetail->Pelapor }}</td>
+                                                    <td>{{ $itemdetail->Pelapor}}</td>
+                                                    <td>{{ date('d M Y', strtotime($itemdetail->tanggal))}}</td>
+                                                    @if ($itemdetail->verified == 'Y')
+                                                    <td>Done</td>                                                        
+                                                    @else
                                                     <td><button type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#Update{{$itemdetail->IdBarangDetail}}">Update Kondisi</button>
+                                                    @endif
                                                 </tr>
 
                                                 {{-- Modal --}}

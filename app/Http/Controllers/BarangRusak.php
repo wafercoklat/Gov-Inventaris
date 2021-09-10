@@ -19,7 +19,7 @@ class BarangRusak extends Controller
     {
         $clause = $this->Checkrole();
 
-        $data = DB::select('SELECT br.Code, br.IdBarang, br.Name barang, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and brd.IdBarangDetail is not null and brd.Status = 4');
+        $data = DB::select('SELECT br.Code, br.IdBarang, br.Name barang, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and brd.IdBarangDetail is not null and brd.Status = 4 or  brd.Status = 3');
 
         return view('pages.Kondisi.KRusak',compact('data'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
