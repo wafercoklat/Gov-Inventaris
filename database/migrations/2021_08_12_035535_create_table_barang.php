@@ -18,9 +18,9 @@ class CreateTableBarang extends Migration
             $table->integer('IdRuangan');
             $table->string('Code',25)->unique();
             $table->string('Name',64);
+            $table->string('Kategori',25);
             $table->string('NUP',25)->nullable()->default(NULL);
             $table->string('Keterangan',64)->nullable()->default(NULL);
-            $table->integer('Counter')->nullable()->default(NULL);
             $table->string('CreatedBy', 50)->nullable()->default(NULL);
             $table->timestamps();
         });

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UserRole extends Migration
+class CreateGate extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class UserRole extends Migration
      */
     public function up()
     {
-        Schema::create('userrole', function (Blueprint $table) {
-            $table->id();
-            $table->Integer('userId');
-            $table->Integer('IdRuangan');
-            $table->timestamps();
+        Schema::create('gatebk', function (Blueprint $table) {
+            $table->id('id');
+            $table->integer('IdBarang');
+            $table->integer('IdKondisi');
         });
     }
 
@@ -28,6 +27,6 @@ class UserRole extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userrole');
+        Schema::dropIfExists('gatebk');
     }
 }

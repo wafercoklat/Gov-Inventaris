@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableTransaksipindahbarang extends Migration
+class Transaksi extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,10 @@ class CreateTableTransaksipindahbarang extends Migration
     {
         Schema::create('Transaksi', function (Blueprint $table) {
             $table->id('IdTrans');
-            $table->string('Type',10);
-            $table->string('Trans',25);
-            $table->integer('IdBarang');
-            $table->integer('IdRuangan');
+            $table->string('Type',10)->nullable()->default(NULL);
+            $table->string('Trans',25)->nullable()->default(NULL);
+            $table->integer('IdBarang')->nullable()->default(NULL);
+            $table->integer('IdRuangan')->nullable()->default(NULL);
             $table->integer('IdRuangan2')->nullable()->default(NULL);
             $table->string('User',64)->nullable()->default(NULL);
             $table->string('Remark',64)->nullable()->default(NULL);
@@ -31,7 +31,7 @@ class CreateTableTransaksipindahbarang extends Migration
             $table->string('VerifyBy',25)->nullable()->default(NULL);
             $table->timestamp('VerifedTime')->nullable();
             $table->timestamps();
-        });
+        });   //
     }
 
     /**

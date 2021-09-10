@@ -21,7 +21,8 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
-                                    <a href="{{route('Barang.create')}}" class="btn btn-primary" disabled>Tambah Barang</a>
+                                    <a href="{{route('Barang.create')}}" class="btn btn-primary">Tambah Barang</a>
+                                    <a href="{{route('Scan')}}" class="btn btn-primary">Scan Barang</a>
                                 </ol>
                             </div>
                         </div>
@@ -50,9 +51,9 @@
                                                     <th>Lantai</th>
                                                     <th>Status</th>
                                                     <th>Keterangan</th>
-                                                    @if (Auth::check('role') != 'admin')
+                                                    {{-- @if (Auth::role() != 'admin') --}}
                                                         <th>Modify</th> 
-                                                    @endif
+                                                    {{-- @endif --}}
                                                 </tr>{{Auth::check('role')}}
                                             </thead>
                                             <tbody>
@@ -72,14 +73,14 @@
                                                         {{ $itemdetail->Stat }}</td>
                                                         @endif
                                                     <td>{{ $itemdetail->Remark }}</td>
-                                                    @if (Auth::check('role') != 'admin')
+                                                    {{-- @if (Auth::role() != 'admin') --}}
                                                     <td class="text-center">
                                                         <form class="ml-auto pt-3" action="{{ route('Barang.destroy', $itemdetail->IdBarang) }}" method="POST">
                                                             <a class="btn btn-primary btn-sm" href="{{ route('Barang.edit',$itemdetail->IdBarang) }}">Edit</a> @csrf @method('DELETE')
                                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
                                                         </form>
                                                     </td>
-                                                    @endif
+                                                    {{-- @endif --}}
                                                 </div>
                                                 @endforeach
                                             </tbody>

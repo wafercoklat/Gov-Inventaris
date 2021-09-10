@@ -21,8 +21,8 @@ class DKController extends Controller
     {
         $clause = $this->Checkrole();
 
-        $data = DB::select('SELECT br.Code, br.IdBarang, br.Name barang, br.NUP, brd.Pelapor, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and brd.IdBarangDetail is not null and brd.Status != 3 and brd.Status != 4');
-        $kondisi = statusbarang::Pluck('status', 'id');
+        $data = DB::select('SELECT brd.verified, br.Code, br.IdBarang, br.Name barang, br.NUP, brd.Pelapor, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail, brd.created_at tanggal FROM barang br LEFT JOIN barangdetail brd ON brd.IdBarang = br.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') ORDER BY brd.created_at DESC, brd.IdBarangDetail DESC');
+        $kondisi = statusbarang::where('id',1)->orwhere('id',2)->Pluck('status', 'id');
         return view('pages.Kondisi.Kview',compact('data', 'kondisi'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
 
@@ -38,7 +38,7 @@ class DKController extends Controller
 
         $data = DB::select('SELECT br.IdBarang, br.Name FROM barang br left join gatebk g on br.IdBarang = g.IdBarang left join barangdetail brd on brd.IdBarangDetail = g.IdKondisi LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and (brd.IdBarang is NULL or brd.Status = 3)');
 
-        $kondisi = statusbarang::Pluck('status', 'id');
+        $kondisi = statusbarang::where('id',3)->orwhere('id',4)->Pluck('status', 'id');
         return view('pages.Kondisi.Kadd', compact('data', 'kondisi'));
     }
 
@@ -56,6 +56,7 @@ class DKController extends Controller
             'Kondisi' => 'required'
         ]);
 
+        $request->merge(['Verified' => 'N']);
         $this -> addKondisi($request);
         
         /// redirect jika sukses menyimpan data
@@ -101,7 +102,8 @@ class DKController extends Controller
     {   
      
         $data = Kondisi::where('IdBarangDetail', $data)->first();
-        $request->merge(['IdBarang' => $data->IdBarang]);
+        $t = (($request->Kondisi == 2) ? 'Sedang Di Perbaiki' : "" ) ? ($request->Kondisi == 3) : 'Selesai di Perbaiki';
+        $request->merge(['IdBarang' => $data->IdBarang, 'Remark' => $t, 'Verified' => 'Y']);
         $this -> addKondisi($request);
 
         /// setelah berhasil mengubah data
@@ -142,33 +144,15 @@ class DKController extends Controller
         return $clause;
     }
 
-    public function addKondisi($request){
-        if(empty(Kondisi::latest('Counter')->first()->$request->IdBarang)){
-            $lastid = 1;
-        } else {
-            $lastid = (Kondisi::latest('Counter')->first()->$request->IdBarang)+1;
-        }
-        
+    public function addKondisi($request){        
         $item = new Kondisi();
         $item -> IdBarang = $request->IdBarang;
         $item -> Status = $request->Kondisi;
-        $item -> Kondisi = $request->Kondisi;
         $item -> Remark = $request->Remark;
         $item -> Pelapor = Auth::user()->name;
-        $item -> Counter = $lastid;
         $item -> save();
 
         DB::table('gateBK')->where('IdBarang',$request->IdBarang)->update(['IdKondisi'=> $item->IdBarangDetail]);
     }
-
-    public function BarangRusak()
-    {
-        $clause = $this->Checkrole();
-
-        $data = DB::select('SELECT br.Code, br.IdBarang, br.Name barang, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and brd.IdBarangDetail is not null and brd.Status = 4');
-
-        return view('pages.Kondisi.KRusak',compact('data'))-> with ('i', (request()->input('page', 1) - 1) * 100);
-    }
-
 
 }
