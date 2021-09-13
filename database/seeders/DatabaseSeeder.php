@@ -20,9 +20,5 @@ class DatabaseSeeder extends Seeder
             'username' => strtolower('admin'),
             'password' => Hash::make('admin123'),
         ]);
-
-        DB::table('ruangandetail')->inser([
-            
-        ]);
     }
 }
