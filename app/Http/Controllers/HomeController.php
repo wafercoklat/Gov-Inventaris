@@ -1,6 +1,7 @@
 <?php
   
 namespace App\Http\Controllers;
+use App\Models\Ruangan;
   
 use Illuminate\Http\Request;
   
@@ -13,8 +14,8 @@ class HomeController extends Controller
 
     public function scan()
     {
-        // return redirect()->away('https://192.168.43.86/scan/index.html');
-        return view('pages.badd-s');
+        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
+        return view('pages.badd-s', compact('Ruangan'));
     }
 
     public function tmbhbarang()

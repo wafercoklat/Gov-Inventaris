@@ -41,7 +41,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/Trans/Update/{var}', [DTrans_Controller::class, 'create'])->name('Update');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/Error', [HomeController::class, 'error'])->name('error'); 
-    Route::get('/ScanQR', [HomeController::class, 'scan'])->name('Scan'); 
+    Route::get('/ScanQR', [HomeController::class, 'scan'])->name('Scan');
+    Route::post('/ScanStore', [DBController::class, 'storeBR'])->name('AddScan');  
 
     Route::group(['middleware' => 'checkRole:admin'], function(){
         Route::resource('/User', UserController::class);

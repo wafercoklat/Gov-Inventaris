@@ -47,7 +47,6 @@ class DBController extends Controller
         barang::create($request->all());
 
         $IdBarang = barang::latest('IdBarang')->first()->IdBarang;
-
         $lastid = AdditionalFunc::getLastId("", 'IdTrans');
         $item = new TransaksiUpdate();
         $item -> IdBarang = $IdBarang;
@@ -132,4 +131,34 @@ class DBController extends Controller
         }
         return $clause;
     }
+
+    public function storeBR(Request $req)
+    {
+        for ($i=0; $i < count($req->Name) ; $i++) {    
+            $barang = new barang();
+            $barang -> IdRuangan = $req->IdRuangan[0];
+            $barang -> Code = $req->Code[$i];
+            $barang -> Name = $req->Name[$i];
+            $barang -> Kategori = 1;
+            $barang -> NUP =  $req->nup[$i];
+            $barang -> Keterangan = 'Baru diTambahkan';
+            $barang -> CreatedBy = Auth::user()->username;
+            $barang -> save();
+
+            $IdBarang = barang::latest('IdBarang')->first()->IdBarang;
+            $lastid = AdditionalFunc::getLastId("", 'IdTrans');
+            $item = new TransaksiUpdate();
+            $item -> IdBarang = $IdBarang;
+            $item -> IdRuangan = $req->IdRuangan[0];
+            $item -> Trans = "TR-" .$lastid;
+            $item -> Remark = "New";
+            $item -> ReqBy = Auth::user()->username;
+            $item -> save();
+    
+            DB::table('gateBK')->insert(['IdBarang'=>$IdBarang, 'IdKondisi'=> 0]);
+        }
+        return redirect()->route('Barang.index')
+                        ->with('success','Post created successfully.');
+    }
 }
+
