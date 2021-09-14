@@ -42,7 +42,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/Error', [HomeController::class, 'error'])->name('error'); 
     Route::get('/ScanQR', [HomeController::class, 'scan'])->name('Scan');
-    Route::post('/ScanStore', [DBController::class, 'storeBR'])->name('AddScan');  
+    Route::post('/ScanStore', [DBController::class, 'storeBR'])->name('AddScan');    
+    Route::get('/ScanTrans', [DTrans_Controller::class, 'scanTrans'])->name('TransScan');
+    Route::post('/UpdatePindah', [DTrans_Controller::class, 'storeScan'])->name('TransPost'); 
 
     Route::group(['middleware' => 'checkRole:admin'], function(){
         Route::resource('/User', UserController::class);

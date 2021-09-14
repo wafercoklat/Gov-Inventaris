@@ -21,7 +21,7 @@ class DKController extends Controller
     {
         $clause = $this->Checkrole();
 
-        $data = DB::select('SELECT brd.verified, br.Code, br.IdBarang, br.Name barang, br.NUP, brd.Pelapor, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail, brd.created_at tanggal FROM barang br LEFT JOIN barangdetail brd ON brd.IdBarang = br.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') ORDER BY brd.created_at DESC, brd.IdBarangDetail DESC');
+        $data = DB::select('SELECT brd.verified, br.Code, br.IdBarang, br.Name barang, br.NUP, brd.Pelapor, ru.Name ruangan, bs.Status, brd.Remark, brd.IdBarangDetail, brd.created_at tanggal FROM barang br LEFT JOIN barangdetail brd ON brd.IdBarang = br.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan where ('.$clause.') and (brd.Status = 2 or brd.Status = 3) ORDER BY brd.created_at DESC, brd.IdBarangDetail DESC');
         $kondisi = statusbarang::where('id',1)->orwhere('id',2)->Pluck('status', 'id');
         return view('pages.Kondisi.Kview',compact('data', 'kondisi'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
@@ -100,7 +100,6 @@ class DKController extends Controller
      */
     public function update(Request $request, $data)
     {   
-     
         $data = Kondisi::where('IdBarangDetail', $data)->first();
         $t = (($request->Kondisi == 2) ? 'Sedang Di Perbaiki' : "" ) ? ($request->Kondisi == 3) : 'Selesai di Perbaiki';
         $request->merge(['IdBarang' => $data->IdBarang, 'Remark' => $t, 'Verified' => 'Y']);

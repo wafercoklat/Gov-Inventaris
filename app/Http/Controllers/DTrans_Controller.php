@@ -85,7 +85,7 @@ class DTrans_Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
     }
@@ -169,9 +169,7 @@ class DTrans_Controller extends Controller
     }
 
     public function updateDate($var){
-
         $get = DB::select('SELECT IdBarang, IdRuangan, IdRuangan2, Req, Verified, VerifedTime FROM transaksi where IdTrans = '.$var);
-        
         $barang = barang::where('IdBarang',$get[0]->IdBarang)->first();
         $barang->IdRuangan = $get[0]->IdRuangan2;
         $barang->save();
@@ -181,5 +179,47 @@ class DTrans_Controller extends Controller
         $trans->Verified = 'Y';
         $trans->VerifedTime = now();
         $trans->save();
+    }
+
+    public function scanTrans()
+    {
+        $clause = $this->Checkrole();
+        $clause2 = $this->Checkrole2();
+  
+        $data = DB::select("SELECT br.IdBarang, br.Name, br.IdRuangan, br.barcode, br.Code, br.NUP FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN (SELECT IdBarang, Req from transaksi ORDER BY Counter DESC LIMIT 1) tr ON tr.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan $clause2 (brd.IdBarangDetail is null or brd.Status = 3) and (tr.Req = 'N' OR tr.Req IS NULL)");
+       
+        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
+
+        return view('pages.Trans.tpindah-s',compact('data', 'Ruangan'))-> with ('i', (request()->input('page', 1) - 1) * 100);
+    }
+
+    public function storeScan(Request $Req)
+    {
+        for ($i=0; $i < count($Req->IdBarang) ; $i++) {   
+            if(empty(TransaksiUpdate::latest('Counter')->where('IdBarang', $Req->IdBarang[$i])->first())){
+                $lastid = 1;
+            } else {
+                $lastid = (TransaksiUpdate::latest('Counter')->where('IdBarang', $Req->IdBarang[$i])->first()->Counter)+1;
+            }
+
+            $No = (empty(TransaksiUpdate::latest()->first()->IdTrans)) ? 1 : TransaksiUpdate::latest()->first()->IdTrans + 1;
+            $update = barang::where('IdBarang', $Req->IdBarang[$i])->first();
+
+            $item = new TransaksiUpdate();
+            $item -> IdBarang = $Req->IdBarang[$i]; 
+            $item -> Type = "PI";
+            $item -> IdRuangan = $update->IdRuangan;
+            $item -> IdRuangan2 = $Req ->IdRuangan[$i]; 
+            $item -> Trans = "TR-" .$No;
+            $item -> Counter = $lastid;
+            $item -> Remark = "Pindah";
+            $item -> Req = 'Y';
+            $item -> ReqTime = now();
+            $item -> ReqBy = Auth::user()->name;
+            $item -> save();
+        }
+        
+        return redirect()->route('Trans.index')
+                        ->with('success','Barang sedang di Request untuk Pindah');
     }
 }

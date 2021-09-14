@@ -47,15 +47,15 @@ class DBController extends Controller
         barang::create($request->all());
 
         $IdBarang = barang::latest('IdBarang')->first()->IdBarang;
-        $lastid = AdditionalFunc::getLastId("", 'IdTrans');
-        $item = new TransaksiUpdate();
-        $item -> IdBarang = $IdBarang;
-        $item -> IdRuangan = $request->IdRuangan;
-        $item -> Trans = "TR-" .$lastid;
-        $item -> Remark = "New";
-        $item -> Counter = 1;
-        $item -> ReqBy = $user;
-        $item -> save();
+        // $lastid = AdditionalFunc::getLastId("", 'IdTrans');
+        // $item = new TransaksiUpdate();
+        // $item -> IdBarang = $IdBarang;
+        // $item -> IdRuangan = $request->IdRuangan;
+        // $item -> Trans = "TR-" .$lastid;
+        // $item -> Remark = "New";
+        // $item -> Counter = 1;
+        // $item -> ReqBy = $user;
+        // $item -> save();
 
         DB::table('gateBK')->insert(['IdBarang'=>$IdBarang, 'IdKondisi'=> 0]);
 
@@ -141,21 +141,12 @@ class DBController extends Controller
             $barang -> Name = $req->Name[$i];
             $barang -> Kategori = 1;
             $barang -> NUP =  $req->nup[$i];
+            $barang -> barcode =  $req->barcode[$i];
             $barang -> Keterangan = 'Baru diTambahkan';
             $barang -> CreatedBy = Auth::user()->username;
             $barang -> save();
-
-            $IdBarang = barang::latest('IdBarang')->first()->IdBarang;
-            $lastid = AdditionalFunc::getLastId("", 'IdTrans');
-            $item = new TransaksiUpdate();
-            $item -> IdBarang = $IdBarang;
-            $item -> IdRuangan = $req->IdRuangan[0];
-            $item -> Trans = "TR-" .$lastid;
-            $item -> Remark = "New";
-            $item -> ReqBy = Auth::user()->username;
-            $item -> save();
     
-            DB::table('gateBK')->insert(['IdBarang'=>$IdBarang, 'IdKondisi'=> 0]);
+            DB::table('gateBK')->insert(['IdBarang'=>$barang->IdBarang, 'IdKondisi'=> 0]);
         }
         return redirect()->route('Barang.index')
                         ->with('success','Post created successfully.');
