@@ -34,16 +34,8 @@
                             <div class="card card-statistics mb-30">
                                 <div class="card-body">
                                     <h5 class="card-title">Basic form</h5>
-                                    <form action="{{ route('AddScan') }}" method="post">
+                                    <form action="{{ route('TransPost') }}" method="POST">
                                         @csrf
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Pilih Ruangan</label>
-                                            <select class="btn btn-secondary dropdown-toggle" name="IdRuangan[]" id="IdRuangan">
-                                                @foreach ($Ruangan as $IdRuangan => $Name)
-                                                    <option class="dropdown-menu-right" value="{{$IdRuangan}}">{{$Name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
                                         <div class="container-fluid">
                                             <div class="row">
                                                 <div class="col-sm-5">
@@ -62,8 +54,8 @@
                                                         });
                                                         scanner.addListener('scan', function(content) {
                                                             if (content != "") {
-                                                                self.add(content, i);
-                                                                i++;
+                                                                self.check(content);
+                                                                i++; 
                                                             }
                                                         });
                                                         Instascan.Camera.getCameras().then(function(cameras) {
@@ -93,25 +85,37 @@
                                                             alert(e);
                                                         });
 
-                                                        var add = function add(content, i) {
+                                                        var check = function check(content) {
+                                                            $flag = 0;
+                                                            @foreach ($data as $barang)
+                                                                if ('{{$barang->barcode}}' == content.trim()) {
+                                                                    self.add(content, i, '{{$barang->IdBarang}}', '{{$barang->IdRuangan}}', '{{$barang->barcode}}', '{{$barang->Code}}', '{{$barang->NUP}}', '{{$barang->Name}}' );
+                                                                    flag = 1;
+                                                                }
+                                                            @endforeach
+                                                            if (flag = 0) {
+                                                                alert('Barang tidak ditemukan');
+                                                            }
+                                                        };
+
+                                                        var add = function add(content, i, idbarang, idruangan, barcode, code, nup, nama) {
                                                             content = content.toString().trim();
                                                             const regex = /(?<=[A-Z])\d+/;
                                                             var nup = String(content.match(regex));
                                                             document.getElementById('repeater').innerHTML +=
-                                                                '<div data-repeater-item><div class="form-group col-md-6"><label for="inputEmail4">Nama Barang</label><input type="text" class="form-control" id="inputEmail4" placeholder="Nama Barang" name="Name[' + i + ']"><input type="text" class="form-control" id="inputEmail4" placeholder="' + content + '" value="' + content + '" name="barcode[' + i + ']"></div><div class="form-group col-md-6"><label for="inputEmail4">Detail</label><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup.substr(0, 9) + '" value="' + nup.substr(0, 9) + '" name="Code[' + i + ']"><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup.substr(9, nup.length) + '" value="' + nup.substr(9, nup.length) + '" name="nup[' + i + ']"></div><div class="col-lg-2"><input class="btn btn-danger btn-block" data-repeater-delete type="button" value="Delete" /></div></div>';
+                                                                '<div data-repeater-item><div class="form-group col-md-6"><label for="inputEmail4">Nama Barang</label><input type="text" class="form-control" id="inputEmail4" placeholder="'+nama+'"><input type="text" name="IdBarang['+i+']" value="'+idbarang+'" hidden></div><div class="form-group col-md-6"><label for="inputEmail4">Detail</label><input type="text" class="form-control" id="inputEmail4" placeholder="' + code + '"><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup + '"></div><div class="form-group"><label for="exampleInputEmail1">Pilih Ruangan</label><select class="btn btn-secondary dropdown-toggle" name="IdRuangan[]" id="IdRuangan">@foreach ($Ruangan as $IdRuangan => $Name)<option class="dropdown-menu-right" value="{{$IdRuangan}}">{{$Name}}</option>@endforeach</select></div><div class="col-lg-2"><input class="btn btn-danger btn-block" data-repeater-delete type="button" value="Delete" /></div></div>';
                                                         }
                                                     </script>
                                                 </div>
                                                 <div class="col-xl-12 mb-30">
                                                     <div class="repeater">
                                                         <div data-repeater-list="data" id="repeater">
-
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Ubah</button>
                                     </form>
                                 </div>
                             </div>

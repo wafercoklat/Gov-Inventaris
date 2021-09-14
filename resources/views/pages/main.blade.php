@@ -58,7 +58,7 @@
                                                     <td>{{$item->User}}</td>
                                                     @if ($item->Req == 'Y')
                                                         <td>
-                                                            <a href="{{ route('Update', $item->IdTrans) }}" ">
+                                                        <a href="{{ route('Update', $item->IdTrans) }}">
                                                             <button type="button " class="btn btn-success btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin ingin menghapus data ini?') ">Approve</button>
                                                         </a>
                                                         <form action="{{ route( 'Trans.destroy', $item->IdTrans) }}" method="POST"> @csrf @method('DELETE')
@@ -92,30 +92,30 @@
                         </div>
                         <form action="{{ route('Trans.store') }}" method="post">
                             @csrf
-                        <div class="modal-body">
-                            <div class="col-auto my-1 mb-10">
-                                <label class="mr-sm-2" for="inlineFormCustomSelect"><h4>Pilih Barang</h4></label>
-                                <select id="select2insidemodal" class="custom-select mr-sm-2" name="IdBarang">
-                                <option selected>Choose...</option>
-                                @foreach ($data as $barang)
-                                    <option class="dropdown-menu-right" value="{{$barang->IdBarang}}">{{$barang->Name}}</option>
-                                @endforeach
-                                </select>
-                            </div>
-                            
-                            <div class="col-auto my-1">
-                                <label class="mr-sm-2" id="select-state" for="inlineFormCustomSelect"><h4>Ruangan Tujuan</h4></label>
-                                <select class="custom-select mr-sm-2" id="select2insidemodal" name="IdRuangan">
-                                <option selected>Choose...</option>
-                                @foreach ($Ruangan as $IdRuangan => $Name)
-                                    <option class="dropdown-menu-right" value="{{$IdRuangan}}">{{$Name}}</option>
-                                @endforeach
-                            </select>
-                            </div>
-                        </div>
+                                <div class="modal-body">
+                                    <div class="col-auto my-1 mb-10">
+                                        <label class="mr-sm-2" for="inlineFormCustomSelect"><h4>Pilih Barang</h4></label>
+                                        <select id="select2insidemodal" class="custom-select mr-sm-2" name="IdBarang">
+                                        <option selected>Choose...</option>
+                                        @foreach ($data as $barang)
+                                            <option class="dropdown-menu-right" value="{{$barang->IdBarang}}">{{$barang->Name}}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="col-auto my-1">
+                                        <label class="mr-sm-2" id="select-state" for="inlineFormCustomSelect"><h4>Ruangan Tujuan</h4></label>
+                                        <select class="custom-select mr-sm-2" id="select2insidemodal" name="IdRuangan">
+                                        <option selected>Choose...</option>
+                                        @foreach ($Ruangan as $IdRuangan => $Name)
+                                            <option class="dropdown-menu-right" value="{{$IdRuangan}}">{{$Name}}</option>
+                                        @endforeach
+                                    </select>
+                                    </div>
+                                </div>
                         
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Scan</button>
+                            <a class="btn btn-secondary" href="{{route('TransScan')}}">Scan</a>
                             <button type="submit" class="btn btn-secondary"">Simpan</button>
                         </div>
                         </form>
