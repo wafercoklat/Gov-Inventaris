@@ -146,7 +146,7 @@ class DBController extends Controller
             $barang -> CreatedBy = Auth::user()->username;
             $barang -> save();
     
-            DB::table('gateBK')->insert(['IdBarang'=>$barang->IdBarang, 'IdKondisi'=> 0]);
+            DB::table('gatebk')->insert(['IdBarang'=>$barang->IdBarang, 'IdKondisi'=> 0]);
         }
         return redirect()->route('Barang.index')
                         ->with('success','Post created successfully.');
