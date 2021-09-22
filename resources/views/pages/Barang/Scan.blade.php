@@ -54,7 +54,11 @@
                                                     </div>
 
                                                     <script type="text/javascript">
-                                                        var i = 0;
+                                                        var arr = [];
+                                                        var item = @json($item);
+                                                        console.log(item);
+                                                        // console.log(item.some(item => item.barcode === 'F767-348G56'))
+                                                        console.log(item.hasOwnProperty('barcode'));
                                                         var scanner = new Instascan.Scanner({
                                                             video: document.getElementById('preview'),
                                                             scanPeriod: 5,
@@ -62,13 +66,13 @@
                                                         });
                                                         scanner.addListener('scan', function(content) {
                                                             if (content != "") {
-                                                                self.add(content, i);
+                                                                self.add(content);
                                                                 i++;
                                                             }
                                                         });
                                                         Instascan.Camera.getCameras().then(function(cameras) {
                                                             if (cameras.length > 0) {
-                                                                scanner.start(cameras[1]);
+                                                                scanner.start(cameras[0]);
                                                                 $('[name="options"]').on('change', function() {
                                                                     if ($(this).val() == 1) {
                                                                         if (cameras[0] != "") {
@@ -93,12 +97,23 @@
                                                             alert(e);
                                                         });
 
-                                                        var add = function add(content, i) {
-                                                            content = content.toString().trim();
-                                                            const regex = /(?<=[A-Z])\d+/;
-                                                            var nup = String(content.match(regex));
-                                                            document.getElementById('repeater').innerHTML +=
-                                                                '<div data-repeater-item><div class="form-group col-md-6"><label for="inputEmail4">Nama Barang</label><input type="text" class="form-control" id="inputEmail4" placeholder="Nama Barang" name="Name[' + i + ']"><input type="text" class="form-control" id="inputEmail4" placeholder="' + content + '" value="' + content + '" name="barcode[' + i + ']"></div><div class="form-group col-md-6"><label for="inputEmail4">Detail</label><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup.substr(0, 9) + '" value="' + nup.substr(0, 9) + '" name="Code[' + i + ']"><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup.substr(9, nup.length) + '" value="' + nup.substr(9, nup.length) + '" name="nup[' + i + ']"></div><div class="col-lg-2"><input class="btn btn-danger btn-block" data-repeater-delete type="button" value="Delete" /></div></div>';
+                                                        var add = function add(content) { 
+                                                            if (!(arr.includes(content.trim()))) {
+                                                                // if (condition) {
+                                                                    
+                                                                // }
+                                                                    
+                                                                        content = content.toString().trim();
+                                                                        arr.push(content);
+                                                                        const regex = /(?<=[A-Z])\d+/;
+                                                                        var nup = String(content.match(regex));
+                                                                        document.getElementById('repeater').innerHTML +=
+                                                                        '<div data-repeater-item><div class="form-group col-md-6"><label for="inputEmail4">Nama Barang</label><input type="text" class="form-control" id="inputEmail4" placeholder="Nama Barang" name="Name[' + i + ']"><input type="text" class="form-control" id="inputEmail4" placeholder="' + content + '" value="' + content + '" name="barcode[' + i + ']"></div><div class="form-group col-md-6"><label for="inputEmail4">Detail</label><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup.substr(0, 10) + '" value="' + nup.substr(0, 10) + '" name="Code[' + i + ']"><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup.substr(9, nup.length) + '" value="' + nup.substr(10, nup.length) + '" name="nup[' + i + ']"></div><div class="col-lg-2"><input class="btn btn-danger btn-block" data-repeater-delete type="button" value="Delete" /></div></div>';  
+                                                                        alert('Barang Sudah Di Input ke Database dengan nama');
+                                                                   
+                                                            } else {
+                                                                alert('Barang Sudah Di Scan');
+                                                            }
                                                         }
                                                     </script>
                                                 </div>

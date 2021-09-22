@@ -53,13 +53,7 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Pilih Kategori Barang</label>
-                                            <select class="btn btn-secondary dropdown-toggle" name="Kategori" id="Kategori">
-                                                    <option class="dropdown-menu-right" value="1">Milik Negara</option>
-                                                    <option class="dropdown-menu-right" value="2">Pihak Ketiga</option>
-                                            </select>
-                                        </div>
+                                        <input type="text" value="2" name="Kategori" hidden>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">NUP Barang</label>
                                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="NUP" name="NUP">

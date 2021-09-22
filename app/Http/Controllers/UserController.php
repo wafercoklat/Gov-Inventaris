@@ -17,11 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-    //    $d = DB::Select("Select u.id, u.name, b.NA from users u left join userdetails b on u.id = b.iduser"); 
-        $d = DB::Select("Select id, name, NA from users"); 
-
-
-       return view('pages.User.Uview',compact('d'))
+       $data = DB::Select("Select id, name, NA, role from users"); 
+       return view('Pages.User.Show',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -72,7 +69,7 @@ class UserController extends Controller
         $role = userRole::where('userId', $id);
         $ruangan = DB::select("SELECT a.IdRuangan, a.Name, b.userId  FROM ruangan a LEFT JOIN userrole b ON a.IdRuangan = b.IdRuangan AND b.userId = ".$id." ORDER BY IdRuangan ASC");
 
-        return view('pages.User.Uset',compact('role', 'ruangan', 'id', 'user')) ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('Pages.User.Set',compact('role', 'ruangan', 'id', 'user')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -124,5 +121,25 @@ class UserController extends Controller
     {
         DB::update("update users set NA = 'N' where id = ?",[$id]);
         return redirect()->route('User.index')->with('success','Post updated successfully');
+    }
+
+    public function Adduser(Request $request)
+    {   
+        $rules = [
+            'name'              => 'required|string',
+            'pass'              => 'required|string',
+            'username'          => 'required|string'
+        ];
+  
+        $messages = [
+            'username.required'     => 'User wajib diisi',
+            'username.username'     => 'User tidak valid',
+            'pass.required'     => 'Pass wajib diisi',
+            'pass.username'     => 'Pass tidak valid',
+        ];
+
+        User::create($request->all());
+
+        return redirect()->route('User')->with('success','Post updated successfully');
     }
 }

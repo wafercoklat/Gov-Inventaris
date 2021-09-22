@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\view_Ruangan;
 use App\Models\Ruangan;
 use App\Models\Lantai;
 use App\Models\RuanganUpdate;
@@ -19,8 +18,14 @@ class DRController extends Controller
      */
     public function index()
     {
-        $data = view_Ruangan::latest()->paginate(5);
-        return view('pages.Ruangan.Rview',compact('data'))
+        $data = DB::table('ruangan as ru')
+        ->select('ru.IdRuangan','ru.Name as Ruangan', 'lt.Name as Lantai', 'ru.NUP', 'ru.Code', 'ru.Keterangan')
+        ->join('ruangandetail as rud', 'rud.idRuangan' ,'=', 'ru.IdRuangan')
+        ->join('lokasi as lt', 'lt.IdLokasi', '=', 'rud.idLokasi')
+        ->orderby('ru.IdRuangan', 'asc')
+        ->get();
+
+        return view('Pages.Ruangan.Show',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -32,7 +37,7 @@ class DRController extends Controller
     public function create()
     {
         $Lantai = Lantai::Pluck('Name', 'IdLokasi');
-        return view('pages.Ruangan.Radd',compact('Lantai'));
+        return view('Pages.Ruangan.Add',compact('Lantai'));
     }
 
     /**
@@ -86,7 +91,7 @@ class DRController extends Controller
     {
         $data = Ruangan::where('IdRuangan',$id)->first();
         $Lantai = Lantai::Pluck('Name', 'IdLokasi');
-        return view('pages.Ruangan.Redit',compact('data', 'Lantai'));
+        return view('Pages.Ruangan.Edit',compact('data', 'Lantai'));
     }
 
     /**

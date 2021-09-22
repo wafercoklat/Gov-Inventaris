@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TransaksiUpdate extends Model
+class TransaksiUpdateDetail extends Model
 {
     use HasFactory;
-    protected $table = 'transaksi';
+    protected $table = 'transaksidetail';
     protected $primaryKey = 'DetailID';
     protected $fillable = [
-       'Counter', 'Type' ,'Trans', 'Req', 'ReqTime', 'ReqBy', 'Status', 'Keterangan'
+        'IdBarang', 'IdRuangan', 'IdRuangan2', 'Remark', 'Req', 'ReqBy', 'Verified', 'VerifBy'
    ];  
 }

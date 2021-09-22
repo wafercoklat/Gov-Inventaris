@@ -68,9 +68,9 @@
                                                     <td>{{ $itemdetail->Lantai }}</td>
                                                     <td class="badge badge-success mb-auto">
                                                         @if ($itemdetail->Req == "Y")
-                                                            Reques Pindah
+                                                            Request Pindah
                                                         @else
-                                                        {{ $itemdetail->Stat }}</td>
+                                                        {{ $itemdetail->status }}</td>
                                                         @endif
                                                     <td>{{ $itemdetail->Remark }}</td>
                                                     {{-- @if (Auth::role() != 'admin') --}}

@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function scan()
     {
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
-        return view('pages.badd-s', compact('Ruangan'));
+        return view('Pages.Barang.Scan', compact('Ruangan'));
     }
 
     public function tmbhbarang()
