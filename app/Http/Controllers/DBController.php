@@ -19,10 +19,10 @@ class DBController extends Controller
         $clause = $this->Checkrole();
         
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
-        
-        $item = DB::select('SELECT tr.Req, br.IdBarang, ru.IdRuangan, br.Code, br.Name barang, br.nup, ru.Name ruangan, lt.Name Lantai, if (bs.`Status` is NULL, "Tersedia", bs.`Status`) Stat, if (brd.Remark is NULL, "Baru Di Tambahkan", brd.Remark) Remark, br.created_at, br.updated_at, tr.Req FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN barangstatus bs ON bs.id = brd.`Status` LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi LEFT JOIN ( SELECT IdBarang, Req FROM transaksi ORDER BY counter DESC LIMIT 1) tr on tr.IdBarang = br.IdBarang '.$clause.' Order By br.IdBarang desc');
 
-        return view('pages.barang',compact('item', 'Ruangan'))
+        $item = DB::select('SELECT trd.Req, br.IdBarang, ru.IdRuangan, br.Code, br.Name barang, br.nup, ru.Name ruangan, lt.Name Lantai, bs.`status`, br.created_at, br.updated_at, trd.Remark FROM gatebk g LEFT JOIN barangstatus bs ON bs.id = g.IdKondisi LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN (SELECT Remark, Req, Verified, STATUS, IdBarang from transaksidetail ORDER BY DetailID DESC LIMIT 1) trd ON trd.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi '.$clause.' Order By br.IdBarang desc');
+
+        return view('Pages.Barang.Show',compact('item', 'Ruangan'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -30,7 +30,8 @@ class DBController extends Controller
     {
         //// menampilkan halaman create
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
-        return view('pages.badd',compact('Ruangan'));
+        $item = barang::Pluck('Name', 'barcode');
+        return view('Pages.Barang.Add',compact('Ruangan', 'item'));
     }
 
     public function store(Request $request)
@@ -43,7 +44,7 @@ class DBController extends Controller
         ]);
 
         $user = Auth::user()->username;
-        $request->merge(["CreatedBy" => $user]);
+        $request->merge(["CreatedBy" => $user, "Kategori" => 2]);
         barang::create($request->all());
 
         $IdBarang = barang::latest('IdBarang')->first()->IdBarang;
@@ -69,7 +70,7 @@ class DBController extends Controller
         /// dengan menggunakan resource, kita bisa memanfaatkan model sebagai parameter
         /// berdasarkan id yang dipilih
         /// href="{{ route('item.show',$post->id) }}
-        return view('pages.bedit',compact('item'));
+        return view('Pages.bedit',compact('item'));
     }
 
     public function edit($id)
@@ -78,7 +79,7 @@ class DBController extends Controller
         /// berdasarkan id yang dipilih
         /// href="{{ route('item.edit',$item->id) }}
         $item = barang::where('IdBarang',$id)->first();
-        return view('pages.bedit',compact('item'));
+        return view('Pages.bedit',compact('item'));
     }
 
     public function update(Request $request, $item)
@@ -113,7 +114,7 @@ class DBController extends Controller
     public function kondisi($var)
     {
         $data = DB::select('call view_Kondisi(?)', array($var));
-        return view('pages.bdetail',compact('data'))
+        return view('Pages.bdetail',compact('data'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -146,10 +147,17 @@ class DBController extends Controller
             $barang -> CreatedBy = Auth::user()->username;
             $barang -> save();
     
-            DB::table('gateBK')->insert(['IdBarang'=>$barang->IdBarang, 'IdKondisi'=> 0]);
+            DB::table('gatebk')->insert(['IdBarang'=>$barang->IdBarang, 'IdKondisi'=> 1]);
         }
         return redirect()->route('Barang.index')
                         ->with('success','Post created successfully.');
+    }
+
+    public function scan()
+    {
+        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
+        $item = barang::select('Name', 'barcode');
+        return view('Pages.Barang.Scan', compact('Ruangan', 'item'));
     }
 }
 

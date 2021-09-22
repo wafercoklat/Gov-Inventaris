@@ -60,7 +60,7 @@
                                                         });
                                                         Instascan.Camera.getCameras().then(function(cameras) {
                                                             if (cameras.length > 0) {
-                                                                scanner.start(cameras[0]);
+                                                                scanner.start(cameras[1]);
                                                                 $('[name="options"]').on('change', function() {
                                                                     if ($(this).val() == 1) {
                                                                         if (cameras[0] != "") {
@@ -85,21 +85,31 @@
                                                             alert(e);
                                                         });
 
-                                                        var check = function check(content) {
+                                                        r check = function check(content) {
                                                             $flag = 0;
-                                                            @foreach ($data as $barang)
+                                                            if (!arr.includes(content.trim())) {
+                                                                @foreach ($data as $barang)
                                                                 if ('{{$barang->barcode}}' == content.trim()) {
-                                                                    self.add(content, i, '{{$barang->IdBarang}}', '{{$barang->IdRuangan}}', '{{$barang->barcode}}', '{{$barang->Code}}', '{{$barang->NUP}}', '{{$barang->Name}}' );
-                                                                    flag = 1;
+                                                                    if ('{{$barang->IdKondisi}}' == 1) {
+                                                                        self.add(content, i, '{{$barang->IdBarang}}', '{{$barang->IdRuangan}}', '{{$barang->barcode}}', '{{$barang->Code}}', '{{$barang->NUP}}', '{{$barang->Name}}' );
+                                                                        flag = 1;   
+                                                                    } else {
+                                                                        alert('Barang sedang '+'{{$barang->status}}');  
+                                                                    }
                                                                 }
-                                                            @endforeach
-                                                            if (flag = 0) {
-                                                                alert('Barang tidak ditemukan');
+                                                                @endforeach
+
+                                                                if (flag = 0) {
+                                                                    alert('Barang tidak ditemukan');
+                                                                }
+                                                            } else {
+                                                                alert('Barang Sudah Di Scan');
                                                             }
                                                         };
 
                                                         var add = function add(content, i, idbarang, idruangan, barcode, code, nup, nama) {
                                                             content = content.toString().trim();
+                                                            arr.push(content);
                                                             const regex = /(?<=[A-Z])\d+/;
                                                             var nup = String(content.match(regex));
                                                             document.getElementById('repeater').innerHTML +=

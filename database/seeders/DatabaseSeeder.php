@@ -117,5 +117,6 @@ class DatabaseSeeder extends Seeder
         DB::insert('insert into barangstatus (id, Status) values (?,?)', ['2','Perbaiki']);
         DB::insert('insert into barangstatus (id, Status) values (?,?)', ['3','Rusak Ringan']);
         DB::insert('insert into barangstatus (id, Status) values (?,?)', ['4','Rusak Berat']);
+        DB::insert('insert into barangstatus (id, Status) values (?,?)', ['5','Pindah']);
     }
 }
