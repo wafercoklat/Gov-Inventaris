@@ -873,6 +873,14 @@ NOTE: This file contains all scripts for the actual Template.
        Clickable Row
     *************************/
 
+    POTENZA.Printout = function() {
+        $('#print').on('click', function() {
+            console.log('HELLO');
+            var W = window.open("{{ route('PrintLaporan') }}");
+            W.window.print();
+        });
+    }
+
     POTENZA.Crow = function() {
         var table = $('#example').DataTable();
 
@@ -882,6 +890,7 @@ NOTE: This file contains all scripts for the actual Template.
             alert('You clicked on ' + data[0] + '\'s row');
         });
     }
+
 
 
     /****************************************************
@@ -940,6 +949,7 @@ NOTE: This file contains all scripts for the actual Template.
             POTENZA.wizardform(),
             POTENZA.navactivation(),
             POTENZA.Fullscreenwindow(),
-            POTENZA.Crow();
+            POTENZA.Crow(),
+            POTENZA.Printout();
     });
 })(jQuery);

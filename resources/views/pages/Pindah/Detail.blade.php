@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
-                                    <a data="toggle" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-primary">Print</a>
+                                    <a href="{{route('PrintPindah',$trans[0]->IdTrans)}}" class="btn btn-primary">Print</a>
                                 </ol>
                             </div>
                         </div>

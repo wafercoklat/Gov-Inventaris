@@ -34,7 +34,7 @@
                             <div class="card card-statistics mb-30">
                                 <div class="card-body">
                                     <h5 class="card-title">Basic form</h5>
-                                    <form action="{{ route('TransPost') }}" method="POST">
+                                    <form action="{{ route('Kondisi.store') }}" method="POST">
                                         @csrf
                                         <div class="container-fluid">
                                             <div class="row">
@@ -46,7 +46,7 @@
                                                     </div>
 
                                                     <script type="text/javascript">
-                                                        var i = 0;
+                                                        var arr = []; 
                                                         var scanner = new Instascan.Scanner({
                                                             video: document.getElementById('preview'),
                                                             scanPeriod: 5,
@@ -55,12 +55,11 @@
                                                         scanner.addListener('scan', function(content) {
                                                             if (content != "") {
                                                                 self.check(content);
-                                                                i++; 
                                                             }
                                                         });
                                                         Instascan.Camera.getCameras().then(function(cameras) {
                                                             if (cameras.length > 0) {
-                                                                scanner.start(cameras[1]);
+                                                                scanner.start(cameras[0]);
                                                                 $('[name="options"]').on('change', function() {
                                                                     if ($(this).val() == 1) {
                                                                         if (cameras[0] != "") {
@@ -85,13 +84,13 @@
                                                             alert(e);
                                                         });
 
-                                                        r check = function check(content) {
+                                                        var check = function check(content) {
                                                             $flag = 0;
                                                             if (!arr.includes(content.trim())) {
                                                                 @foreach ($data as $barang)
                                                                 if ('{{$barang->barcode}}' == content.trim()) {
                                                                     if ('{{$barang->IdKondisi}}' == 1) {
-                                                                        self.add(content, i, '{{$barang->IdBarang}}', '{{$barang->IdRuangan}}', '{{$barang->barcode}}', '{{$barang->Code}}', '{{$barang->NUP}}', '{{$barang->Name}}' );
+                                                                        self.add(content, '{{$barang->IdBarang}}', '{{$barang->IdRuangan}}', '{{$barang->barcode}}', '{{$barang->Code}}', '{{$barang->NUP}}', '{{$barang->Name}}' );
                                                                         flag = 1;   
                                                                     } else {
                                                                         alert('Barang sedang '+'{{$barang->status}}');  
@@ -107,13 +106,13 @@
                                                             }
                                                         };
 
-                                                        var add = function add(content, i, idbarang, idruangan, barcode, code, nup, nama) {
+                                                        var add = function add(content, idbarang, idruangan, barcode, code, nup, nama) {
                                                             content = content.toString().trim();
                                                             arr.push(content);
                                                             const regex = /(?<=[A-Z])\d+/;
                                                             var nup = String(content.match(regex));
                                                             document.getElementById('repeater').innerHTML +=
-                                                                '<div data-repeater-item><div class="form-group col-md-6"><label for="inputEmail4">Nama Barang</label><input type="text" class="form-control" id="inputEmail4" placeholder="'+nama+'"><input type="text" name="IdBarang['+i+']" value="'+idbarang+'" hidden></div><div class="form-group col-md-6"><label for="inputEmail4">Detail</label><input type="text" class="form-control" id="inputEmail4" placeholder="' + code + '"><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup + '"></div><div class="form-group"><label for="exampleInputEmail1">Pilih Ruangan</label><select class="btn btn-secondary dropdown-toggle" name="IdRuangan[]" id="IdRuangan">@foreach ($Ruangan as $IdRuangan => $Name)<option class="dropdown-menu-right" value="{{$IdRuangan}}">{{$Name}}</option>@endforeach</select></div><div class="col-lg-2"><input class="btn btn-danger btn-block" data-repeater-delete type="button" value="Delete" /></div></div>';
+                                                                '<div data-repeater-item><div class="form-group col-md-6"><label for="inputEmail4">Nama Barang</label><input type="text" class="form-control" id="inputEmail4" placeholder="'+nama+'"><input type="text" name="IdBarang[]" value="'+idbarang+'" hidden></div><div class="form-group col-md-6"><label for="inputEmail4">Detail</label><input type="text" class="form-control" id="inputEmail4" placeholder="' + code + '"><input type="text" class="form-control" id="inputEmail4" placeholder="' + nup + '"></div><div class="form-group"><label for="exampleInputEmail1">Pilih Ruangan</label><select class="btn btn-secondary dropdown-toggle" name="Kondisi[]" id="IdRuangan">@foreach ($Kondisi as $IdKondisi => $Name)<option class="dropdown-menu-right" value="{{$IdKondisi}}">{{$Name}}</option>@endforeach</select></div><div class="form-group col-md-6"><label for="inputEmail4">Keterangan</label><textarea type="textarea" class="form-control" id="inputEmail4" placeholder="Keterangan" name="Keterangan[]"></textarea></div><div class="col-lg-2"><input class="btn btn-danger btn-block" data-repeater-delete type="button" value="Delete" /></div></div>';
                                                         }
                                                     </script>
                                                 </div>

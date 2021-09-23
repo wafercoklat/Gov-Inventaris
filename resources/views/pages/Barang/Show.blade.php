@@ -57,7 +57,6 @@
                                                 </tr>{{Auth::check('role')}}
                                             </thead>
                                             <tbody>
-
                                                 @foreach ($item as $itemdetail)
                                                 <tr>
                                                     <td>{{ ++$i }}</td>

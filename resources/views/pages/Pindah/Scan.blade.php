@@ -46,8 +46,7 @@
                                                     </div>
 
                                                     <script type="text/javascript">
-                                                        var i = 0;
-                                                        var arr = [];
+                                                        var arr = []; 
                                                         var scanner = new Instascan.Scanner({
                                                             video: document.getElementById('preview'),
                                                             scanPeriod: 5,
@@ -56,7 +55,6 @@
                                                         scanner.addListener('scan', function(content) {
                                                             if (content != "") {
                                                                 self.check(content);
-                                                                i++; 
                                                             }
                                                         });
                                                         Instascan.Camera.getCameras().then(function(cameras) {
@@ -92,7 +90,7 @@
                                                                 @foreach ($data as $barang)
                                                                 if ('{{$barang->barcode}}' == content.trim()) {
                                                                     if ('{{$barang->IdKondisi}}' == 1) {
-                                                                        self.add(content, i, '{{$barang->IdBarang}}', '{{$barang->IdRuangan}}', '{{$barang->barcode}}', '{{$barang->Code}}', '{{$barang->NUP}}', '{{$barang->Name}}' );
+                                                                        self.add(content, '{{$barang->IdBarang}}', '{{$barang->IdRuangan}}', '{{$barang->barcode}}', '{{$barang->Code}}', '{{$barang->NUP}}', '{{$barang->Name}}' );
                                                                         flag = 1;   
                                                                     } else {
                                                                         alert('Barang sedang '+'{{$barang->status}}');  
@@ -108,7 +106,7 @@
                                                             }
                                                         };
 
-                                                        var add = function add(content, i, idbarang, idruangan, barcode, code, nup, nama) {
+                                                        var add = function add(content, idbarang, idruangan, barcode, code, nup, nama) {
                                                             content = content.toString().trim();
                                                             arr.push(content);
                                                             const regex = /(?<=[A-Z])\d+/;

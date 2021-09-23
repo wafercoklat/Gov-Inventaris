@@ -16,7 +16,7 @@ class DLController extends Controller
     public function index()
     {
         $data = Lantai::select('IdLokasi','Code', 'Name')->get();
-        return view('Pages.Lantai.Show',compact('data'))
+        return view('Pages.Lantai.Lview',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class DLController extends Controller
      */
     public function create()
     {
-        return view('Pages.Lantai.Add');
+        return view('Pages.Lantai.LAdd');
     }
 
     /**
@@ -45,7 +45,7 @@ class DLController extends Controller
 
         Lantai::create($request->all());
 
-        return redirect()->route('Lantai.index')
+        return redirect()->route('Lantai')
                         ->with('success','Post created successfully.');         
     }
 
@@ -57,7 +57,7 @@ class DLController extends Controller
      */
     public function show(Lantai $id)
     {
-        return view('Pages.Lantai.Edit',compact('id'));
+        return view('Pages.Lantai.Ledit',compact('id'));
     }
 
     /**
@@ -69,7 +69,7 @@ class DLController extends Controller
     public function edit($id)
     {
         $data = Lantai::where('IdLokasi',$id)->first();
-        return view('Pages.Lantai.Edit',compact('data'));
+        return view('Pages.Lantai.Ledit',compact('data'));
     }
 
     /**
@@ -88,7 +88,7 @@ class DLController extends Controller
         $update = Lantai::where('IdLokasi',$data)->first();
         $update->update($request->all());
          
-        return redirect()->route('Lantai.index')
+        return redirect()->route('Lantai')
                         ->with('success','Post updated successfully');
     }
 
@@ -112,7 +112,7 @@ class DLController extends Controller
                 return redirect()->route('Lantai.index')->with('success','Lantai berhasil di hapus');
             }
         }
-        return redirect()->route('Lantai.index')->with('success','Gagal');
+        return redirect()->route('Lantai')->with('success','Gagal');
     }
 
     protected function checkLantai($d){

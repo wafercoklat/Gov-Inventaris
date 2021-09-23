@@ -28,6 +28,9 @@
 <!-- toastr -->
 <script src="{{asset('js/toastr.js')}}"></script>
 
+{{-- Print --}}
+<script src="{{asset('js/Print.js')}}"></script>
+
 <!-- validation -->
 <script src="{{asset('js/validation.js')}}"></script>
 

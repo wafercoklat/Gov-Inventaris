@@ -25,7 +25,7 @@ class DRController extends Controller
         ->orderby('ru.IdRuangan', 'asc')
         ->get();
 
-        return view('Pages.Ruangan.Show',compact('data'))
+        return view('Pages.Ruangan.Rview',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -37,7 +37,7 @@ class DRController extends Controller
     public function create()
     {
         $Lantai = Lantai::Pluck('Name', 'IdLokasi');
-        return view('Pages.Ruangan.Add',compact('Lantai'));
+        return view('Pages.Ruangan.Redit',compact('Lantai'));
     }
 
     /**
@@ -66,7 +66,7 @@ class DRController extends Controller
         $item -> IdLokasi = $request->IdLokasi;
         $item -> save();
 
-        return redirect()->route('Ruangan.index')
+        return redirect()->route('Ruangan')
                         ->with('success','Post created successfully.');         
     }
 
@@ -91,7 +91,7 @@ class DRController extends Controller
     {
         $data = Ruangan::where('IdRuangan',$id)->first();
         $Lantai = Lantai::Pluck('Name', 'IdLokasi');
-        return view('Pages.Ruangan.Edit',compact('data', 'Lantai'));
+        return view('Pages.Ruangan.Redit',compact('data', 'Lantai'));
     }
 
     /**
@@ -116,7 +116,7 @@ class DRController extends Controller
             ]
         );
 
-        return redirect()->route('Ruangan.index')
+        return redirect()->route('Ruangan')
                         ->with('success','Post updated successfully');
     }
 
@@ -139,7 +139,7 @@ class DRController extends Controller
                 return redirect()->route('Ruangan.index')->with('success','Ruangan berhasil di hapus');
             }
         }
-        return redirect()->route('Ruangan.index')->with('success','Gagal');
+        return redirect()->route('Ruangan')->with('success','Gagal');
     }
 
     protected function checkRuangan($d){

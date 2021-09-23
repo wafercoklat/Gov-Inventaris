@@ -16,8 +16,8 @@
                 <div class="row justify-content-center no-gutters vertical-align">
                     <div class="col-lg-4 col-md-6 login-fancy-bg bg" style="background-image: url(images/login-inner-bg.jpg);">
                         <div class="login-fancy">
-                            <h2 class="text-white mb-20">Hello world!</h2>
-                            <p class="mb-20 text-white">Create tailor-cut websites with the exclusive multi-purpose responsive template along with powerful features.</p>
+                            <h2 class="text-white mb-20">Siperiang App</h2>
+                            <p class="mb-20 text-white">Sistem Informasi Perpindahan dan Inventarisir Barang</p>
                             <ul class="list-unstyled  pos-bot pb-30">
                                 <li class="list-inline-item"><a class="text-white" href="#"> Terms of Use</a> </li>
                                 <li class="list-inline-item"><a class="text-white" href="#"> Privacy Policy</a></li>
