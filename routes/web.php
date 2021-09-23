@@ -44,8 +44,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/TambahBarang/Scan', [DBController::class, 'scan'])->name('Scan');
     Route::post('/ScanStore', [DBController::class, 'storeBR'])->name('AddScan');    
     Route::get('/ScanTrans', [DTrans_Controller::class, 'scanTrans'])->name('TransScan');
-    // Route::post('/UpdatePindah', [DTrans_Controller::class, 'storeScan'])->name('TransPost'); 
-
+    Route::get('/Scan-LaporBarang', [DKController::class, 'scanTrans'])->name('LaporScan');
+    Route::post('/Lapor/Update/{detailID}/{IdTrans}/{flag}/{IdBarang}', [DKController::class,'updateDate'])->name('UpdateLaporan');
+    Route::get('/PrintLapor/{var}', [DKController::class,'print'])->name('PrintLaporan');
+    Route::get('/PrintPindah/{var}', [DTrans_Controller::class,'print'])->name('PrintPindah');
+    
     Route::group(['middleware' => 'checkRole:admin'], function(){
         Route::resource('/User', UserController::class);
         Route::get('/User/{var}/nonActive', [UserController::class, 'NActive'])->name('NActive');

@@ -156,7 +156,7 @@ class DBController extends Controller
     public function scan()
     {
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
-        $item = barang::select('Name', 'barcode');
+        $item = DB::select('Select Name, barcode from barang');
         return view('Pages.Barang.Scan', compact('Ruangan', 'item'));
     }
 }

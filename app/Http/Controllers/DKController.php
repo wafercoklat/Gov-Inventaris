@@ -7,6 +7,7 @@ use App\Models\Transaksi;
 use App\Models\barang;
 use App\Models\Ruangan;
 use DB;
+use Carbon\Carbon;
 use App\Models\statusbarang;
 use App\Models\TransaksiUpdate;
 use App\Models\TransaksiUpdateDetail;
@@ -74,7 +75,7 @@ class DKController extends Controller
             DB::table('gatebk')->where('IdBarang', $Req['IdBarang'][$i])->update(['IdKondisi'=> $Req['Kondisi'][$i]]);
         }
         
-        return redirect()->route('Lapor.index')
+        return redirect()->route('Lapor')
                         ->with('success','Barang sedang di Request untuk Lapor');
     }
 
@@ -172,7 +173,7 @@ class DKController extends Controller
 
         DB::table('gatebk')->where('IdBarang', $IdBarang)->update(['IdKondisi'=> $s]);
 
-        return redirect()->route('Lapor.show', $IdTrans)
+        return redirect()->route('Kondisi.show', $IdTrans)
                         ->with('success','Post updated successfully');
 
     }
@@ -225,5 +226,17 @@ class DKController extends Controller
 
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
         return view('Pages.Lapor.Scan',compact('data', 'Ruangan'));
+    }
+
+    public function print($id){
+    
+        $clause = $this->Checkrole();
+
+        $trans = DB::select("SELECT trd.Verified, trd.Req, tr.IdTrans, trd.DetailID, tr.trans transaksi, br.IdBarang, br.Code, br.NUP, br.Name barang, ru.Code codeRuangan, ru.Name ruangan, lt.Name Lantai, tr.created_at tanggal, trd.ReqBy User, trd.Remark, bs.`status` Kondisi, trd.Status FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barangstatus bs ON bs.id = trd.`Status` LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause and (trd.IdTrans = $id)");
+
+        setlocale(LC_TIME, 'id_ID');
+        $date = Carbon::now()->isoFormat('D MMMM Y');
+        
+        return view('layouts.print.PrintLapor',compact('trans', 'date'))-> with ('i', (request()->input('page', 1) - 1) * 100); 
     }
 }

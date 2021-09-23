@@ -7,6 +7,7 @@ use App\Models\Transaksi;
 use App\Models\barang;
 use App\Models\Ruangan;
 use DB;
+use Carbon\Carbon;
 use App\Models\TransaksiUpdate;
 use App\Models\TransaksiUpdateDetail;
 use App\Controllers\AdditionalFunc;
@@ -77,10 +78,10 @@ class DTrans_Controller extends Controller
             DB::table('gatebk')->where('IdBarang', $Req['IdBarang'][$i])->update(['IdKondisi'=> 5]);
         }
         
-        return redirect()->route('PindahBarang')
+        return redirect()->route('Trans')
                         ->with('success','Barang sedang di Request untuk Pindah');
     }
-
+ 
     /**
      * Display the specified resource.
      *
@@ -187,7 +188,7 @@ class DTrans_Controller extends Controller
 
         DB::table('gatebk')->where('IdBarang', $IdBarang)->update(['IdKondisi'=> 1]);
 
-        return redirect()->route('PindahBarang.show',$IdTrans)
+        return redirect()->route('Trans.show',$IdTrans)
                         ->with('success','Post updated successfully');
     }
 
@@ -209,5 +210,16 @@ class DTrans_Controller extends Controller
 
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
         return view('Pages.Pindah.Scan',compact('data', 'Ruangan'));
+    }
+
+    public function print($id){
+        $clause = $this->Checkrole2();
+
+        $trans = DB::select("SELECT trd.Req, tr.IdTrans, trd.DetailID, tr.trans transaksi, br.IdBarang, br.Code, br.NUP, br.Name barang, ru.Code codeRuangan, ru.Name ruangan, ru2.Code codeRuangan2, ru2.IdRuangan, ru2.Name ruangan2, lt.Name Lantai, tr.created_at tanggal, trd.ReqBy User, trd.Remark FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = trd.IdRuangan LEFT JOIN ruangan ru2 ON ru2.IdRuangan = trd.IdRuangan2 LEFT JOIN ruangandetail rud ON rud.idRuangan = ru2.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause (trd.IdTrans = $id)");
+
+        setlocale(LC_TIME, 'id_ID');
+        $date = Carbon::now()->isoFormat('D MMMM Y');
+
+        return view('layouts.print.PrintPindah', compact('trans', 'date'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
 }
