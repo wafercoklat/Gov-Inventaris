@@ -1,0 +1,4966 @@
+﻿data = [{
+    "Kode": "3010101005",
+    "Barang": "Aircraft Towing Tractor"
+}, {
+    "Kode": "3010101006",
+    "Barang": "Towing Bar"
+}, {
+    "Kode": "3010101007",
+    "Barang": "Bulldozer"
+}, {
+    "Kode": "3010101008",
+    "Barang": "Wheel Dozer"
+}, {
+    "Kode": "3010101999",
+    "Barang": "Tractor  Lainnya"
+}, {
+    "Kode": "3010102001",
+    "Barang": "Grader  + Attachment"
+}, {
+    "Kode": "3010102002",
+    "Barang": "Grader  Towed Type"
+}, {
+    "Kode": "3010102999",
+    "Barang": "Grader  Lainnya"
+}, {
+    "Kode": "3010103001",
+    "Barang": "Crawler Excavator  + Attachment"
+}, {
+    "Kode": "3010103002",
+    "Barang": "Wheel Excavator  + Attachment"
+}, {
+    "Kode": "3010103999",
+    "Barang": "Excavator  Lainnya"
+}, {
+    "Kode": "3010104001",
+    "Barang": "Diesel Pile Driver"
+}, {
+    "Kode": "3010104002",
+    "Barang": "Pneumatic Pile Driver"
+}, {
+    "Kode": "3010104003",
+    "Barang": "Vibration Pile Driver"
+}, {
+    "Kode": "3010104999",
+    "Barang": "Pile Driver Lainnya"
+}, {
+    "Kode": "3010105001",
+    "Barang": "Self Propelled Scraper"
+}, {
+    "Kode": "3010105002",
+    "Barang": "Towed Scraper"
+}, {
+    "Kode": "3010105003",
+    "Barang": "Dump Truck"
+}, {
+    "Kode": "3010105004",
+    "Barang": "Dump Wagon"
+}, {
+    "Kode": "3010105005",
+    "Barang": "Lori"
+}, {
+    "Kode": "3010105999",
+    "Barang": "Hauler Lainnya"
+}, {
+    "Kode": "3010106001",
+    "Barang": "Asphalt Mixing Plant"
+}, {
+    "Kode": "3010106002",
+    "Barang": "Asphalt Finisher"
+}, {
+    "Kode": "3010106003",
+    "Barang": "Asphalt Distributor"
+}, {
+    "Kode": "3010106004",
+    "Barang": "Asphalt Heater"
+}, {
+    "Kode": "3010106005",
+    "Barang": "Asphalt Tanker"
+}, {
+    "Kode": "3010106006",
+    "Barang": "Asphalt Sprayer"
+}, {
+    "Kode": "3010106007",
+    "Barang": "Asbuton Dryer"
+}, {
+    "Kode": "3010106008",
+    "Barang": "Asphalt Recycle"
+}, {
+    "Kode": "3010106009",
+    "Barang": "Cold Milling Machine"
+}, {
+    "Kode": "3010106010",
+    "Barang": "Asphalt Mixer"
+}, {
+    "Kode": "3010106011",
+    "Barang": "Bitumen / Asphalt Test"
+}, {
+    "Kode": "3010106999",
+    "Barang": "Asphalt Equipment Lainnya"
+}, {
+    "Kode": "3010107001",
+    "Barang": "Macadam  Roller/Three Wheel Roller"
+}, {
+    "Kode": "3010107002",
+    "Barang": "Tandem Roller"
+}, {
+    "Kode": "3010107003",
+    "Barang": "Mesh Roller"
+}, {
+    "Kode": "3010107004",
+    "Barang": "Vibration Roller"
+}, {
+    "Kode": "3010107005",
+    "Barang": "Tyre Roller"
+}, {
+    "Kode": "3010107006",
+    "Barang": "Soil Stabilizer"
+}, {
+    "Kode": "3010107007",
+    "Barang": "Sheepfoot/Tamping Roller"
+}, {
+    "Kode": "3010107008",
+    "Barang": "Stamper"
+}, {
+    "Kode": "3010107009",
+    "Barang": "Vibration Plate"
+}, {
+    "Kode": "3010107010",
+    "Barang": "Pemadat Sampah"
+}, {
+    "Kode": "3010107011",
+    "Barang": "Truck & Bush Tyre"
+}, {
+    "Kode": "3010107012",
+    "Barang": "Scissor Lif Hi Com"
+}, {
+    "Kode": "3010107999",
+    "Barang": "Compacting Equipment Lainnya"
+}, {
+    "Kode": "3010108001",
+    "Barang": "Stone  Crushing Plant"
+}, {
+    "Kode": "3010108002",
+    "Barang": "Screening Classifer"
+}, {
+    "Kode": "3010108003",
+    "Barang": "Stone  Chuser"
+}, {
+    "Kode": "3010108004",
+    "Barang": "Aggregate Washer"
+}, {
+    "Kode": "3010199999",
+    "Barang": "Alat Besar Darat  Lainnya"
+}, {
+    "Kode": "30102",
+    "Barang": "ALAT BESAR APUNG"
+}, {
+    "Kode": "3010201001",
+    "Barang": "Suction Dredger"
+}, {
+    "Kode": "3010201002",
+    "Barang": "Bucket Dredger"
+}, {
+    "Kode": "3010201003",
+    "Barang": "Cutter  Suction Dredger"
+}, {
+    "Kode": "3010201999",
+    "Barang": "Dredger  Lainnya"
+}, {
+    "Kode": "3010202001",
+    "Barang": "Floating Excavator  + Attachment"
+}, {
+    "Kode": "3010202002",
+    "Barang": "Floating Crane"
+}, {
+    "Kode": "3010202003",
+    "Barang": "Floating Pump"
+}, {
+    "Kode": "3010202999",
+    "Barang": "Floating Excavator  Lainnya"
+}, {
+    "Kode": "3010203001",
+    "Barang": "Plain Suction"
+}, {
+    "Kode": "3010203002",
+    "Barang": "Cutter  (Amphibi Dredger)"
+}, {
+    "Kode": "3010203003",
+    "Barang": "Clamshell / Dragline"
+}, {
+    "Kode": "3010203999",
+    "Barang": "Amphibi Dredger  Lainnya"
+}, {
+    "Kode": "3010204001",
+    "Barang": "Kapal Tarik"
+}, {
+    "Kode": "3010204999",
+    "Barang": "Kapal Tarik Lainnya"
+}, {
+    "Kode": "3010205001",
+    "Barang": "Water  Treatment (Mesin Proses  Apung)"
+}, {
+    "Kode": "3010205999",
+    "Barang": "Mesin Proses  Apung Lainnya"
+}, {
+    "Kode": "3010299999",
+    "Barang": "Alat Besar Apung Lainnya"
+}, {
+    "Kode": "30103",
+    "Barang": "ALAT BANTU"
+}, {
+    "Kode": "3010301001",
+    "Barang": "Alat Penarik Kapal"
+}, {
+    "Kode": "3010301002",
+    "Barang": "Alat Penarik Jaring"
+}, {
+    "Kode": "3010301999",
+    "Barang": "Alat Penarik Lainnya"
+}, {
+    "Kode": "3010302001",
+    "Barang": "Elevator /Lift"
+}, {
+    "Kode": "3010302002",
+    "Barang": "Belt Conveyor (Feeder)"
+}, {
+    "Kode": "3010302003",
+    "Barang": "Screw Conveyor (Feeder)"
+}, {
+    "Kode": "3010302004",
+    "Barang": "Escalator"
+}, {
+    "Kode": "3010302005",
+    "Barang": "Gandola"
+}, {
+    "Kode": "3010302006",
+    "Barang": "Elevator (Feeder)"
+}, {
+    "Kode": "3010302007",
+    "Barang": "Gangway"
+}, {
+    "Kode": "3010302999",
+    "Barang": "Feeder  Lainnya (Alat Besar)"
+}, {
+    "Kode": "3010303001",
+    "Barang": "Transportable Compressor"
+}, {
+    "Kode": "3010303002",
+    "Barang": "Portable Compressor"
+}, {
+    "Kode": "3010303003",
+    "Barang": "Stationary Compressor"
+}, {
+    "Kode": "3010303004",
+    "Barang": "Air Compresor"
+}, {
+    "Kode": "3010303005",
+    "Barang": "Compressor Pneumatic Tool 25 GMP"
+}, {
+    "Kode": "3010303999",
+    "Barang": "Compressor Lainnya"
+}, {
+    "Kode": "3010304001",
+    "Barang": "Transportable Generating Set"
+}, {
+    "Kode": "3010304002",
+    "Barang": "Portable Generating Set"
+}, {
+    "Kode": "3010304003",
+    "Barang": "Stationary Generating Set"
+}, {
+    "Kode": "3010304004",
+    "Barang": "Dynamo  Electric"
+}, {
+    "Kode": "3010304999",
+    "Barang": "Electric Generating Set Lainnya"
+}, {
+    "Kode": "3010305001",
+    "Barang": "Transportable Water  Pump"
+}, {
+    "Kode": "3010305002",
+    "Barang": "Portable Water  Pump"
+}, {
+    "Kode": "3010305003",
+    "Barang": "Stationary Water  Pump"
+}, {
+    "Kode": "3030205030",
+    "Barang": "Cylinder Bearing"
+}, {
+    "Kode": "3030205031",
+    "Barang": "Perlengkapan Bengkel Pengecatan"
+}, {
+    "Kode": "3030205032",
+    "Barang": "Toolkit Tukang  Air"
+}, {
+    "Kode": "3030205033",
+    "Barang": "Rak tool box portable bersusun"
+}, {
+    "Kode": "3030205999",
+    "Barang": "Perkakas Standard (Standard Tools) Lainnya"
+}, {
+    "Kode": "3030206001",
+    "Barang": "Kunci Khusus Untuk Engine"
+}, {
+    "Kode": "3030206002",
+    "Barang": "Kunci Khusus Alat Besar Darat"
+}, {
+    "Kode": "3030206003",
+    "Barang": "Kunci Khusus Alat Besar Apung"
+}, {
+    "Kode": "3030206004",
+    "Barang": "Kunci Khusus Casis Alat Angkut Darat"
+}, {
+    "Kode": "3030206005",
+    "Barang": "Kunci Khusus Casis"
+}, {
+    "Kode": "3030206006",
+    "Barang": "Kunci Khusus Alat Angkut Apung"
+}, {
+    "Kode": "3030206007",
+    "Barang": "Kunci Khusus Pembuka Mur/Baut"
+}, {
+    "Kode": "3030206008",
+    "Barang": "Kunci Khusus Moment"
+}, {
+    "Kode": "3030206009",
+    "Barang": "Kunci Khusus Alat Besar Udara"
+}, {
+    "Kode": "3030206010",
+    "Barang": "Kunci Khusus Casis Alat Besar Udara"
+}, {
+    "Kode": "3030206011",
+    "Barang": "Digital Tang Ampere"
+}, {
+    "Kode": "3030206012",
+    "Barang": "Digital Tachometer"
+}, {
+    "Kode": "3030206013",
+    "Barang": "Foot Klep"
+}, {
+    "Kode": "3030206014",
+    "Barang": "Cincin/Kopling Slang Hydrant"
+}, {
+    "Kode": "3030206015",
+    "Barang": "Kunci  L"
+}, {
+    "Kode": "3030206016",
+    "Barang": "TBA"
+}, {
+    "Kode": "3030206999",
+    "Barang": "Perkakas Khusus (Special Tools) Lainnya"
+}, {
+    "Kode": "3030207001",
+    "Barang": "Gergaji"
+}, {
+    "Kode": "3030207002",
+    "Barang": "Ketam"
+}, {
+    "Kode": "3030207003",
+    "Barang": "Bor"
+}, {
+    "Kode": "3030207004",
+    "Barang": "Pahat"
+}, {
+    "Kode": "3030207005",
+    "Barang": "Kakak Tua"
+}, {
+    "Kode": "3030207006",
+    "Barang": "Water  Pas"
+}, {
+    "Kode": "3030207007",
+    "Barang": "Siku"
+}, {
+    "Kode": "3030207008",
+    "Barang": "Palu"
+}, {
+    "Kode": "3030207999",
+    "Barang": "Perkakas Bengkel Kerja Lainnya"
+}, {
+    "Kode": "3030208001",
+    "Barang": "Tanggem"
+}, {
+    "Kode": "3030208002",
+    "Barang": "Gunting Plat"
+}, {
+    "Kode": "3030208003",
+    "Barang": "Landasan Kenteng"
+}, {
+    "Kode": "3030208004",
+    "Barang": "Kunci Kaul"
+}, {
+    "Kode": "3030208005",
+    "Barang": "Gunting Plat Tangan"
+}, {
+    "Kode": "3030208006",
+    "Barang": "Tang Kombinasi"
+}, {
+    "Kode": "3030208007",
+    "Barang": "Tang Potong"
+}, {
+    "Kode": "3030208008",
+    "Barang": "Betel, Seter, Drip, Dreg, Sneper"
+}, {
+    "Kode": "3030208009",
+    "Barang": "Pukul Konde"
+}, {
+    "Kode": "3030208010",
+    "Barang": "Pukul Lengkung"
+}, {
+    "Kode": "3030208011",
+    "Barang": "Pukul Sabit"
+}, {
+    "Kode": "3030208012",
+    "Barang": "Kikir"
+}, {
+    "Kode": "3030208013",
+    "Barang": "Kunci Pas"
+}, {
+    "Kode": "3030208014",
+    "Barang": "Tang Senai & Tap"
+}, {
+    "Kode": "3030208015",
+    "Barang": "Drei Biasa (Obeng)"
+}, {
+    "Kode": "3030208016",
+    "Barang": "Drei Kembang (Obeng)"
+}, {
+    "Kode": "3030208017",
+    "Barang": "Drei Ketok (Obeng)"
+}, {
+    "Kode": "3030208018",
+    "Barang": "Seket  Mat"
+}, {
+    "Kode": "3030208019",
+    "Barang": "Jangka  Besi"
+}, {
+    "Kode": "3030208020",
+    "Barang": "Kunci Stang"
+}, {
+    "Kode": "3030208999",
+    "Barang": "Peralatan Tukang  Besi Lainnya"
+}, {
+    "Kode": "3030209001",
+    "Barang": "Tatah  Biasa"
+}, {
+    "Kode": "3030301039",
+    "Barang": "DME Ground Station Test Set (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301040",
+    "Barang": "UHF Signal Generator"
+}, {
+    "Kode": "3030301041",
+    "Barang": "Sweep  Oscillator (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301042",
+    "Barang": "VHF Signal Generator"
+}, {
+    "Kode": "3030301043",
+    "Barang": "Spektrum Analyzer"
+}, {
+    "Kode": "3030301044",
+    "Barang": "Tube Tester  (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301045",
+    "Barang": "Dosimeter & Accesories"
+}, {
+    "Kode": "3030301046",
+    "Barang": "Survey Meter (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301047",
+    "Barang": "Sound  Detector"
+}, {
+    "Kode": "3030301048",
+    "Barang": "Vidicon Quick Tester"
+}, {
+    "Kode": "3030301049",
+    "Barang": "Pattern For TV Adjustment"
+}, {
+    "Kode": "3030301050",
+    "Barang": "Power Meter Cillibrator"
+}, {
+    "Kode": "3030301051",
+    "Barang": "Thermistor"
+}, {
+    "Kode": "3030301052",
+    "Barang": "Signal Generator Audio VHF, UHF"
+}, {
+    "Kode": "3030301053",
+    "Barang": "X - Tal Detector"
+}, {
+    "Kode": "3030301054",
+    "Barang": "CO - Axial Slot Line"
+}, {
+    "Kode": "3030301055",
+    "Barang": "RF Volt Meter"
+}, {
+    "Kode": "3030301056",
+    "Barang": "Frekquency Wave Meter"
+}, {
+    "Kode": "3030301057",
+    "Barang": "Megger"
+}, {
+    "Kode": "3030301058",
+    "Barang": "CO Axial Attenuator"
+}, {
+    "Kode": "3030301059",
+    "Barang": "Variabel CO Axial Attenuator"
+}, {
+    "Kode": "3030301060",
+    "Barang": "Directional Coupler (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301061",
+    "Barang": "Pin Modulator"
+}, {
+    "Kode": "3030301062",
+    "Barang": "Logig Trouble Shoting Kit"
+}, {
+    "Kode": "3030301063",
+    "Barang": "SWR Meter"
+}, {
+    "Kode": "3030301064",
+    "Barang": "Memori Programmer"
+}, {
+    "Kode": "3030301065",
+    "Barang": "Logig Statc  Analyzer"
+}, {
+    "Kode": "3030301066",
+    "Barang": "Frequency Cuonter"
+}, {
+    "Kode": "3030301067",
+    "Barang": "Universal Bridge"
+}, {
+    "Kode": "3030301068",
+    "Barang": "FB Meter"
+}, {
+    "Kode": "3030301069",
+    "Barang": "Noise"
+}, {
+    "Kode": "3030301070",
+    "Barang": "Radiation Monitor Isotropic"
+}, {
+    "Kode": "3030301071",
+    "Barang": "Phase  Meter"
+}, {
+    "Kode": "3030301072",
+    "Barang": "Global Positioning System"
+}, {
+    "Kode": "3030301073",
+    "Barang": "ILS. Calibration RX."
+}, {
+    "Kode": "3030301074",
+    "Barang": "DCP ( Alat Control ) Sensor"
+}, {
+    "Kode": "3030301075",
+    "Barang": "Moisteur Meter"
+}, {
+    "Kode": "3030301076",
+    "Barang": "Rota Meter"
+}, {
+    "Kode": "3030301077",
+    "Barang": "Mini Phasec  View"
+}, {
+    "Kode": "3030301078",
+    "Barang": "Frequency Inverter"
+}, {
+    "Kode": "3030301079",
+    "Barang": "Accumeter"
+}, {
+    "Kode": "3030301080",
+    "Barang": "Temperatur Digital"
+}, {
+    "Kode": "3030301081",
+    "Barang": "Argometer"
+}, {
+    "Kode": "3030301082",
+    "Barang": "Dial Test Indicator"
+}, {
+    "Kode": "3030301083",
+    "Barang": "Speed  Meter"
+}, {
+    "Kode": "3030301084",
+    "Barang": "Oil Bath, Hart Scientific"
+}, {
+    "Kode": "3030301085",
+    "Barang": "Speed  Detector"
+}, {
+    "Kode": "3030301086",
+    "Barang": "Thermohygrometer (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301087",
+    "Barang": "Traffic Counter"
+}, {
+    "Kode": "3030301088",
+    "Barang": "Standar Test Gauge"
+}, {
+    "Kode": "3030301090",
+    "Barang": "Sigma Meter"
+}, {
+    "Kode": "3030301091",
+    "Barang": "Ionisasi Meter"
+}, {
+    "Kode": "3030301092",
+    "Barang": "Rotan Sampler Spliter"
+}, {
+    "Kode": "3030301093",
+    "Barang": "Henry Meter"
+}, {
+    "Kode": "3030301094",
+    "Barang": "Mesin Kocok Horisontal"
+}, {
+    "Kode": "3030301095",
+    "Barang": "Capasitor Meter"
+}, {
+    "Kode": "3030301096",
+    "Barang": "Microprocessor Conductivity"
+}, {
+    "Kode": "3030301097",
+    "Barang": "UHF Out Pusttessting Equipment"
+}, {
+    "Kode": "3030301098",
+    "Barang": "Shrangkage Limit Apparatus"
+}, {
+    "Kode": "3030301099",
+    "Barang": "R.F. Signal Generator"
+}, {
+    "Kode": "3030301100",
+    "Barang": "Dewmeter Print"
+}, {
+    "Kode": "3030301102",
+    "Barang": "Orbital Shaker"
+}, {
+    "Kode": "3030301103",
+    "Barang": "VHF/UHF Dummy Load"
+}, {
+    "Kode": "3030301104",
+    "Barang": "Ozonizer"
+}, {
+    "Kode": "3030301105",
+    "Barang": "Psophometric Weighting Network"
+}, {
+    "Kode": "3030301106",
+    "Barang": "Personal CDT"
+}, {
+    "Kode": "3030301107",
+    "Barang": "Portable Test Reck"
+}, {
+    "Kode": "3030301108",
+    "Barang": "Radio Meter (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301109",
+    "Barang": "Nmotor Drive Wire Wropper"
+}, {
+    "Kode": "3030301110",
+    "Barang": "Salinity Temp Depth  Analizer"
+}, {
+    "Kode": "3030301111",
+    "Barang": "Digital Circuit Tester"
+}, {
+    "Kode": "3030301112",
+    "Barang": "Salinometer"
+}, {
+    "Kode": "3030301113",
+    "Barang": "Field Strength Meter"
+}, {
+    "Kode": "3030301114",
+    "Barang": "Acientific Soundeer System"
+}, {
+    "Kode": "3030301115",
+    "Barang": "Alterneatur"
+}, {
+    "Kode": "3030301116",
+    "Barang": "Senter Bawah Air"
+}, {
+    "Kode": "3030301117",
+    "Barang": "Mega Ohm Tester"
+}, {
+    "Kode": "3030301118",
+    "Barang": "Six Place Hidromanifold"
+}, {
+    "Kode": "3030301119",
+    "Barang": "Insulation Tester  (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301120",
+    "Barang": "Sonicator Virsoic Call Disluptor"
+}, {
+    "Kode": "3030301121",
+    "Barang": "Electric Bench"
+}, {
+    "Kode": "3030301122",
+    "Barang": "Sweep  Function Generator"
+}, {
+    "Kode": "3030301123",
+    "Barang": "Loadmeter"
+}, {
+    "Kode": "3030301124",
+    "Barang": "System  UV Sterelisasi dan Sirkulasi AI"
+}, {
+    "Kode": "3030301125",
+    "Barang": "Counter  Tester"
+}, {
+    "Kode": "3030301126",
+    "Barang": "System  For Chemical Oxygen Demond"
+}, {
+    "Kode": "3030301127",
+    "Barang": "The Dacor Seasprint Under Water  Vehicle"
+}, {
+    "Kode": "3030301128",
+    "Barang": "Titration Unit"
+}, {
+    "Kode": "3030301129",
+    "Barang": "Ultrasonic Cleaner (Alat Ukur Universal)"
+}, {
+    "Kode": "3030301130",
+    "Barang": "Water  Analysis Kit"
+}, {
+    "Kode": "3030301131",
+    "Barang": "Wheel Meter"
+}, {
+    "Kode": "3030301132",
+    "Barang": "Proyection Polariscope"
+}, {
+    "Kode": "3030301133",
+    "Barang": "CDMA/GSM Test"
+}, {
+    "Kode": "3030301134",
+    "Barang": "Antenna Selector"
+}, {
+    "Kode": "3030301135",
+    "Barang": "Log Periodic Antenna"
+}, {
+    "Kode": "3030301136",
+    "Barang": "Alat Ukur Sigmat"
+}, {
+    "Kode": "3030301137",
+    "Barang": "Alat Ukur Air Aki"
+}, {
+    "Kode": "3030301138",
+    "Barang": "True Root Mean Square  (RMS) Multimeter"
+}, {
+    "Kode": "3030301139",
+    "Barang": "TV Analyzer"
+}, {
+    "Kode": "3030301140",
+    "Barang": "Grounding Test"
+}, {
+    "Kode": "3030301141",
+    "Barang": "Distance Meter"
+}, {
+    "Kode": "3030301999",
+    "Barang": "Alat Ukur Universal Lainnya"
+}, {
+    "Kode": "3030302001",
+    "Barang": "Test Intelegensia WPPS"
+}, {
+    "Kode": "3030302002",
+    "Barang": "Test Intelegensia WISC"
+}, {
+    "Kode": "3030302003",
+    "Barang": "Test Intelegensia WB"
+}, {
+    "Kode": "3030302004",
+    "Barang": "Test Intelegensia WB Advence"
+}, {
+    "Kode": "3030302005",
+    "Barang": "Test Intelegensia Progresive Matricaral"
+}, {
+    "Kode": "3030302006",
+    "Barang": "Test Intelegensia Vineland"
+}, {
+    "Kode": "3030302007",
+    "Barang": "Test Intelegensia Black Passalon"
+}, {
+    "Kode": "3030302999",
+    "Barang": "Alat Ukur/Test Intelegensia Lainnya"
+}, {
+    "Kode": "3030303001",
+    "Barang": "Alat Ukur / Test Alat Kepribadian Dotcita"
+}, {
+    "Kode": "3030303002",
+    "Barang": "Alat Ukur / Test Alat Kepribadian Zat"
+}, {
+    "Kode": "3030303003",
+    "Barang": "Alat Ukur / Test Alat Kepribadian Warna"
+}, {
+    "Kode": "3030303004",
+    "Barang": "Alat Ukur / Test Alat Kepribadian Zondi"
+}, {
+    "Kode": "3030303005",
+    "Barang": "Alat Ukur / Test Alat Kepribadian Cat"
+}, {
+    "Kode": "3030303006",
+    "Barang": "Alat Ukur / Test Alat Kepribadian WPPZ"
+}, {
+    "Kode": "3030303007",
+    "Barang": "Alat Ukur / Test Alat Kepribadian Woinaa"
+}, {
+    "Kode": "3030303008",
+    "Barang": "Alat Ukur / Test Alat Kepribadian Kudu"
+}, {
+    "Kode": "3030303009",
+    "Barang": "Vidio Measurement"
+}, {
+    "Kode": "3030303999",
+    "Barang": "Alat Ukur / Test Alat Kepribadian Lainnya"
+}, {
+    "Kode": "3030304001",
+    "Barang": "Binder Aestalt"
+}, {
+    "Kode": "3030304002",
+    "Barang": "General Vocationalanpunde Tester"
+}, {
+    "Kode": "3030304003",
+    "Barang": "Consoroting Tester"
+}, {
+    "Kode": "3030304004",
+    "Barang": "Meroding Tester"
+}, {
+    "Kode": "3030304005",
+    "Barang": "Meroding Brinding Tester"
+}, {
+    "Kode": "3030304006",
+    "Barang": "Cord Briding Tester"
+}, {
+    "Kode": "3030304007",
+    "Barang": "Grip Diagnannonnuter"
+}, {
+    "Kode": "3030304008",
+    "Barang": "Black Anolig Muscle Dinamo Meter Jumping Meter"
+}, {
+    "Kode": "3030304009",
+    "Barang": "Modulation/Jumping Meter"
+}, {
+    "Kode": "3030304010",
+    "Barang": "Channel Conventer"
+}, {
+    "Kode": "3030304011",
+    "Barang": "RF Analyzer"
+}, {
+    "Kode": "3030304012",
+    "Barang": "Meronding Vacational Lanpunde Tester"
+}, {
+    "Kode": "3030304013",
+    "Barang": "Kekuatan Otot Pinggang"
+}, {
+    "Kode": "3030304999",
+    "Barang": "Alat Ukur / Test Klinis Lainnya"
+}, {
+    "Kode": "3030305001",
+    "Barang": "Calibration Level Generator"
+}, {
+    "Kode": "3030305002",
+    "Barang": "Color Bar Generator"
+}, {
+    "Kode": "3030305003",
+    "Barang": "Grid Pattem Generator"
+}, {
+    "Kode": "3030305004",
+    "Barang": "Grating Generator Unit"
+}, {
+    "Kode": "3030305005",
+    "Barang": "Insection Signal Generator"
+}, {
+    "Kode": "3030305006",
+    "Barang": "Insection Test Signal Generator"
+}, {
+    "Kode": "3030305007",
+    "Barang": "Multiburst Generator Unit"
+}, {
+    "Kode": "3030305008",
+    "Barang": "Pattem Generator"
+}, {
+    "Kode": "3030305009",
+    "Barang": "Stair Stope  Generator Unit"
+}, {
+    "Kode": "3030305010",
+    "Barang": "Sign Wave Generator Unit"
+}, {
+    "Kode": "3030305011",
+    "Barang": "Test Generator"
+}, {
+    "Kode": "3030305012",
+    "Barang": "Test Line Generator"
+}, {
+    "Kode": "3030305013",
+    "Barang": "TV Test Signal Generator"
+}, {
+    "Kode": "3030305014",
+    "Barang": "TV IF Signal Generator"
+}, {
+    "Kode": "3030305015",
+    "Barang": "PAL Test Generator"
+}, {
+    "Kode": "3030305016",
+    "Barang": "Monochrome Test Generator"
+}, {
+    "Kode": "3030305017",
+    "Barang": "Standard Level Generator"
+}, {
+    "Kode": "3030305018",
+    "Barang": "Interval Test Generator"
+}, {
+    "Kode": "3030305019",
+    "Barang": "Station Identification Generator"
+}, {
+    "Kode": "3030305020",
+    "Barang": "Character Generator (Alat Kalibrasi)"
+}, {
+    "Kode": "3030305021",
+    "Barang": "Video Generator"
+}, {
+    "Kode": "3030305022",
+    "Barang": "Waveform  Generator Special Efect"
+}, {
+    "Kode": "3030305023",
+    "Barang": "Test Signal Generator"
+}, {
+    "Kode": "3030305024",
+    "Barang": "Special Effect"
+}, {
+    "Kode": "3030305025",
+    "Barang": "Dead Weight Tester"
+}, {
+    "Kode": "3030305026",
+    "Barang": "Fuel Injection Test"
+}, {
+    "Kode": "3030305027",
+    "Barang": "Mater Calibrator"
+}, {
+    "Kode": "3030305028",
+    "Barang": "Pulse Generator (Alat Kalibrasi)"
+}, {
+    "Kode": "3030305029",
+    "Barang": "Autometic Syntheisizer"
+}, {
+    "Kode": "3030305030",
+    "Barang": "Pattern TV adjusment"
+}, {
+    "Kode": "3030305031",
+    "Barang": "RC Generator"
+}, {
+    "Kode": "3030305032",
+    "Barang": "Bantam  Air Sampler"
+}, {
+    "Kode": "3030305033",
+    "Barang": "Combined Vacum Pump"
+}, {
+    "Kode": "3030305034",
+    "Barang": "Class Meter II"
+}, {
+    "Kode": "3030305035",
+    "Barang": "Lend Brich (Timah Hitam)"
+}, {
+    "Kode": "3030305036",
+    "Barang": "Air Partical Tape Sampler"
+}, {
+    "Kode": "3030305037",
+    "Barang": "Universal Spectometer"
+}, {
+    "Kode": "3030305038",
+    "Barang": "GM Preamplifier P31"
+}, {
+    "Kode": "3030305039",
+    "Barang": "Crytal for D 200"
+}, {
+    "Kode": "3030305040",
+    "Barang": "Window For F 200"
+}, {
+    "Kode": "3030305041",
+    "Barang": "Seintication Detector"
+}, {
+    "Kode": "3030305042",
+    "Barang": "Radio Arsipe Sounde  Groun"
+}, {
+    "Kode": "3030305043",
+    "Barang": "Radio Arsipe Sounde  Meter"
+}, {
+    "Kode": "3030305044",
+    "Barang": "Regullating Transformator"
+}, {
+    "Kode": "3030305045",
+    "Barang": "Radio Active Source"
+}, {
+    "Kode": "3030305046",
+    "Barang": "Aloka Nuclear Instrument"
+}, {
+    "Kode": "3030305047",
+    "Barang": "Electron Calculator Hewlet"
+}, {
+    "Kode": "3030305048",
+    "Barang": "Packard  Mini Komplit"
+}, {
+    "Kode": "3030305049",
+    "Barang": "Mica Window, Griger Tube"
+}, {
+    "Kode": "3030305050",
+    "Barang": "Time Up"
+}, {
+    "Kode": "3030305051",
+    "Barang": "Tehnical Drawing Machine"
+}, {
+    "Kode": "3030305052",
+    "Barang": "Slide Resister"
+}, {
+    "Kode": "3030305053",
+    "Barang": "Tracerlab"
+}, {
+    "Kode": "3030305054",
+    "Barang": "Rapid Reading Balance"
+}, {
+    "Kode": "3030305055",
+    "Barang": "Versamatic II Scaler"
+}, {
+    "Kode": "3030305056",
+    "Barang": "Alpha Seintilation"
+}, {
+    "Kode": "3030305057",
+    "Barang": "Field Balance"
+}, {
+    "Kode": "3030305058",
+    "Barang": "Sorterak"
+}, {
+    "Kode": "3030305059",
+    "Barang": "Precicheh Grainer Electronic"
+}, {
+    "Kode": "3030305060",
+    "Barang": "Micromat Grainer Electonic"
+}, {
+    "Kode": "3030305061",
+    "Barang": "Sun Photo  Meter"
+}, {
+    "Kode": "3030305062",
+    "Barang": "Epidiascome"
+}, {
+    "Kode": "3030305063",
+    "Barang": "Regullating Transformator Radio Active Sound"
+}, {
+    "Kode": "3030305064",
+    "Barang": "Radio Active Sound  Antenna TD-2"
+}, {
+    "Kode": "3030305065",
+    "Barang": "Control Verity"
+}, {
+    "Kode": "3030305066",
+    "Barang": "Mechanic Setter"
+}, {
+    "Kode": "3030305067",
+    "Barang": "Epanics"
+}, {
+    "Kode": "3030305068",
+    "Barang": "Electronic Spear"
+}, {
+    "Kode": "3030305069",
+    "Barang": "Transmitting Vacuum"
+}, {
+    "Kode": "3030305070",
+    "Barang": "Automatic Emergency Lighting"
+}, {
+    "Kode": "3030305071",
+    "Barang": "Preccision Laboratory Balance"
+}, {
+    "Kode": "3030305072",
+    "Barang": "Moisture Determination Balance"
+}, {
+    "Kode": "3030305073",
+    "Barang": "Loud And Large Converter"
+}, {
+    "Kode": "3030305074",
+    "Barang": "Prim Apparat"
+}, {
+    "Kode": "3030305075",
+    "Barang": "Thermostat"
+}, {
+    "Kode": "3030305076",
+    "Barang": "Thermohygrostat"
+}, {
+    "Kode": "3030305077",
+    "Barang": "Barostat"
+}, {
+    "Kode": "3030305078",
+    "Barang": "Alat Tera Radiasi Matahari"
+}, {
+    "Kode": "3030305079",
+    "Barang": "Alat Tera Kecepatan Angin"
+}, {
+    "Kode": "3030305080",
+    "Barang": "Amplifier Micro Thermometer"
+}, {
+    "Kode": "3030305081",
+    "Barang": "Visilight Recorder"
+}, {
+    "Kode": "3030305082",
+    "Barang": "Vibrometer (Alat Kalibrasi)"
+}, {
+    "Kode": "3030305083",
+    "Barang": "Refracsion Seismograph"
+}, {
+    "Kode": "3030305084",
+    "Barang": "Radio Sonde"
+}, {
+    "Kode": "3030305085",
+    "Barang": "Hand Vibrstion Test"
+}, {
+    "Kode": "3030305086",
+    "Barang": "Flaw Detector"
+}, {
+    "Kode": "3030305087",
+    "Barang": "Multigas Detector"
+}, {
+    "Kode": "3030305088",
+    "Barang": "Softeware Multigas Retector"
+}, {
+    "Kode": "3030305089",
+    "Barang": "Caoting Thicknes Gauge"
+}, {
+    "Kode": "3030305090",
+    "Barang": "Wet Film Thicknes Gauge"
+}, {
+    "Kode": "3030305091",
+    "Barang": "Dual Scape  Electrinic Coating Thicknes"
+}, {
+    "Kode": "3030305092",
+    "Barang": "Ultrasonic Thicknes Test"
+}, {
+    "Kode": "3030315009",
+    "Barang": "Carlift/Ptlift"
+}, {
+    "Kode": "3030315010",
+    "Barang": "Axle Weight Beam"
+}, {
+    "Kode": "3030315011",
+    "Barang": "Chasis Lubricator"
+}, {
+    "Kode": "3030315012",
+    "Barang": "Tune Up Tester  (Alat Penguji Kendaraan Bermotor)"
+}, {
+    "Kode": "3030315013",
+    "Barang": "Compression Gauge"
+}, {
+    "Kode": "3030315014",
+    "Barang": "Diesel Timing Tachometer"
+}, {
+    "Kode": "3030315015",
+    "Barang": "Vernier Caliper"
+}, {
+    "Kode": "3030315016",
+    "Barang": "Sound  Scope"
+}, {
+    "Kode": "3030315017",
+    "Barang": "Hydraulic Tester"
+}, {
+    "Kode": "3030315018",
+    "Barang": "Temperature Gauge"
+}, {
+    "Kode": "3030315019",
+    "Barang": "Whitsone Brigg"
+}, {
+    "Kode": "3030315020",
+    "Barang": "Tire Pressure Gauge"
+}, {
+    "Kode": "3030315021",
+    "Barang": "Service Lift"
+}, {
+    "Kode": "3030315022",
+    "Barang": "Tachometer (Mechanical)"
+}, {
+    "Kode": "3030315023",
+    "Barang": "Tachometer (electric)"
+}, {
+    "Kode": "3030315024",
+    "Barang": "Spark Plug Cleaner"
+}, {
+    "Kode": "3030315025",
+    "Barang": "Spark Plug Quick Tester"
+}, {
+    "Kode": "3030315026",
+    "Barang": "Injection Pump Tester"
+}, {
+    "Kode": "3030315027",
+    "Barang": "Chassis Analyzer"
+}, {
+    "Kode": "3030315028",
+    "Barang": "Chassis Dynamometer"
+}, {
+    "Kode": "3030315029",
+    "Barang": "Engine Analyzer"
+}, {
+    "Kode": "3030315030",
+    "Barang": "Engine Dynamometer"
+}, {
+    "Kode": "3030315031",
+    "Barang": "Brinell Hardness Tester"
+}, {
+    "Kode": "3030315999",
+    "Barang": "Alat Penguji Kendaraan Bermotor  Lainnya"
+}, {
+    "Kode": "3030316001",
+    "Barang": "Transmission Measuring Set Modulator"
+}, {
+    "Kode": "3030316002",
+    "Barang": "DME Ground Station Test Set (Specific Set)"
+}, {
+    "Kode": "3030316003",
+    "Barang": "Communication Receiver Set"
+}, {
+    "Kode": "3030316004",
+    "Barang": "ILS Calibration"
+}, {
+    "Kode": "3030316005",
+    "Barang": "Measuring Set"
+}, {
+    "Kode": "3030316999",
+    "Barang": "Specific Set Lainnya"
+}, {
+    "Kode": "3030317001",
+    "Barang": "Sunshine Recorder"
+}, {
+    "Kode": "3030317002",
+    "Barang": "Solarimeter (Alat Pengukur Keadaan Alam)"
+}, {
+    "Kode": "3030317003",
+    "Barang": "Pyranometer"
+}, {
+    "Kode": "3030317004",
+    "Barang": "Pyrheliometer"
+}, {
+    "Kode": "3030317005",
+    "Barang": "Net Radiometer"
+}, {
+    "Kode": "3030317006",
+    "Barang": "Digital Radiometer"
+}, {
+    "Kode": "3030317007",
+    "Barang": "Actinometer"
+}, {
+    "Kode": "3030317008",
+    "Barang": "Integrating Actino Meter"
+}, {
+    "Kode": "3030317009",
+    "Barang": "Albedometer"
+}, {
+    "Kode": "3030317010",
+    "Barang": "Gun Belani"
+}, {
+    "Kode": "3030317011",
+    "Barang": "Angstroom Pyrheliometer"
+}, {
+    "Kode": "3030317012",
+    "Barang": "Solarigraph"
+}, {
+    "Kode": "3030317013",
+    "Barang": "Pyrheliograph"
+}, {
+    "Kode": "3030317014",
+    "Barang": "Actiongraph"
+}, {
+    "Kode": "3030317015",
+    "Barang": "Pyranograph"
+}, {
+    "Kode": "3030317016",
+    "Barang": "X-Y Recorder  (Alat Pengukur Keadaan Alam)"
+}, {
+    "Kode": "3030317017",
+    "Barang": "Penakar Hujan"
+}, {
+    "Kode": "3030317018",
+    "Barang": "Reinfall Recorder  Type Bucket"
+}, {
+    "Kode": "3030317019",
+    "Barang": "Leaf Area Meter"
+}, {
+    "Kode": "3030317020",
+    "Barang": "Planimeter (Alat Pengukur Keadaan Alam)"
+}, {
+    "Kode": "3030317021",
+    "Barang": "Ceilometer"
+}, {
+    "Kode": "3030317022",
+    "Barang": "Ceilograph"
+}, {
+    "Kode": "3030317023",
+    "Barang": "Weather Radar  (Alat Pengukur Keadaan Alam)"
+}, {
+    "Kode": "3030317024",
+    "Barang": "Open Pan Evaporimeter"
+}, {
+    "Kode": "3030317025",
+    "Barang": "Piche Evaporimeter"
+}, {
+    "Kode": "3030317084",
+    "Barang": "Digital Analog Magnetograph"
+}, {
+    "Kode": "3030317085",
+    "Barang": "Deklinometer"
+}, {
+    "Kode": "3030317086",
+    "Barang": "Inklinometer"
+}, {
+    "Kode": "3030317087",
+    "Barang": "QHN Instrument"
+}, {
+    "Kode": "3030317088",
+    "Barang": "BMZ Instrument"
+}, {
+    "Kode": "3030317089",
+    "Barang": "Proton  Magnetograph"
+}, {
+    "Kode": "3030317090",
+    "Barang": "Portable Variograph"
+}, {
+    "Kode": "3030317091",
+    "Barang": "Stationary Variograph"
+}, {
+    "Kode": "3030317092",
+    "Barang": "Potential Gradient Meter"
+}, {
+    "Kode": "3030317093",
+    "Barang": "Conductivity Meter (Alat Pengukur Keadaan Alam)"
+}, {
+    "Kode": "3030317094",
+    "Barang": "Air Aerth Current  Meter"
+}, {
+    "Kode": "3030317095",
+    "Barang": "Ligthing Counter"
+}, {
+    "Kode": "3030317096",
+    "Barang": "Ionosode"
+}, {
+    "Kode": "3030317097",
+    "Barang": "Satellite Positioning"
+}, {
+    "Kode": "3030317098",
+    "Barang": "Transit Thedolite"
+}, {
+    "Kode": "3030317099",
+    "Barang": "Astrolebe"
+}, {
+    "Kode": "3030317100",
+    "Barang": "La Coste And Remberg 6523"
+}, {
+    "Kode": "3030317101",
+    "Barang": "Microtremor"
+}, {
+    "Kode": "3030317102",
+    "Barang": "Portable Seismograph"
+}, {
+    "Kode": "3030317103",
+    "Barang": "Digital Accelerograph"
+}, {
+    "Kode": "3030317104",
+    "Barang": "Digital Broadband Seismograph"
+}, {
+    "Kode": "3030317105",
+    "Barang": "PC Drum"
+}, {
+    "Kode": "3030317106",
+    "Barang": "Tribrach"
+}, {
+    "Kode": "3030317107",
+    "Barang": "Sangkar  Meteorologi"
+}, {
+    "Kode": "3030317108",
+    "Barang": "Thermometer Max"
+}, {
+    "Kode": "3030317109",
+    "Barang": "Thermometer Min"
+}, {
+    "Kode": "3030317110",
+    "Barang": "Thermometer Apung"
+}, {
+    "Kode": "3030317111",
+    "Barang": "Thermometer Tanah"
+}, {
+    "Kode": "3030317112",
+    "Barang": "Thermometer Suhu Air Laut"
+}, {
+    "Kode": "3030317113",
+    "Barang": "Flow Watch"
+}, {
+    "Kode": "3030317114",
+    "Barang": "Portable Weather Season"
+}, {
+    "Kode": "3030317115",
+    "Barang": "Psychrometer Assman"
+}, {
+    "Kode": "3030317116",
+    "Barang": "Automatic Weather Station (AWS)"
+}, {
+    "Kode": "3030317117",
+    "Barang": "Ground Rason Receiver"
+}, {
+    "Kode": "3030317118",
+    "Barang": "Automatic Weather Observing Station (AWOS)"
+}, {
+    "Kode": "3030317119",
+    "Barang": "Intensity Meter"
+}, {
+    "Kode": "3030317120",
+    "Barang": "Sistem Informasi Meteorologi Otomatis (SIMO)"
+}, {
+    "Kode": "3030317121",
+    "Barang": "Seismic Borehole"
+}, {
+    "Kode": "3030317122",
+    "Barang": "Low Level Wind Shear  Alert System"
+}, {
+    "Kode": "3030317123",
+    "Barang": "Tide Gauge  Tsunami"
+}, {
+    "Kode": "3030317124",
+    "Barang": "Wind Profiler"
+}, {
+    "Kode": "3030317125",
+    "Barang": "Alat Monitoring Tsunami"
+}, {
+    "Kode": "3030317126",
+    "Barang": "Light Detecting and Ranging (LIDAR)"
+}, {
+    "Kode": "3030317127",
+    "Barang": "Alat Deteksi Getaran Tanah"
+}, {
+    "Kode": "3030317128",
+    "Barang": "Infrasound Meter"
+}, {
+    "Kode": "3030317129",
+    "Barang": "Radiosonde"
+}, {
+    "Kode": "3030317130",
+    "Barang": "Magnetograph"
+}, {
+    "Kode": "3030317131",
+    "Barang": "Lightning Detector"
+}, {
+    "Kode": "3030317132",
+    "Barang": "Refraksi Meter"
+}, {
+    "Kode": "3030317133",
+    "Barang": "Resistivity Meter"
+}, {
+    "Kode": "3030317134",
+    "Barang": "Handheld Teropong"
+}, {
+    "Kode": "3030317135",
+    "Barang": "Digital Soil Thermometer"
+}, {
+    "Kode": "3030317136",
+    "Barang": "Thermometer Minimum Rumput"
+}, {
+    "Kode": "3030317137",
+    "Barang": "Handheld Digital Soil Moisture"
+}, {
+    "Kode": "3030317138",
+    "Barang": "Wind Tunnel"
+}, {
+    "Kode": "3030317139",
+    "Barang": "Alat Penakar Hujan"
+}, {
+    "Kode": "3030317140",
+    "Barang": "Automatic Rain Gauge  (ARG)"
+}, {
+    "Kode": "3030317141",
+    "Barang": "Actinograph"
+}, {
+    "Kode": "3040108005",
+    "Barang": "Beach Seine ( Pukat Pantai )"
+}, {
+    "Kode": "3040108006",
+    "Barang": "Drift Gill Net ( Jaring Insang Hanyut  )"
+}, {
+    "Kode": "3040108007",
+    "Barang": "Encircling Gill Net ( Jaring Insang Lingkar )"
+}, {
+    "Kode": "3040108008",
+    "Barang": "Shrimp Gill Net ( Jaring Klitik )"
+}, {
+    "Kode": "3040108009",
+    "Barang": "Set Gill Net ( Jaring Insang Tetap  )"
+}, {
+    "Kode": "3040108010",
+    "Barang": "Boat Raft Lift Net ( Bagan Perahu/Rakit )"
+}, {
+    "Kode": "3040108011",
+    "Barang": "Bagan Tancap  Berikut Kelong"
+}, {
+    "Kode": "3040108012",
+    "Barang": "Scoop Net ( Serok )"
+}, {
+    "Kode": "3040108013",
+    "Barang": "Jaring Angkat Lainnya"
+}, {
+    "Kode": "3040108014",
+    "Barang": "Guiding Barrier ( Serok )"
+}, {
+    "Kode": "3040108015",
+    "Barang": "Stow Net ( Jermal Termasuk Togo )"
+}, {
+    "Kode": "3040108016",
+    "Barang": "Portable Traps  ( Bubu )"
+}, {
+    "Kode": "3040108017",
+    "Barang": "Perangkap Lainnya"
+}, {
+    "Kode": "3040108018",
+    "Barang": "Tuna Long Line ( Rawai Tuna )"
+}, {
+    "Kode": "3040108019",
+    "Barang": "Set Long Line ( Rawai Tetap  )"
+}, {
+    "Kode": "3040108020",
+    "Barang": "Skipjack Pole And Lines ( Huhate  )"
+}, {
+    "Kode": "3040108021",
+    "Barang": "Trool Line ( Pancing Tonda  )"
+}, {
+    "Kode": "3040108022",
+    "Barang": "Pancing Lainnya"
+}, {
+    "Kode": "3040108023",
+    "Barang": "Muroami Inc. Mallalugis"
+}, {
+    "Kode": "3040108024",
+    "Barang": "Jala"
+}, {
+    "Kode": "3040108025",
+    "Barang": "Garpu"
+}, {
+    "Kode": "3040108026",
+    "Barang": "Tombak"
+}, {
+    "Kode": "3040108027",
+    "Barang": "Sea Water  Reservoir"
+}, {
+    "Kode": "3040108028",
+    "Barang": "Bak Pemeliharaan Sementara"
+}, {
+    "Kode": "3040108029",
+    "Barang": "Bak Pengendapan"
+}, {
+    "Kode": "3040108030",
+    "Barang": "Keramba ( Jaring Apung )"
+}, {
+    "Kode": "3040108031",
+    "Barang": "Jaring Lingkar"
+}, {
+    "Kode": "3040108032",
+    "Barang": "Pukat Tarik Berkapal"
+}, {
+    "Kode": "3040108033",
+    "Barang": "Pukat Hela"
+}, {
+    "Kode": "3040108034",
+    "Barang": "Pukat Dorong"
+}, {
+    "Kode": "3040108035",
+    "Barang": "Penggaruk"
+}, {
+    "Kode": "3040108036",
+    "Barang": "Jaring Angkat Menetap"
+}, {
+    "Kode": "3040108037",
+    "Barang": "Jaring Angkat Tidak Menetap"
+}, {
+    "Kode": "3040108038",
+    "Barang": "Alat yang Dijatuhkan"
+}, {
+    "Kode": "3040108039",
+    "Barang": "Alat Penjepit dan Melukai"
+}, {
+    "Kode": "3040108999",
+    "Barang": "Alat Produksi Perikanan Lainnya"
+}, {
+    "Kode": "3040199999",
+    "Barang": "Alat Pengolahan Lainnya"
+}, {
+    "Kode": "305",
+    "Barang": "ALAT KANTOR & RUMAH TANGGA"
+}, {
+    "Kode": "30501",
+    "Barang": "ALAT KANTOR"
+}, {
+    "Kode": "3050101001",
+    "Barang": "Mesin Ketik Manual Portable (11-13  Inci)"
+}, {
+    "Kode": "3050101002",
+    "Barang": "Mesin Ketik Manual Standard (14-16  Inci)"
+}, {
+    "Kode": "3050101003",
+    "Barang": "Mesin Ketik Manual Langewagon (18-27  Inci)"
+}, {
+    "Kode": "3050101004",
+    "Barang": "Mesin Ketik Listrik"
+}, {
+    "Kode": "3050101005",
+    "Barang": "Mesin Ketik Listrik Potable (11-13  Inci)"
+}, {
+    "Kode": "3050101006",
+    "Barang": "Mesin Ketik Listrik Standard (14-16  Inci)"
+}, {
+    "Kode": "3050101007",
+    "Barang": "Mesin Ketik Listrik Langewagon (18-27  Inci)"
+}, {
+    "Kode": "3050101008",
+    "Barang": "Mesin Ketik Elektronik/Selektrik"
+}, {
+    "Kode": "3050101009",
+    "Barang": "Mesin Ketik Braille"
+}, {
+    "Kode": "3050101010",
+    "Barang": "Mesin Phromosons"
+}, {
+    "Kode": "3050101011",
+    "Barang": "Mesin Cetak Stereo  Piper (Braille)"
+}, {
+    "Kode": "3050101999",
+    "Barang": "Mesin Ketik Lainnya"
+}, {
+    "Kode": "3050102001",
+    "Barang": "Mesin Hitung Manual"
+}, {
+    "Kode": "3050102002",
+    "Barang": "Mesin Hitung Listrik"
+}, {
+    "Kode": "3050102003",
+    "Barang": "Mesin Hitung Elektronik/Calculator"
+}, {
+    "Kode": "3050206036",
+    "Barang": "Dispenser"
+}, {
+    "Kode": "3050206037",
+    "Barang": "Mimbar/Podium"
+}, {
+    "Kode": "3050206038",
+    "Barang": "Gucci"
+}, {
+    "Kode": "3050206039",
+    "Barang": "Tangga  Hidrolik"
+}, {
+    "Kode": "3050206040",
+    "Barang": "Palu Sidang"
+}, {
+    "Kode": "3050206041",
+    "Barang": "Mesin Pengering Pakaian"
+}, {
+    "Kode": "3050206042",
+    "Barang": "Lambang Instansi"
+}, {
+    "Kode": "3050206043",
+    "Barang": "Lonceng/Genta"
+}, {
+    "Kode": "3050206044",
+    "Barang": "Mesin Pemotong Keramik"
+}, {
+    "Kode": "3050206045",
+    "Barang": "Coffee Maker"
+}, {
+    "Kode": "3050206046",
+    "Barang": "Handy Cam"
+}, {
+    "Kode": "3050206047",
+    "Barang": "Mesin Obras"
+}, {
+    "Kode": "3050206048",
+    "Barang": "Mesin Potong  Kain"
+}, {
+    "Kode": "3050206049",
+    "Barang": "Mesin Pelubang Kancing"
+}, {
+    "Kode": "3050206050",
+    "Barang": "Meja Potong"
+}, {
+    "Kode": "3050206051",
+    "Barang": "Rader"
+}, {
+    "Kode": "3050206052",
+    "Barang": "Manequin (Boneka)"
+}, {
+    "Kode": "3050206053",
+    "Barang": "Pinset (Pisau Lobang Kancing)"
+}, {
+    "Kode": "3050206054",
+    "Barang": "Mini Compo"
+}, {
+    "Kode": "3050206055",
+    "Barang": "Heater  (Alat Rumah  Tangga  Lainnya ( Home Use ))"
+}, {
+    "Kode": "3050206056",
+    "Barang": "Karpet"
+}, {
+    "Kode": "3050206057",
+    "Barang": "Vertikal Blind"
+}, {
+    "Kode": "3050206058",
+    "Barang": "Gordyin/Kray"
+}, {
+    "Kode": "3050206059",
+    "Barang": "Kabel Roll"
+}, {
+    "Kode": "3050206060",
+    "Barang": "Asbak Tinggi"
+}, {
+    "Kode": "3050206061",
+    "Barang": "Keset Kaki"
+}, {
+    "Kode": "3050206062",
+    "Barang": "Sun Screen"
+}, {
+    "Kode": "3050206063",
+    "Barang": "Alat Pemanas Ruangan"
+}, {
+    "Kode": "3050206064",
+    "Barang": "Lemari Plastik"
+}, {
+    "Kode": "3050206065",
+    "Barang": "Mesin Pengering Tangan"
+}, {
+    "Kode": "3050206066",
+    "Barang": "Panggung"
+}, {
+    "Kode": "3050206067",
+    "Barang": "Mesin Pedding"
+}, {
+    "Kode": "3050206068",
+    "Barang": "DVD Player"
+}, {
+    "Kode": "3050206069",
+    "Barang": "Lampu Belajar"
+}, {
+    "Kode": "3050206070",
+    "Barang": "Tangga"
+}, {
+    "Kode": "3050206071",
+    "Barang": "Kabel"
+}, {
+    "Kode": "3050206072",
+    "Barang": "Lampu"
+}, {
+    "Kode": "3050206073",
+    "Barang": "Jemuran"
+}, {
+    "Kode": "3050206074",
+    "Barang": "Patung  Peraga Pakaian"
+}, {
+    "Kode": "3050206075",
+    "Barang": "Gendola"
+}, {
+    "Kode": "3050206076",
+    "Barang": "Gunting Rumput  Non Mesin"
+}, {
+    "Kode": "3050206077",
+    "Barang": "Bendera  Negara"
+}, {
+    "Kode": "3050206078",
+    "Barang": "Bingkai Foto"
+}, {
+    "Kode": "3050206079",
+    "Barang": "Alat Pangkas Rambut  Listrik"
+}, {
+    "Kode": "3050206080",
+    "Barang": "Bracket Standing Peralatan"
+}, {
+    "Kode": "3050206081",
+    "Barang": "Tangki Air"
+}, {
+    "Kode": "3050206082",
+    "Barang": "Home Theater"
+}, {
+    "Kode": "3050206083",
+    "Barang": "Lampu Tegak/Standing Lamp"
+}, {
+    "Kode": "3050206084",
+    "Barang": "Lampu Dinding"
+}, {
+    "Kode": "3050206085",
+    "Barang": "Tempat Sampah"
+}, {
+    "Kode": "3050206086",
+    "Barang": "Lampu Emergency"
+}, {
+    "Kode": "3050206087",
+    "Barang": "Neon Box"
+}, {
+    "Kode": "3050206088",
+    "Barang": "Bunga Plastik/Pohon Artificial"
+}, {
+    "Kode": "3050206089",
+    "Barang": "Pengharum Ruangan Aromaterapi"
+}, {
+    "Kode": "3050206999",
+    "Barang": "Alat Rumah  Tangga  Lainnya ( Home Use )"
+}, {
+    "Kode": "3050299999",
+    "Barang": "Alat Rumah  Tangga  Lainnya"
+}, {
+    "Kode": "3060102074",
+    "Barang": "Micro Film"
+}, {
+    "Kode": "3060102075",
+    "Barang": "Mixer PVC"
+}, {
+    "Kode": "3060102076",
+    "Barang": "Unit Replenieser Tank"
+}, {
+    "Kode": "3060102077",
+    "Barang": "Horizontal Motorized Film Rewinder"
+}, {
+    "Kode": "3060102078",
+    "Barang": "Vertical Motorized Film Rewinder"
+}, {
+    "Kode": "3060102079",
+    "Barang": "Manual Film Rewinder"
+}, {
+    "Kode": "3060102080",
+    "Barang": "Mesin Prosesing Film Negatif"
+}, {
+    "Kode": "3060102081",
+    "Barang": "Mesin Prosesing Film Positif"
+}, {
+    "Kode": "3060102082",
+    "Barang": "Mesin Prosesing Film Warna  Negatif (ECN)"
+}, {
+    "Kode": "3060102083",
+    "Barang": "Mesin Prosesing Film Warna  Positif (ECP)"
+}, {
+    "Kode": "3060102084",
+    "Barang": "Mesin Film Color Analyzer"
+}, {
+    "Kode": "3060102085",
+    "Barang": "Analitical Balance (Peralatan Studio Video Dan Film)"
+}, {
+    "Kode": "3060102086",
+    "Barang": "Alat Pemanas Prosesing ( Water  Heater  )"
+}, {
+    "Kode": "3060102087",
+    "Barang": "Stapler Film"
+}, {
+    "Kode": "3060102088",
+    "Barang": "Magnetic Stip"
+}, {
+    "Kode": "3060102089",
+    "Barang": "Splitzer Tape"
+}, {
+    "Kode": "3060102090",
+    "Barang": "Meja Editing Film"
+}, {
+    "Kode": "3060102091",
+    "Barang": "Digital Tbc"
+}, {
+    "Kode": "3060102092",
+    "Barang": "Titanium Tank Single Shaft"
+}, {
+    "Kode": "3060102093",
+    "Barang": "Temperatur Control C/W"
+}, {
+    "Kode": "3060102094",
+    "Barang": "Gear Box Sun Assy"
+}, {
+    "Kode": "3060102095",
+    "Barang": "Tacho Generator For Drive Motor Raching"
+}, {
+    "Kode": "3060102096",
+    "Barang": "Circulation System  Complet"
+}, {
+    "Kode": "3060102097",
+    "Barang": "Chiller Water  Complet"
+}, {
+    "Kode": "3060102098",
+    "Barang": "Video Audio Jack Panel"
+}, {
+    "Kode": "3060102099",
+    "Barang": "Automatic Emergency Light"
+}, {
+    "Kode": "3060102100",
+    "Barang": "Film Chain Multiplier"
+}, {
+    "Kode": "3060102101",
+    "Barang": "Photo  Tustel"
+}, {
+    "Kode": "3060102102",
+    "Barang": "Photo  Tustel Polaroid"
+}, {
+    "Kode": "3060102103",
+    "Barang": "Betacam Recorder/Player"
+}, {
+    "Kode": "3060102104",
+    "Barang": "Slide Rail"
+}, {
+    "Kode": "3060102105",
+    "Barang": "Weapon  & Metal Detector ( Check Gate )"
+}, {
+    "Kode": "3060102107",
+    "Barang": "Layar Film/Projector"
+}, {
+    "Kode": "3060102108",
+    "Barang": "Camera  Tune Simulator"
+}, {
+    "Kode": "3060102109",
+    "Barang": "Dry Splitzer Film"
+}, {
+    "Kode": "3060102110",
+    "Barang": "Video Tone Cleaner"
+}, {
+    "Kode": "3060102111",
+    "Barang": "Mini Viewer"
+}, {
+    "Kode": "3060102112",
+    "Barang": "Push Button Control Panel"
+}, {
+    "Kode": "3060102113",
+    "Barang": "Rak Terminal Vencing"
+}, {
+    "Kode": "3060102114",
+    "Barang": "Standard True Signal/Master Rack"
+}, {
+    "Kode": "3060102115",
+    "Barang": "Motor Driver"
+}, {
+    "Kode": "3060102116",
+    "Barang": "Analog Delay (Peralatan Studio Video Dan Film)"
+}, {
+    "Kode": "3060102117",
+    "Barang": "Standard Point Animation"
+}, {
+    "Kode": "3060102118",
+    "Barang": "Head Set"
+}, {
+    "Kode": "3060102119",
+    "Barang": "Character Effect Interface"
+}, {
+    "Kode": "3060102120",
+    "Barang": "Lighting Head Body"
+}, {
+    "Kode": "3060102121",
+    "Barang": "Lighting Mechanic"
+}, {
+    "Kode": "3060102122",
+    "Barang": "Alos 321 Fiche Reader"
+}, {
+    "Kode": "3060102123",
+    "Barang": "Alos 321 Alos Reader"
+}, {
+    "Kode": "3060102124",
+    "Barang": "Inserter Jacket  Filmnes Model Frf-160 & 3500"
+}, {
+    "Kode": "3060102125",
+    "Barang": "Diaso Printer, 404"
+}, {
+    "Kode": "3060102126",
+    "Barang": "Diaso Processor 404 dan 404 D"
+}, {
+    "Kode": "3060102127",
+    "Barang": "Camera  Under Water"
+}, {
+    "Kode": "3060102128",
+    "Barang": "Camera  Digital"
+}, {
+    "Kode": "3060102129",
+    "Barang": "Tas Kamera"
+}, {
+    "Kode": "3060102130",
+    "Barang": "Lampu Blitz Kamera"
+}, {
+    "Kode": "3060102131",
+    "Barang": "Lensa Filter"
+}, {
+    "Kode": "3060102132",
+    "Barang": "Video Conference"
+}, {
+    "Kode": "3060102133",
+    "Barang": "Turbo IDDR (Intelligent Digital Disk Recorder)"
+}, {
+    "Kode": "3060102134",
+    "Barang": "Video Router"
+}, {
+    "Kode": "3060102135",
+    "Barang": "LCD Monitor"
+}, {
+    "Kode": "3060102136",
+    "Barang": "Sdi Rasteriser"
+}, {
+    "Kode": "3060102137",
+    "Barang": "Audio Monitoring Unit"
+}, {
+    "Kode": "3060102138",
+    "Barang": "Frame  Synchronizer"
+}, {
+    "Kode": "3060102139",
+    "Barang": "Audio Transcoder"
+}, {
+    "Kode": "3060102140",
+    "Barang": "Audio Converter"
+}, {
+    "Kode": "3060102141",
+    "Barang": "Automation Main"
+}, {
+    "Kode": "3060102142",
+    "Barang": "Recording Workstation"
+}, {
+    "Kode": "3060102143",
+    "Barang": "Editor Workstation"
+}, {
+    "Kode": "3060102144",
+    "Barang": "On Air Recording"
+}, {
+    "Kode": "3060102145",
+    "Barang": "Connectors"
+}, {
+    "Kode": "3060102146",
+    "Barang": "Patch  Cord"
+}, {
+    "Kode": "3060102147",
+    "Barang": "Audio Embedder"
+}, {
+    "Kode": "3060102148",
+    "Barang": "VTR Recorder"
+}, {
+    "Kode": "3060102149",
+    "Barang": "Analog Video Router"
+}, {
+    "Kode": "3060102150",
+    "Barang": "Broadband Amlifier"
+}, {
+    "Kode": "3060102151",
+    "Barang": "Splitter"
+}, {
+    "Kode": "3060102152",
+    "Barang": "RF Cable"
+}, {
+    "Kode": "3060102153",
+    "Barang": "F Connector"
+}, {
+    "Kode": "3060102154",
+    "Barang": "TV Connector"
+}, {
+    "Kode": "3060102155",
+    "Barang": "Thermo  Bind Machine"
+}, {
+    "Kode": "3060102156",
+    "Barang": "Kamera Stile"
+}, {
+    "Kode": "3060102157",
+    "Barang": "Mini DV"
+}, {
+    "Kode": "3060102158",
+    "Barang": "Monopod"
+}, {
+    "Kode": "3060102159",
+    "Barang": "Clipp On"
+}, {
+    "Kode": "3060102160",
+    "Barang": "Computer Editing"
+}, {
+    "Kode": "3060102161",
+    "Barang": "Cut Editing"
+}, {
+    "Kode": "3060102162",
+    "Barang": "Duplicator VCD"
+}, {
+    "Kode": "3060102163",
+    "Barang": "Duplicator DVD"
+}, {
+    "Kode": "3060102164",
+    "Barang": "Video Splitter"
+}, {
+    "Kode": "3060102165",
+    "Barang": "Camera  Conference"
+}, {
+    "Kode": "3060102166",
+    "Barang": "End Point Vicon"
+}, {
+    "Kode": "3060102167",
+    "Barang": "Drone"
+}, {
+    "Kode": "3060102168",
+    "Barang": "Video Wall"
+}, {
+    "Kode": "3060102999",
+    "Barang": "Peralatan Studio Video Dan Film Lainnya"
+}, {
+    "Kode": "3060103001",
+    "Barang": "Meja Gambar"
+}, {
+    "Kode": "3060103002",
+    "Barang": "Lichdruck Apparaat"
+}, {
+    "Kode": "3060103003",
+    "Barang": "Sablon Set"
+}, {
+    "Kode": "3060103004",
+    "Barang": "Alat Tulis Gambar"
+}, {
+    "Kode": "3060103005",
+    "Barang": "Busur Gambar"
+}, {
+    "Kode": "3060103006",
+    "Barang": "Jangka  Gambar"
+}, {
+    "Kode": "3060103999",
+    "Barang": "Peralatan Studio Gambar  Lainnya"
+}, {
+    "Kode": "3060104001",
+    "Barang": "Meja Membuat  Klise"
+}, {
+    "Kode": "3060104002",
+    "Barang": "Meja Cetak Tangan"
+}, {
+    "Kode": "3060104003",
+    "Barang": "Mesin Cetak Listrik Sheet"
+}, {
+    "Kode": "3060104004",
+    "Barang": "Mesin Cetak Listrik Roll"
+}, {
+    "Kode": "3060104005",
+    "Barang": "Mesin Cetak Elektronik"
+}, {
+    "Kode": "3050104005",
+    "Barang": "Lemari Besi"
+}, {
+    "Kode": "3060104006",
+    "Barang": "Mesin Cetak"
+}, {
+    "Kode": "3060104007",
+    "Barang": "Mesin Cetak Offset Sheet"
+}, {
+    "Kode": "3060104008",
+    "Barang": "Mesin Cetak Offset Roll"
+}, {
+    "Kode": "3060104009",
+    "Barang": "Mesin Cetak Offset Mini"
+}, {
+    "Kode": "3060104010",
+    "Barang": "Mesin Pemotong Biasa"
+}, {
+    "Kode": "3060104011",
+    "Barang": "Mesin Pemotong Biasa Tiga Pisau"
+}, {
+    "Kode": "3060303003",
+    "Barang": "Unit Pemancar VHF/FM Stationary"
+}, {
+    "Kode": "3060303004",
+    "Barang": "TRX VHF FM LB BS"
+}, {
+    "Kode": "3060303005",
+    "Barang": "TRX VHF FM MB BS"
+}, {
+    "Kode": "3060303006",
+    "Barang": "TRX VHF-UHF AM/FM"
+}, {
+    "Kode": "3060303999",
+    "Barang": "Peralatan Pemancar VHF/FM Lainnya"
+}, {
+    "Kode": "3060304001",
+    "Barang": "Unit Pemancar UHF Portable"
+}, {
+    "Kode": "3060304002",
+    "Barang": "Unit Pemancar UHF Transportable"
+}, {
+    "Kode": "3060304003",
+    "Barang": "Unit Pemancar UHF Stationary"
+}, {
+    "Kode": "3060304004",
+    "Barang": "Portable Reporter Link"
+}, {
+    "Kode": "3060304999",
+    "Barang": "Peralatan Pemancar UHF Lainnya"
+}, {
+    "Kode": "3060305001",
+    "Barang": "Unit Pemancar SHF Portable"
+}, {
+    "Kode": "3060305002",
+    "Barang": "Unit Pemancar SHF Transportable"
+}, {
+    "Kode": "3060305003",
+    "Barang": "Unit Pemancar SHF Stationary"
+}, {
+    "Kode": "3060305004",
+    "Barang": "Satellite Link ( Up/Down Link )"
+}, {
+    "Kode": "3060305999",
+    "Barang": "Peralatan Pemancar SHF Lainnya"
+}, {
+    "Kode": "3060306001",
+    "Barang": "Antene MF/MW Portable"
+}, {
+    "Kode": "3060306002",
+    "Barang": "Antene MF/MW Transportable"
+}, {
+    "Kode": "3060306003",
+    "Barang": "Antene MF/MW Stationary"
+}, {
+    "Kode": "3060306999",
+    "Barang": "Peralatan Antena MF/MW Lainnya"
+}, {
+    "Kode": "3060307001",
+    "Barang": "Antene HF/SW Portable"
+}, {
+    "Kode": "3060307002",
+    "Barang": "Antene HF/SW Transportable"
+}, {
+    "Kode": "3060307003",
+    "Barang": "Antene HF/SW Stationary"
+}, {
+    "Kode": "3060307999",
+    "Barang": "Peralatan Antena HF/SW Lainnya"
+}, {
+    "Kode": "3060308001",
+    "Barang": "Antene VHF/FM Portable"
+}, {
+    "Kode": "3060308002",
+    "Barang": "Antene VHF/FM Transportable"
+}, {
+    "Kode": "3060308003",
+    "Barang": "Antene VHF/FM Stationary"
+}, {
+    "Kode": "3060308999",
+    "Barang": "Peralatan Antena VHF/FM Lainnya"
+}, {
+    "Kode": "3060309001",
+    "Barang": "Antene UHF Portable"
+}, {
+    "Kode": "3060309002",
+    "Barang": "Antene UHF Transportable"
+}, {
+    "Kode": "3060309003",
+    "Barang": "Antene UHF Stationary"
+}, {
+    "Kode": "3060309999",
+    "Barang": "Peralatan Antena UHF Lainnya"
+}, {
+    "Kode": "3060310001",
+    "Barang": "Antene SHF Portable"
+}, {
+    "Kode": "3060310002",
+    "Barang": "Antene SHF Transportable"
+}, {
+    "Kode": "3060310003",
+    "Barang": "Antene SHF Stationary"
+}, {
+    "Kode": "3060310004",
+    "Barang": "Antena All Band"
+}, {
+    "Kode": "3060310005",
+    "Barang": "Antena SSB"
+}, {
+    "Kode": "3060310999",
+    "Barang": "Peralatan Antena SHF/Parabola Lainnya"
+}, {
+    "Kode": "3060311001",
+    "Barang": "Translator VHF/VHF Portable"
+}, {
+    "Kode": "3060311002",
+    "Barang": "Translator VHF/VHF Transportable"
+}, {
+    "Kode": "3060311003",
+    "Barang": "Translator VHF/VHF Stationary"
+}, {
+    "Kode": "3060311999",
+    "Barang": "Peralatan Translator VHF/VHF Lainnya"
+}, {
+    "Kode": "3060312001",
+    "Barang": "Translator UHF/UHF Portable"
+}, {
+    "Kode": "3060312002",
+    "Barang": "Translator UHF/UHF Transportable"
+}, {
+    "Kode": "3060312003",
+    "Barang": "Translator UHF/UHF Stationary"
+}, {
+    "Kode": "3060312999",
+    "Barang": "Peralatan Translator UHF/UHF Lainnya"
+}, {
+    "Kode": "3060313001",
+    "Barang": "Translator VHF/UHF Portable"
+}, {
+    "Kode": "3060313002",
+    "Barang": "Translator VHF/UHF Transportable"
+}, {
+    "Kode": "3070102059",
+    "Barang": "Kaca Mulut/Spigel"
+}, {
+    "Kode": "3070102060",
+    "Barang": "Kikir Gigi"
+}, {
+    "Kode": "3070102061",
+    "Barang": "Knabel Tang (Alat Kedokteran Gigi)"
+}, {
+    "Kode": "3070102062",
+    "Barang": "Knope Sonda"
+}, {
+    "Kode": "3070102063",
+    "Barang": "Laboratorium Hathe"
+}, {
+    "Kode": "3070102065",
+    "Barang": "Laring Suprane Dental Unit Shimatic 20 cc/Fontell"
+}, {
+    "Kode": "3070102066",
+    "Barang": "Laring Supreme Dental Unit"
+}, {
+    "Kode": "3070102067",
+    "Barang": "Light Curing Unit"
+}, {
+    "Kode": "3070102068",
+    "Barang": "LIP Retraktor"
+}, {
+    "Kode": "3070102069",
+    "Barang": "Mouth Piece"
+}, {
+    "Kode": "3070102070",
+    "Barang": "Motor Gigi Fora Tanpa  Handpiece"
+}, {
+    "Kode": "3070102071",
+    "Barang": "Mouth Retraktor"
+}, {
+    "Kode": "3070102072",
+    "Barang": "Mouth Speder"
+}, {
+    "Kode": "3070102073",
+    "Barang": "Odner  Bending"
+}, {
+    "Kode": "3070102074",
+    "Barang": "Okludator"
+}, {
+    "Kode": "3070102075",
+    "Barang": "Palishing Motor"
+}, {
+    "Kode": "3070102076",
+    "Barang": "Pengukur Bracket"
+}, {
+    "Kode": "3070102077",
+    "Barang": "Physiodispenser Implant + Microsurgery"
+}, {
+    "Kode": "3070102078",
+    "Barang": "PIK Hak Gigi"
+}, {
+    "Kode": "3070102079",
+    "Barang": "Pinset Dental"
+}, {
+    "Kode": "3070102080",
+    "Barang": "Pisau Lilin/Wasmess/Wax Knife"
+}, {
+    "Kode": "3070102081",
+    "Barang": "Plastik Instrument"
+}, {
+    "Kode": "3070102082",
+    "Barang": "Press  Untuk Dua Kafet"
+}, {
+    "Kode": "3070102083",
+    "Barang": "Press  Untuk Satu Kapet"
+}, {
+    "Kode": "3070102084",
+    "Barang": "Prostetic Engine"
+}, {
+    "Kode": "3070102085",
+    "Barang": "Raspatorium"
+}, {
+    "Kode": "3070102086",
+    "Barang": "Semen  Stoper"
+}, {
+    "Kode": "3070102087",
+    "Barang": "Shade  Guide"
+}, {
+    "Kode": "3070102088",
+    "Barang": "Slip Join"
+}, {
+    "Kode": "3070102089",
+    "Barang": "Spatel Gips"
+}, {
+    "Kode": "3070102090",
+    "Barang": "Speculum Gigi"
+}, {
+    "Kode": "3070102091",
+    "Barang": "Spoot  Welder"
+}, {
+    "Kode": "3070102092",
+    "Barang": "Tang Clamer"
+}, {
+    "Kode": "3070102093",
+    "Barang": "Tang Ektrasi (Dewasa,Anak)"
+}, {
+    "Kode": "3070102094",
+    "Barang": "Tang Omega"
+}, {
+    "Kode": "3070102095",
+    "Barang": "Tang Pengukur Bracket Depan/Belakang"
+}, {
+    "Kode": "3070102096",
+    "Barang": "Tang Rahang  Bawah"
+}, {
+    "Kode": "3070102097",
+    "Barang": "Tang Removable Appliance"
+}, {
+    "Kode": "3070102098",
+    "Barang": "Tang Serba  Guna"
+}, {
+    "Kode": "3070102099",
+    "Barang": "Tang Set"
+}, {
+    "Kode": "3070102100",
+    "Barang": "Tang Spatel/Kawat"
+}, {
+    "Kode": "3070102101",
+    "Barang": "Tang Sporasi"
+}, {
+    "Kode": "3070102102",
+    "Barang": "Tang Tulang"
+}, {
+    "Kode": "3070102103",
+    "Barang": "Tastim Instrument Manual"
+}, {
+    "Kode": "3070102104",
+    "Barang": "Vacuum Mixer"
+}, {
+    "Kode": "3070102105",
+    "Barang": "Wang Hak"
+}, {
+    "Kode": "3070102106",
+    "Barang": "Yudir Klem"
+}, {
+    "Kode": "3070102107",
+    "Barang": "Zuig Kanule"
+}, {
+    "Kode": "3070102108",
+    "Barang": "Infus  Standard Mac High 2 M"
+}, {
+    "Kode": "3070102109",
+    "Barang": "Kompresor Jun Air"
+}, {
+    "Kode": "3070102110",
+    "Barang": "Prisma Life System  (Sinar Halogen)"
+}, {
+    "Kode": "3070102111",
+    "Barang": "Compresor Gigi"
+}, {
+    "Kode": "3070102112",
+    "Barang": "Scaller"
+}, {
+    "Kode": "3070102113",
+    "Barang": "Scaller Callat Scalling"
+}, {
+    "Kode": "3070102114",
+    "Barang": "Matrix"
+}, {
+    "Kode": "3070102115",
+    "Barang": "Mortir and B Stamper"
+}, {
+    "Kode": "3070102116",
+    "Barang": "Pisau Operasi/Scapel"
+}, {
+    "Kode": "3070102117",
+    "Barang": "Pisau Crown/Lecron"
+}, {
+    "Kode": "3080111084",
+    "Barang": "Boll Mill / Boll Press"
+}, {
+    "Kode": "3080111085",
+    "Barang": "PH Meter (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111086",
+    "Barang": "Tangki Pembuat Sheet"
+}, {
+    "Kode": "3080111087",
+    "Barang": "Tangki Bahan Baku"
+}, {
+    "Kode": "3080111088",
+    "Barang": "Kjeldahl Set"
+}, {
+    "Kode": "3080111089",
+    "Barang": "Salt Spray Test Chamber"
+}, {
+    "Kode": "3080111090",
+    "Barang": "Corrosion Tester  (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111091",
+    "Barang": "Electrolytic Equipment"
+}, {
+    "Kode": "3080111092",
+    "Barang": "Autograph"
+}, {
+    "Kode": "3080111093",
+    "Barang": "Air Permeability Tester"
+}, {
+    "Kode": "3080111094",
+    "Barang": "Penguji Titik Leleh"
+}, {
+    "Kode": "3080111095",
+    "Barang": "Pengukur Derajat  Putih"
+}, {
+    "Kode": "3080111096",
+    "Barang": "S E M"
+}, {
+    "Kode": "3080111097",
+    "Barang": "Alat Sampling Gas Buang"
+}, {
+    "Kode": "3080111098",
+    "Barang": "Soun Level Meter Tester"
+}, {
+    "Kode": "3080111099",
+    "Barang": "Dialcaliter"
+}, {
+    "Kode": "3080111100",
+    "Barang": "Dry Oven"
+}, {
+    "Kode": "3080111101",
+    "Barang": "Hydrolic Hand Press"
+}, {
+    "Kode": "3080111102",
+    "Barang": "Hair Dryer/Spray Dryer/Dryer"
+}, {
+    "Kode": "3080111103",
+    "Barang": "Aqua Guard"
+}, {
+    "Kode": "3080111104",
+    "Barang": "Titration Apparatus"
+}, {
+    "Kode": "3080111105",
+    "Barang": "Multi Unit Extraction"
+}, {
+    "Kode": "3080111106",
+    "Barang": "Plat Pemanas"
+}, {
+    "Kode": "3080111107",
+    "Barang": "Alat Pengukur Tebal"
+}, {
+    "Kode": "3080111108",
+    "Barang": "Alat Ukur Kadar Air (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111109",
+    "Barang": "Vergeot Apparat"
+}, {
+    "Kode": "3080111110",
+    "Barang": "Alat Tembus  Udara"
+}, {
+    "Kode": "3080111111",
+    "Barang": "Alat Uji Kelembaban Udara"
+}, {
+    "Kode": "3080111112",
+    "Barang": "Laminar Air Flow"
+}, {
+    "Kode": "3080111113",
+    "Barang": "Microtome (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111114",
+    "Barang": "Spi Flame Ability (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111115",
+    "Barang": "Autoclave Unit (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111116",
+    "Barang": "Electrik Thermometer"
+}, {
+    "Kode": "3080111117",
+    "Barang": "Flour Photometer"
+}, {
+    "Kode": "3080111118",
+    "Barang": "Microscope Dengan  Camera"
+}, {
+    "Kode": "3080111119",
+    "Barang": "System  Pengendali Derajat  Asam"
+}, {
+    "Kode": "3080111120",
+    "Barang": "Mesin Potong  Jerami"
+}, {
+    "Kode": "3080111121",
+    "Barang": "Mesin Pres Jerami"
+}, {
+    "Kode": "3080111122",
+    "Barang": "Bak Flukulator"
+}, {
+    "Kode": "3080111123",
+    "Barang": "Alat Poleshing"
+}, {
+    "Kode": "3080111124",
+    "Barang": "Alat Gerinda"
+}, {
+    "Kode": "3080111125",
+    "Barang": "Refrigerator"
+}, {
+    "Kode": "3080111126",
+    "Barang": "Freeze  Dryer"
+}, {
+    "Kode": "3080111127",
+    "Barang": "Refractometer (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111128",
+    "Barang": "Vacuum Oven"
+}, {
+    "Kode": "3080111129",
+    "Barang": "Calorimeter"
+}, {
+    "Kode": "3080111130",
+    "Barang": "Galvanometer"
+}, {
+    "Kode": "3080111131",
+    "Barang": "Filter Press"
+}, {
+    "Kode": "3080111132",
+    "Barang": "Higromoter"
+}, {
+    "Kode": "3080111133",
+    "Barang": "Termocouple"
+}, {
+    "Kode": "3080111134",
+    "Barang": "Steroscop"
+}, {
+    "Kode": "3080111135",
+    "Barang": "Load Cell"
+}, {
+    "Kode": "3080111136",
+    "Barang": "Desitometer"
+}, {
+    "Kode": "3080111137",
+    "Barang": "Tripod"
+}, {
+    "Kode": "3080111138",
+    "Barang": "Spectrophotometer"
+}, {
+    "Kode": "3080111139",
+    "Barang": "Epron eraser"
+}, {
+    "Kode": "3080111140",
+    "Barang": "Induction Totor"
+}, {
+    "Kode": "3080111141",
+    "Barang": "Container N2 Cair (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111142",
+    "Barang": "Ionisator"
+}, {
+    "Kode": "3080111143",
+    "Barang": "Helc and Flow"
+}, {
+    "Kode": "3080111144",
+    "Barang": "Plamscope"
+}, {
+    "Kode": "3080111145",
+    "Barang": "Remote  Terminal Limit"
+}, {
+    "Kode": "3080111146",
+    "Barang": "Ignation Wire Nickel"
+}, {
+    "Kode": "3080111147",
+    "Barang": "Digital Signal Procesor"
+}, {
+    "Kode": "3080111148",
+    "Barang": "Hand Saw Machine"
+}, {
+    "Kode": "3080111149",
+    "Barang": "Fire Assay Furnace"
+}, {
+    "Kode": "3080111150",
+    "Barang": "Function Generator (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111151",
+    "Barang": "Process  Calibrator Fluke"
+}, {
+    "Kode": "3080111152",
+    "Barang": "Semi Automatic Penetometer"
+}, {
+    "Kode": "3080111154",
+    "Barang": "Multizer Plate"
+}, {
+    "Kode": "3080111155",
+    "Barang": "Cnc Milling Machine"
+}, {
+    "Kode": "3080111156",
+    "Barang": "Mesin Pengayak"
+}, {
+    "Kode": "3080111157",
+    "Barang": "Cyclone 2 Hall"
+}, {
+    "Kode": "3080111158",
+    "Barang": "Variable Speed  Transmission"
+}, {
+    "Kode": "3080111159",
+    "Barang": "Bottle Regen"
+}, {
+    "Kode": "3080111160",
+    "Barang": "Rock Cutting Machine"
+}, {
+    "Kode": "3080111162",
+    "Barang": "Rock Strength Index"
+}, {
+    "Kode": "3080111164",
+    "Barang": "Plate Pulveriser"
+}, {
+    "Kode": "3080111165",
+    "Barang": "Core Bit"
+}, {
+    "Kode": "3080111166",
+    "Barang": "Low Fristian Pressure"
+}, {
+    "Kode": "3080111167",
+    "Barang": "Universal Coring Machine"
+}, {
+    "Kode": "3080111168",
+    "Barang": "Test Set For Water  Well"
+}, {
+    "Kode": "3080111169",
+    "Barang": "Ayakan Gantung"
+}, {
+    "Kode": "3080111170",
+    "Barang": "Earth Resistivity Meter"
+}, {
+    "Kode": "3080111171",
+    "Barang": "Elektroda Spesifik"
+}, {
+    "Kode": "3080111172",
+    "Barang": "Spectrometric Mode"
+}, {
+    "Kode": "3080111173",
+    "Barang": "Cuvet Cadangan Metachylate"
+}, {
+    "Kode": "3080111174",
+    "Barang": "Digital Indicator LCD/Metric"
+}, {
+    "Kode": "3080111175",
+    "Barang": "Orsat"
+}, {
+    "Kode": "3080111176",
+    "Barang": "Ultra Pure Water  Chemistreat"
+}, {
+    "Kode": "3080111177",
+    "Barang": "Molser Content  Tester"
+}, {
+    "Kode": "3080111178",
+    "Barang": "Peralatan Sampler Spliter"
+}, {
+    "Kode": "3080111179",
+    "Barang": "Peralatan Homogenisasi"
+}, {
+    "Kode": "3080111180",
+    "Barang": "Peralatan Petroscope"
+}, {
+    "Kode": "3080111181",
+    "Barang": "Peralatan Palomagnetic"
+}, {
+    "Kode": "3080111182",
+    "Barang": "Shear  Strength"
+}, {
+    "Kode": "3080111183",
+    "Barang": "Mesin Gerus Tanah"
+}, {
+    "Kode": "3080111184",
+    "Barang": "Schimdt Hammer"
+}, {
+    "Kode": "3080111185",
+    "Barang": "Jack Mill"
+}, {
+    "Kode": "3080111186",
+    "Barang": "Termolline Pyrometer"
+}, {
+    "Kode": "3080111187",
+    "Barang": "Gelinding"
+}, {
+    "Kode": "3080111188",
+    "Barang": "Alat Procesing rumput"
+}, {
+    "Kode": "3080111189",
+    "Barang": "Bacteriological Colony Counter"
+}, {
+    "Kode": "3080111190",
+    "Barang": "Bacthythermograph"
+}, {
+    "Kode": "3080111191",
+    "Barang": "Biocounter"
+}, {
+    "Kode": "3080111192",
+    "Barang": "Closing Gear"
+}, {
+    "Kode": "3080111193",
+    "Barang": "Complete Cyanida Distallation Apparatus"
+}, {
+    "Kode": "3080111194",
+    "Barang": "Cooling Water  Circulator"
+}, {
+    "Kode": "3080111195",
+    "Barang": "Coulter Counter  (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111196",
+    "Barang": "Delux Two Speed  Horizontal Lapidary"
+}, {
+    "Kode": "3080111197",
+    "Barang": "Disecting Apparatus (Alat Laboratorium Umum)"
+}, {
+    "Kode": "3080111198",
+    "Barang": "Dive tank"
+}, {
+    "Kode": "3080111199",
+    "Barang": "Dry Ice Storage Shest"
+}, {
+    "Kode": "3080111200",
+    "Barang": "Electric Measuring Tape"
+}, {
+    "Kode": "3080111201",
+    "Barang": "Elektrophoresis"
+}, {
+    "Kode": "3080111202",
+    "Barang": "Enlarge"
+}, {
+    "Kode": "3080141035",
+    "Barang": "Climatic Chamber"
+}, {
+    "Kode": "3080141036",
+    "Barang": "Cod Monitor"
+}, {
+    "Kode": "3080141037",
+    "Barang": "Cold Chamber/Cabinet"
+}, {
+    "Kode": "3080141038",
+    "Barang": "Cold Handling Cabinet"
+}, {
+    "Kode": "3080141039",
+    "Barang": "Cold Storage (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141040",
+    "Barang": "Colony Counter  (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141041",
+    "Barang": "Coloumn Chromatography"
+}, {
+    "Kode": "3080141042",
+    "Barang": "Conductivity Meter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141043",
+    "Barang": "Container N2 Cair (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141044",
+    "Barang": "Cooker Bak Terbuka"
+}, {
+    "Kode": "3080141045",
+    "Barang": "Cooker Stainlessteel"
+}, {
+    "Kode": "3080141046",
+    "Barang": "Cosmotektor"
+}, {
+    "Kode": "3080141047",
+    "Barang": "Coulter Counter  (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141048",
+    "Barang": "Cross Blaser"
+}, {
+    "Kode": "3080141049",
+    "Barang": "Crusher/Mixer"
+}, {
+    "Kode": "3080141050",
+    "Barang": "Cryogenic Container"
+}, {
+    "Kode": "3080141051",
+    "Barang": "Culture Dish"
+}, {
+    "Kode": "3080141052",
+    "Barang": "Current  Meter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141053",
+    "Barang": "Data Assignation (Polycorder)"
+}, {
+    "Kode": "3080141054",
+    "Barang": "Data Logger (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141055",
+    "Barang": "Data Recorder"
+}, {
+    "Kode": "3080141056",
+    "Barang": "Dead Weight Press.Gauge Tester"
+}, {
+    "Kode": "3080141057",
+    "Barang": "Deep Freezer  (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141058",
+    "Barang": "Dehumidifier (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141059",
+    "Barang": "Demineralizer (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141060",
+    "Barang": "Digital Multimeter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141061",
+    "Barang": "Digital Preassure Gauge"
+}, {
+    "Kode": "3080141062",
+    "Barang": "Dispenser & Diluter"
+}, {
+    "Kode": "3080141063",
+    "Barang": "Distiling Apparatus"
+}, {
+    "Kode": "3080141064",
+    "Barang": "Distiling Unit For TMA"
+}, {
+    "Kode": "3080141065",
+    "Barang": "Distiling Unit For VRS"
+}, {
+    "Kode": "3080141066",
+    "Barang": "Dna Sequezing"
+}, {
+    "Kode": "3080141067",
+    "Barang": "DO Meter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141068",
+    "Barang": "Dredge"
+}, {
+    "Kode": "3080141069",
+    "Barang": "Dringking Monitor"
+}, {
+    "Kode": "3080141070",
+    "Barang": "Drying Test"
+}, {
+    "Kode": "3080141071",
+    "Barang": "Dynamometer Car"
+}, {
+    "Kode": "3080141072",
+    "Barang": "Echo Sounder (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141073",
+    "Barang": "Electric Meat San"
+}, {
+    "Kode": "3080141074",
+    "Barang": "Electrophoresis (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141075",
+    "Barang": "Elisa Reader"
+}, {
+    "Kode": "3080141076",
+    "Barang": "Elisa Reader(Computerized,Semi Manual)"
+}, {
+    "Kode": "3080141077",
+    "Barang": "Embrio Filter"
+}, {
+    "Kode": "3080141078",
+    "Barang": "Embrio Manipulator"
+}, {
+    "Kode": "3080141079",
+    "Barang": "Ergonomic Tester"
+}, {
+    "Kode": "3080141080",
+    "Barang": "Exhouse  Gas Analyzer"
+}, {
+    "Kode": "3080141081",
+    "Barang": "Extruder  (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141082",
+    "Barang": "Feed Mixer"
+}, {
+    "Kode": "3080141083",
+    "Barang": "Fermentor (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141084",
+    "Barang": "Fibertec System"
+}, {
+    "Kode": "3080141085",
+    "Barang": "Fibrograph (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141086",
+    "Barang": "Filter Holder (Stainless Steel 1000  Ml)"
+}, {
+    "Kode": "3080141087",
+    "Barang": "Filtration Unit"
+}, {
+    "Kode": "3080141088",
+    "Barang": "Fish Moisture Tester"
+}, {
+    "Kode": "3080141089",
+    "Barang": "Flamephotometer"
+}, {
+    "Kode": "3080141090",
+    "Barang": "Flow Meter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141091",
+    "Barang": "Fluorence Dektor"
+}, {
+    "Kode": "3080141092",
+    "Barang": "Fractional Distilation"
+}, {
+    "Kode": "3080141093",
+    "Barang": "Freezer  (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141094",
+    "Barang": "Frequency Generator"
+}, {
+    "Kode": "3080141095",
+    "Barang": "Fuel Flow Meter"
+}, {
+    "Kode": "3080141096",
+    "Barang": "Fumehood"
+}, {
+    "Kode": "3080141097",
+    "Barang": "Gamma  Counter"
+}, {
+    "Kode": "3080141098",
+    "Barang": "Gas Chamber"
+}, {
+    "Kode": "3080141099",
+    "Barang": "Gas Chromatography (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141100",
+    "Barang": "Gas Cylinder(-N2,Co2,Udara)"
+}, {
+    "Kode": "3080141101",
+    "Barang": "Generator"
+}, {
+    "Kode": "3080141102",
+    "Barang": "Germinator"
+}, {
+    "Kode": "3080141103",
+    "Barang": "Glass Dryer"
+}, {
+    "Kode": "3080141104",
+    "Barang": "Grader"
+}, {
+    "Kode": "3080141105",
+    "Barang": "Grain Counter"
+}, {
+    "Kode": "3080141106",
+    "Barang": "Grain Crack Inspector"
+}, {
+    "Kode": "3080141107",
+    "Barang": "Grain Devider"
+}, {
+    "Kode": "3080141108",
+    "Barang": "Grain Moisture Tester"
+}, {
+    "Kode": "3080141109",
+    "Barang": "Grain Sorter"
+}, {
+    "Kode": "3080141110",
+    "Barang": "Green  Meter"
+}, {
+    "Kode": "3080141111",
+    "Barang": "Grinder"
+}, {
+    "Kode": "3080141112",
+    "Barang": "Growth Chamber"
+}, {
+    "Kode": "3080141113",
+    "Barang": "Haematocrit Reader"
+}, {
+    "Kode": "3080141114",
+    "Barang": "Haemoglobin Meter"
+}, {
+    "Kode": "3080141115",
+    "Barang": "Hammer  Mill (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141116",
+    "Barang": "Hand Counter"
+}, {
+    "Kode": "3080141117",
+    "Barang": "Hand Penetrometer"
+}, {
+    "Kode": "3080141118",
+    "Barang": "Hardness Tester"
+}, {
+    "Kode": "3080141119",
+    "Barang": "Hating Mantle"
+}, {
+    "Kode": "3080141120",
+    "Barang": "Heating Air Incubator"
+}, {
+    "Kode": "3080141121",
+    "Barang": "Hematocrit Reader"
+}, {
+    "Kode": "3080141122",
+    "Barang": "High Perfomance Liquid Chromatography (HPLC)"
+}, {
+    "Kode": "3080141123",
+    "Barang": "Higro Thermograph"
+}, {
+    "Kode": "3080141124",
+    "Barang": "Homogenizer (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141125",
+    "Barang": "Hot Plate (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141126",
+    "Barang": "Hot Plate Stirer"
+}, {
+    "Kode": "3080141127",
+    "Barang": "Humidified Chamber"
+}, {
+    "Kode": "3080141128",
+    "Barang": "Ice Maker (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141129",
+    "Barang": "Incinerator (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141130",
+    "Barang": "Incubator (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141131",
+    "Barang": "Inductively Coupled Plasma (ICP)"
+}, {
+    "Kode": "3080141132",
+    "Barang": "Infra Red Gas Analyzer"
+}, {
+    "Kode": "3080141133",
+    "Barang": "Insemination Device"
+}, {
+    "Kode": "3080141134",
+    "Barang": "Instron Food Tester"
+}, {
+    "Kode": "3080141135",
+    "Barang": "Instron Machine"
+}, {
+    "Kode": "3080141136",
+    "Barang": "Integrating Quantum Radiometer"
+}, {
+    "Kode": "3080141137",
+    "Barang": "Ion Analyzer"
+}, {
+    "Kode": "3080141138",
+    "Barang": "IRGA"
+}, {
+    "Kode": "3080141139",
+    "Barang": "Janet Ketel"
+}, {
+    "Kode": "3080141140",
+    "Barang": "Kjeltec"
+}, {
+    "Kode": "3080141141",
+    "Barang": "Kompor Distilasi"
+}, {
+    "Kode": "3080141142",
+    "Barang": "Kompor Gas (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141143",
+    "Barang": "Laminar Flow"
+}, {
+    "Kode": "3080141144",
+    "Barang": "Laparascopi"
+}, {
+    "Kode": "3080141145",
+    "Barang": "Leaf Area Meter (LAM)"
+}, {
+    "Kode": "3080141146",
+    "Barang": "Liminar Flow Cabinet"
+}, {
+    "Kode": "3080141147",
+    "Barang": "Liquid N2 Container"
+}, {
+    "Kode": "3080141148",
+    "Barang": "Low Temperature Incubator"
+}, {
+    "Kode": "3080141149",
+    "Barang": "Macro Balance"
+}, {
+    "Kode": "3080141150",
+    "Barang": "Magnetic Stirer (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141151",
+    "Barang": "Meat Grinder"
+}, {
+    "Kode": "3080141152",
+    "Barang": "Mesin Pencuci Sayuran"
+}, {
+    "Kode": "3080141153",
+    "Barang": "Mesin Pengepres Buah"
+}, {
+    "Kode": "3080141154",
+    "Barang": "Mesin Pengolahan Susu"
+}, {
+    "Kode": "3080141155",
+    "Barang": "Metabolisme Cages+Spirometer"
+}, {
+    "Kode": "3080141156",
+    "Barang": "Metal Crack/Roughness Detector"
+}, {
+    "Kode": "3080141157",
+    "Barang": "Metal Hadness Tester"
+}, {
+    "Kode": "3080141158",
+    "Barang": "Microfuge"
+}, {
+    "Kode": "3080141159",
+    "Barang": "Micrometer"
+}, {
+    "Kode": "3080141160",
+    "Barang": "Micronaire (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141162",
+    "Barang": "Microscope Discecting"
+}, {
+    "Kode": "3080141163",
+    "Barang": "Microscope Electron"
+}, {
+    "Kode": "3080141164",
+    "Barang": "Microscope Flourescence"
+}, {
+    "Kode": "3080141165",
+    "Barang": "Microscope Inverted"
+}, {
+    "Kode": "3080141166",
+    "Barang": "Microscope Light"
+}, {
+    "Kode": "3080141167",
+    "Barang": "Microscope Phase  Contras"
+}, {
+    "Kode": "3080141168",
+    "Barang": "Microscope Photomicrograph"
+}, {
+    "Kode": "3080141169",
+    "Barang": "Microtone Cryostat"
+}, {
+    "Kode": "3080141170",
+    "Barang": "Microwave Oven"
+}, {
+    "Kode": "3080141171",
+    "Barang": "Milling Test"
+}, {
+    "Kode": "3080141172",
+    "Barang": "Mixer (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141173",
+    "Barang": "Model Pilot Plant"
+}, {
+    "Kode": "3080141174",
+    "Barang": "Moisture Tester  (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141175",
+    "Barang": "Muffle Furnace"
+}, {
+    "Kode": "3080141176",
+    "Barang": "Multi Channel Thermometer"
+}, {
+    "Kode": "3080141177",
+    "Barang": "Multichannel Pippete Dispenser"
+}, {
+    "Kode": "3080141178",
+    "Barang": "Near Infrared Reflectance"
+}, {
+    "Kode": "3080141179",
+    "Barang": "Nematoda Separator"
+}, {
+    "Kode": "3080141180",
+    "Barang": "Neuber  Chamber  (Cell Counter)"
+}, {
+    "Kode": "3080141181",
+    "Barang": "Neubeur  Chamber"
+}, {
+    "Kode": "3080141182",
+    "Barang": "Oilbath"
+}, {
+    "Kode": "3080141183",
+    "Barang": "Operating Table+Overhead Light"
+}, {
+    "Kode": "3080141184",
+    "Barang": "Orifice"
+}, {
+    "Kode": "3080141185",
+    "Barang": "Oscilloscope"
+}, {
+    "Kode": "3080141186",
+    "Barang": "Oven (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141187",
+    "Barang": "Oxigenmeter"
+}, {
+    "Kode": "3080141188",
+    "Barang": "Pasteurisasi Unit"
+}, {
+    "Kode": "3080141189",
+    "Barang": "Pelleting Machine"
+}, {
+    "Kode": "3080141190",
+    "Barang": "Penetrometer (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141191",
+    "Barang": "Penggilingan Buah"
+}, {
+    "Kode": "3080141192",
+    "Barang": "Penggilingan Tepung"
+}, {
+    "Kode": "3080141194",
+    "Barang": "Personal Computer"
+}, {
+    "Kode": "3080141195",
+    "Barang": "PH Meter Digital"
+}, {
+    "Kode": "3080141196",
+    "Barang": "PH Meter Portable"
+}, {
+    "Kode": "3080141197",
+    "Barang": "Physicrometer"
+}, {
+    "Kode": "3080141198",
+    "Barang": "Physicrometer Potensial"
+}, {
+    "Kode": "3080141199",
+    "Barang": "Phytotron"
+}, {
+    "Kode": "3080141200",
+    "Barang": "Pilot Tube"
+}, {
+    "Kode": "3080141201",
+    "Barang": "Pippet Machine"
+}, {
+    "Kode": "3080141202",
+    "Barang": "Planimeter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141203",
+    "Barang": "Plankton Net (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141204",
+    "Barang": "Platform Ballance"
+}, {
+    "Kode": "3080141205",
+    "Barang": "Polarimeter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141206",
+    "Barang": "Polihon"
+}, {
+    "Kode": "3080141207",
+    "Barang": "Portable Pen Recorder"
+}, {
+    "Kode": "3080141208",
+    "Barang": "Portable Spectroradiometic Research System"
+}, {
+    "Kode": "3080141209",
+    "Barang": "Power Conditioner (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141210",
+    "Barang": "Precooling Apparatus Froced Air"
+}, {
+    "Kode": "3080141211",
+    "Barang": "Pressure Bomb"
+}, {
+    "Kode": "3080141212",
+    "Barang": "Pressure Gauge  (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141213",
+    "Barang": "Prony Brake For Axle"
+}, {
+    "Kode": "3080141214",
+    "Barang": "Prony Brake For PTO"
+}, {
+    "Kode": "3080141215",
+    "Barang": "Pull Tipe Dinamometer"
+}, {
+    "Kode": "3080141216",
+    "Barang": "Pulper"
+}, {
+    "Kode": "3080141217",
+    "Barang": "Pump Testing Apparatus"
+}, {
+    "Kode": "3080141218",
+    "Barang": "Pyrometer (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141219",
+    "Barang": "Radiotrackin Micro Applycator"
+}, {
+    "Kode": "3080141220",
+    "Barang": "Respirator (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141221",
+    "Barang": "Respirometer"
+}, {
+    "Kode": "3080141222",
+    "Barang": "Roll Meter"
+}, {
+    "Kode": "3080141223",
+    "Barang": "Rotary Evaporator (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141224",
+    "Barang": "Ruang  Aklimatisasi"
+}, {
+    "Kode": "3080141225",
+    "Barang": "Rubber  Hardness Tester"
+}, {
+    "Kode": "3080141226",
+    "Barang": "Rubber  Moisture Tester"
+}, {
+    "Kode": "3080141227",
+    "Barang": "Scale (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141228",
+    "Barang": "Scanning Electron Microscope (SEM)/(TEM)"
+}, {
+    "Kode": "3080141229",
+    "Barang": "Seechi Disk"
+}, {
+    "Kode": "3080141230",
+    "Barang": "Seed  Divider"
+}, {
+    "Kode": "3080141231",
+    "Barang": "Semen  Dan Embrio Collection Device"
+}, {
+    "Kode": "3080141232",
+    "Barang": "Shaker  (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141233",
+    "Barang": "Sharp  Knife"
+}, {
+    "Kode": "3080141234",
+    "Barang": "Siever"
+}, {
+    "Kode": "3080141235",
+    "Barang": "Siro Kent Lamp"
+}, {
+    "Kode": "3080141236",
+    "Barang": "Sistem Boiler"
+}, {
+    "Kode": "3080141237",
+    "Barang": "Soil Bin"
+}, {
+    "Kode": "3080141238",
+    "Barang": "Soil Hardness Tester"
+}, {
+    "Kode": "3080141239",
+    "Barang": "Soil Hydrometer"
+}, {
+    "Kode": "3080141240",
+    "Barang": "Soil Moisture Tester"
+}, {
+    "Kode": "3080141241",
+    "Barang": "Solarimeter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141242",
+    "Barang": "Sosis Maker"
+}, {
+    "Kode": "3080141243",
+    "Barang": "Sound  Level Meter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141244",
+    "Barang": "Soxtec"
+}, {
+    "Kode": "3080141245",
+    "Barang": "Soxtec  System"
+}, {
+    "Kode": "3080141246",
+    "Barang": "Spark Tes For Steel"
+}, {
+    "Kode": "3080141247",
+    "Barang": "Spora  Trap"
+}, {
+    "Kode": "3080141248",
+    "Barang": "Sprayer"
+}, {
+    "Kode": "3080141249",
+    "Barang": "Spring Ballance"
+}, {
+    "Kode": "3080141250",
+    "Barang": "Spyral Probe"
+}, {
+    "Kode": "3080141251",
+    "Barang": "Stabilizer/UPS"
+}, {
+    "Kode": "3080141252",
+    "Barang": "Steam  Boiler"
+}, {
+    "Kode": "3080141253",
+    "Barang": "Steam  Generator"
+}, {
+    "Kode": "3080141254",
+    "Barang": "Steel Ruller"
+}, {
+    "Kode": "3080141255",
+    "Barang": "Stelo Meter (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141256",
+    "Barang": "Stereo  Microscope (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141257",
+    "Barang": "Sterilisator Kecil"
+}, {
+    "Kode": "3080141258",
+    "Barang": "Stick Thermometer"
+}, {
+    "Kode": "3080141259",
+    "Barang": "Stomacher"
+}, {
+    "Kode": "3080141260",
+    "Barang": "Strain Amplifier"
+}, {
+    "Kode": "3080141261",
+    "Barang": "Strain Gauge"
+}, {
+    "Kode": "3080141262",
+    "Barang": "Superporometer"
+}, {
+    "Kode": "3080141263",
+    "Barang": "Tachometer (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141264",
+    "Barang": "Tape Meter"
+}, {
+    "Kode": "3080141265",
+    "Barang": "Tendero Meter"
+}, {
+    "Kode": "3080141266",
+    "Barang": "Tensiometer (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080141267",
+    "Barang": "Test Road"
+}, {
+    "Kode": "3080141268",
+    "Barang": "Theodolite (Alat Laboratorium Pertanian)"
+}, {
+    "Kode": "3080158999",
+    "Barang": "Alat Laboratorium Pendidikan Lainnya"
+}, {
+    "Kode": "3080159001",
+    "Barang": "TOC Analizer"
+}, {
+    "Kode": "3080159002",
+    "Barang": "Ionn Selective Electrode"
+}, {
+    "Kode": "3080159003",
+    "Barang": "Magnetic Vacuum"
+}, {
+    "Kode": "3080159004",
+    "Barang": "Dessicator Vacuum"
+}, {
+    "Kode": "3080159005",
+    "Barang": "UV Intensitomotor"
+}, {
+    "Kode": "3080159006",
+    "Barang": "Wet Gas Test Meter"
+}, {
+    "Kode": "3080159007",
+    "Barang": "Refrigenerator Water  Bar Horizontal"
+}, {
+    "Kode": "3080159008",
+    "Barang": "Thermocouple"
+}, {
+    "Kode": "3080159009",
+    "Barang": "Vibrating Stevos  Steam"
+}, {
+    "Kode": "3080159010",
+    "Barang": "Sieke Shaker  Mesh"
+}, {
+    "Kode": "3080159011",
+    "Barang": "Electric Steam  Generator"
+}, {
+    "Kode": "3080159012",
+    "Barang": "Cool Chamber"
+}, {
+    "Kode": "3080159013",
+    "Barang": "Dessicator Cainet"
+}, {
+    "Kode": "3080159014",
+    "Barang": "Acrylic"
+}, {
+    "Kode": "3080159999",
+    "Barang": "Alat Lab. Teknologi Proses  Enzym Lainnya"
+}, {
+    "Kode": "3080160001",
+    "Barang": "Exmuster"
+}, {
+    "Kode": "3080160002",
+    "Barang": "Plastic Binding System"
+}, {
+    "Kode": "3080160003",
+    "Barang": "Novos"
+}, {
+    "Kode": "3080160004",
+    "Barang": "Pressure Gun"
+}, {
+    "Kode": "3080160005",
+    "Barang": "Cetak Kubus Beton"
+}, {
+    "Kode": "3080160006",
+    "Barang": "Alat Pengukur Gelombang Laut"
+}, {
+    "Kode": "3080160007",
+    "Barang": "Saringan Besi"
+}, {
+    "Kode": "3080160008",
+    "Barang": "Set Packard  Paper  Recorded"
+}, {
+    "Kode": "3080160009",
+    "Barang": "GHM"
+}, {
+    "Kode": "3080160999",
+    "Barang": "Alat Laboratorim Teknik Pantai Lainnya"
+}, {
+    "Kode": "3080161001",
+    "Barang": "Power Harmonic Analizer Fluke"
+}, {
+    "Kode": "3080161002",
+    "Barang": "Multi Meter Fluke 37"
+}, {
+    "Kode": "3080161003",
+    "Barang": "Unitest Euro Expert Cut No. 9020L"
+}, {
+    "Kode": "3080161004",
+    "Barang": "Scope Meter Fluke 105 B 103"
+}, {
+    "Kode": "3080161005",
+    "Barang": "Panel Slogging Bailor Simulator"
+}, {
+    "Kode": "3080161006",
+    "Barang": "Process  Simulator Winsim Design"
+}, {
+    "Kode": "3080161007",
+    "Barang": "Power Line Multi Tranducer"
+}, {
+    "Kode": "3080161008",
+    "Barang": "Digital Anemometer"
+}, {
+    "Kode": "3080161009",
+    "Barang": "Portable Staek  Emission Analizer"
+}, {
+    "Kode": "3080161010",
+    "Barang": "Air Less Painting Wagner"
+}, {
+    "Kode": "3080161011",
+    "Barang": "Infra Red Exhaust  Gas Analizer"
+}, {
+    "Kode": "3080161012",
+    "Barang": "Instalasi Fiber Optic LCD Projector  Multimedia"
+}, {
+    "Kode": "3080161999",
+    "Barang": "Alat Lab. Sumber  Daya Dan Energi Lainnya"
+}, {
+    "Kode": "3080162001",
+    "Barang": "Decitating Cabinet"
+}, {
+    "Kode": "3080162002",
+    "Barang": "Digital Analitical Balance"
+}, {
+    "Kode": "3080162003",
+    "Barang": "Long Back Ground Beta Counter"
+}, {
+    "Kode": "3080162004",
+    "Barang": "Oil Content  Analizer"
+}, {
+    "Kode": "3080162005",
+    "Barang": "Boom Oil"
+}, {
+    "Kode": "3080162006",
+    "Barang": "Scimmer Crane"
+}, {
+    "Kode": "3080162999",
+    "Barang": "Alat Laboratorium Polusi Lainnya"
+}, {
+    "Kode": "3080163001",
+    "Barang": "GPS Insight"
+}, {
+    "Kode": "3080163002",
+    "Barang": "Board Display"
+}, {
+    "Kode": "3080163003",
+    "Barang": "Standard Compact"
+}, {
+    "Kode": "3080163999",
+    "Barang": "Alat Pengukur Gelombang Lainnya"
+}, {
+    "Kode": "3080199999",
+    "Barang": "Unit Alat Laboratorium Lainnya"
+}, {
+    "Kode": "3080201056",
+    "Barang": "Peralatan Pencacah Radiasi (Carrier Insert)"
+}, {
+    "Kode": "3080201057",
+    "Barang": "Peralatan Gerusan Keramik"
+}, {
+    "Kode": "3080201058",
+    "Barang": "Ratemeter"
+}, {
+    "Kode": "3080201059",
+    "Barang": "Scintiliation Monitor For Contamination"
+}, {
+    "Kode": "3080201060",
+    "Barang": "Magnifier #7540"
+}, {
+    "Kode": "3080201061",
+    "Barang": "Senter Mini Standar Safety"
+}, {
+    "Kode": "3080201062",
+    "Barang": "Decontamination Kit"
+}, {
+    "Kode": "3080201063",
+    "Barang": "Flexible Waste  Water  Dam"
+}, {
+    "Kode": "3080201064",
+    "Barang": "Decontamination Backpack"
+}, {
+    "Kode": "3080201999",
+    "Barang": "Analytical Instrument Lainnya"
+}, {
+    "Kode": "3080202001",
+    "Barang": "Generalporpose Giass Thermometer"
+}, {
+    "Kode": "3080202002",
+    "Barang": "Dial Reading Thermometer"
+}, {
+    "Kode": "3080202003",
+    "Barang": "Procesion Thermometer"
+}, {
+    "Kode": "3080202004",
+    "Barang": "Clinical Thermometer (Instrument Probe/sensor)"
+}, {
+    "Kode": "3080202005",
+    "Barang": "Maximum-Minimum Thermometer"
+}, {
+    "Kode": "3080202006",
+    "Barang": "Resistance Thermometer"
+}, {
+    "Kode": "3080202007",
+    "Barang": "Bimetal Thermometer"
+}, {
+    "Kode": "3080202008",
+    "Barang": "Temperature Indicator"
+}, {
+    "Kode": "3080202009",
+    "Barang": "Temperatur Recorder"
+}, {
+    "Kode": "3080202010",
+    "Barang": "Thermoregulator"
+}, {
+    "Kode": "3080202011",
+    "Barang": "Immersion Pyrometer"
+}, {
+    "Kode": "3080202012",
+    "Barang": "Spectral-Optical Pyrometer"
+}, {
+    "Kode": "3080202013",
+    "Barang": "UV/UV-VIS Radiometer"
+}, {
+    "Kode": "3080202014",
+    "Barang": "PH Meter/Indicator And Lon Meter"
+}, {
+    "Kode": "3080202015",
+    "Barang": "Ater Puryti Meter (Specific Resistance Meter)"
+}, {
+    "Kode": "3080202016",
+    "Barang": "Dissolvel Oxygen Meter(DO)"
+}, {
+    "Kode": "3080202017",
+    "Barang": "Biologikal Oxygen Demand  Monitor(BOD)"
+}, {
+    "Kode": "3080202018",
+    "Barang": "Bourdan  Vacuum Gauge"
+}, {
+    "Kode": "3080202019",
+    "Barang": "Diaphragm Pressure/Vacuum Gauge"
+}, {
+    "Kode": "3080202020",
+    "Barang": "Thermocouple Vacuum Gauge"
+}, {
+    "Kode": "3080202021",
+    "Barang": "Incline Tube Manometer"
+}, {
+    "Kode": "3080202022",
+    "Barang": "Portable Flectronic Manometer"
+}, {
+    "Kode": "3080202023",
+    "Barang": "Pirani High Vacuum Gauge"
+}, {
+    "Kode": "3080202024",
+    "Barang": "Vacuummeter"
+}, {
+    "Kode": "3080202025",
+    "Barang": "Well Type Manometer"
+}, {
+    "Kode": "3080202026",
+    "Barang": "Liquid Column Pressure Indicator"
+}, {
+    "Kode": "3080202027",
+    "Barang": "Electrec Element Pressure Indicator"
+}, {
+    "Kode": "3080202028",
+    "Barang": "Piezoresistive Pressure Indicator"
+}, {
+    "Kode": "3080202029",
+    "Barang": "Piezoelectric Pressure Indicator"
+}, {
+    "Kode": "3080202030",
+    "Barang": "Straningases Pressure Indicator"
+}, {
+    "Kode": "3080202031",
+    "Barang": "Specific Gravitometer"
+}, {
+    "Kode": "3080202032",
+    "Barang": "Whestphalt Balance Densitometer"
+}, {
+    "Kode": "3080202033",
+    "Barang": "Chain Balance Densitometer"
+}, {
+    "Kode": "3080202034",
+    "Barang": "Densitometer General"
+}, {
+    "Kode": "3080202035",
+    "Barang": "Surface  Tensometer"
+}, {
+    "Kode": "3080202036",
+    "Barang": "Viscometer Viscosimeter"
+}, {
+    "Kode": "3080202037",
+    "Barang": "Kinematic Viscosety Bath"
+}, {
+    "Kode": "3080202038",
+    "Barang": "Du Nuoy Interfacial Tensiometer"
+}, {
+    "Kode": "3080202039",
+    "Barang": "Orsat-Fischer Gas Analyzer"
+}, {
+    "Kode": "3080202040",
+    "Barang": "Orsat-Klei Gas Analyzer"
+}, {
+    "Kode": "3080202041",
+    "Barang": "Koehler Gas Analyzer"
+}, {
+    "Kode": "3080202042",
+    "Barang": "Dust Analyzer"
+}, {
+    "Kode": "3080202043",
+    "Barang": "Dust Sampler (Instrument Probe/sensor)"
+}, {
+    "Kode": "3080202044",
+    "Barang": "Gasmeter"
+}, {
+    "Kode": "3080202045",
+    "Barang": "Anemometer Flowmeter"
+}, {
+    "Kode": "3080202046",
+    "Barang": "Venturumeter Flowmeter"
+}, {
+    "Kode": "3080202047",
+    "Barang": "Areameter Flowmeter"
+}, {
+    "Kode": "3080203107",
+    "Barang": "Speed  Dyna Mixer"
+}, {
+    "Kode": "3080203108",
+    "Barang": "Crystal Growing+Cutter Mach"
+}, {
+    "Kode": "3080203109",
+    "Barang": "Kandang Logam Untuk Penelitian"
+}, {
+    "Kode": "3080203110",
+    "Barang": "Kandang Non Logam Untuk Penelitian"
+}, {
+    "Kode": "3080203111",
+    "Barang": "Rak Kandang Logam Untuk Penelitian"
+}, {
+    "Kode": "3080203112",
+    "Barang": "Rak Kandang Non Logam Untuk Penelitian"
+}, {
+    "Kode": "3080203113",
+    "Barang": "Electric Digital"
+}, {
+    "Kode": "3080203114",
+    "Barang": "Imtri tugal Screen"
+}, {
+    "Kode": "3080203115",
+    "Barang": "Manual Screen"
+}, {
+    "Kode": "3080203116",
+    "Barang": "Durham  Rubes"
+}, {
+    "Kode": "3080203117",
+    "Barang": "Panel Uto Power"
+}, {
+    "Kode": "3080203118",
+    "Barang": "Panel Elevator"
+}, {
+    "Kode": "3080203119",
+    "Barang": "Test Tube Holder"
+}, {
+    "Kode": "3080203120",
+    "Barang": "Holder Contact  Thermometer"
+}, {
+    "Kode": "3080203121",
+    "Barang": "Holder Beverance Thermo"
+}, {
+    "Kode": "3080203999",
+    "Barang": "General Laboratory Tool Lainnya"
+}, {
+    "Kode": "3080204001",
+    "Barang": "Burette"
+}, {
+    "Kode": "3080204002",
+    "Barang": "Autometic Birelle"
+}, {
+    "Kode": "3080204003",
+    "Barang": "Pippeter"
+}, {
+    "Kode": "3080204004",
+    "Barang": "Mikrolitre Piperdort"
+}, {
+    "Kode": "3080204005",
+    "Barang": "Large Glass Vessel (Kataslitye Low Ex-Change)"
+}, {
+    "Kode": "3080204006",
+    "Barang": "Water  Chiller"
+}, {
+    "Kode": "3080204007",
+    "Barang": "Dessiccator"
+}, {
+    "Kode": "3080204008",
+    "Barang": "Cendensor (Liebig Davis,Dimrot,Spiral Allhm)"
+}, {
+    "Kode": "3080204009",
+    "Barang": "Soxhlel Extractor"
+}, {
+    "Kode": "3080204010",
+    "Barang": "Crucible (Quartz,Porcelain)"
+}, {
+    "Kode": "3080204011",
+    "Barang": "Curcible (Nickel. Etc)"
+}, {
+    "Kode": "3080204012",
+    "Barang": "Mortar Porcelain"
+}, {
+    "Kode": "3080204013",
+    "Barang": "Integrated Circuit Taster  (IC Taster)"
+}, {
+    "Kode": "3080204014",
+    "Barang": "Beaker"
+}, {
+    "Kode": "3080204015",
+    "Barang": "Flask"
+}, {
+    "Kode": "3080204016",
+    "Barang": "Bottle Aspirator"
+}, {
+    "Kode": "3080204017",
+    "Barang": "Retort  (Glassware Plastic/utensils)"
+}, {
+    "Kode": "3080204018",
+    "Barang": "Funnel"
+}, {
+    "Kode": "3080204019",
+    "Barang": "Safety  Can"
+}, {
+    "Kode": "3080204020",
+    "Barang": "Safety  Container/Jerrican"
+}, {
+    "Kode": "3080204021",
+    "Barang": "Safety  Container"
+}, {
+    "Kode": "3080204022",
+    "Barang": "Tank"
+}, {
+    "Kode": "3080204023",
+    "Barang": "Flat Bottom Flask"
+}, {
+    "Kode": "3080204024",
+    "Barang": "Round Bottom Flask"
+}, {
+    "Kode": "3080204025",
+    "Barang": "Kjadahi Flash"
+}, {
+    "Kode": "3080204026",
+    "Barang": "Distilling Flask"
+}, {
+    "Kode": "3080204999",
+    "Barang": "Glassware Plastic/Utensils Lainnya"
+}, {
+    "Kode": "3080205001",
+    "Barang": "Generator Set (Lab Scale)"
+}, {
+    "Kode": "3080205002",
+    "Barang": "Ear (Protecting) Muff"
+}, {
+    "Kode": "3080205003",
+    "Barang": "Eye Goggles"
+}, {
+    "Kode": "3080205004",
+    "Barang": "Face Shield (From Radiant Heat Spork)"
+}, {
+    "Kode": "3080205005",
+    "Barang": "Anti Dust & Toxic Fume Respirator"
+}, {
+    "Kode": "3080205006",
+    "Barang": "Eyewash  Station"
+}, {
+    "Kode": "3080205007",
+    "Barang": "Hot Cell"
+}, {
+    "Kode": "3080205008",
+    "Barang": "Lead Glass Window"
+}, {
+    "Kode": "3080205009",
+    "Barang": "FPM Target  Holder Assembly"
+}, {
+    "Kode": "3080205010",
+    "Barang": "WNP Hook"
+}, {
+    "Kode": "3080205011",
+    "Barang": "Fire Extinguisher"
+}, {
+    "Kode": "3080205012",
+    "Barang": "Fire Extinguisher Carlage"
+}, {
+    "Kode": "3090204025",
+    "Barang": "Water  Testing Chemagent"
+}, {
+    "Kode": "3090204026",
+    "Barang": "Tabung  Detektor Kitagawa"
+}, {
+    "Kode": "3090204027",
+    "Barang": "Tabung  Gas Detektor"
+}, {
+    "Kode": "3090204028",
+    "Barang": "Field Shower"
+}, {
+    "Kode": "3090204029",
+    "Barang": "Collapsible Water  Tank"
+}, {
+    "Kode": "3090204030",
+    "Barang": "Training Emulsion"
+}, {
+    "Kode": "3090204031",
+    "Barang": "Alins Traner  NBS"
+}, {
+    "Kode": "3090204032",
+    "Barang": "Removing Maerial"
+}, {
+    "Kode": "3090204033",
+    "Barang": "Swing Fog SN 50"
+}, {
+    "Kode": "3090204034",
+    "Barang": "Stainless Steel Sprayer"
+}, {
+    "Kode": "3090204035",
+    "Barang": "Charge  Battery  Dry Fit"
+}, {
+    "Kode": "3090204036",
+    "Barang": "Battery  Dry Fit"
+}, {
+    "Kode": "3090204037",
+    "Barang": "Set Slang Las and Spray"
+}, {
+    "Kode": "3090204038",
+    "Barang": "Fire Gun"
+}, {
+    "Kode": "3090204039",
+    "Barang": "Tabung  Acetillen"
+}, {
+    "Kode": "3090204040",
+    "Barang": "Derajat  Celcius Termoline"
+}, {
+    "Kode": "3090204041",
+    "Barang": "PenghitunG Bakteri"
+}, {
+    "Kode": "3090204042",
+    "Barang": "NyCounter  Digital Stuart"
+}, {
+    "Kode": "3090204043",
+    "Barang": "Test Nitrit dan Besi"
+}, {
+    "Kode": "3090204044",
+    "Barang": "Dissecting Set"
+}, {
+    "Kode": "3090204045",
+    "Barang": "Container Field Work"
+}, {
+    "Kode": "3090204046",
+    "Barang": "Baker Glass"
+}, {
+    "Kode": "3090204047",
+    "Barang": "Biological Sampling Kit"
+}, {
+    "Kode": "3090204048",
+    "Barang": "Bunsen  Burner (Alat Nuklir, Biologi Dan Kimia)"
+}, {
+    "Kode": "3090204049",
+    "Barang": "Coloni Counter"
+}, {
+    "Kode": "3090204050",
+    "Barang": "Destilator (Alat Nuklir, Biologi Dan Kimia)"
+}, {
+    "Kode": "3090204051",
+    "Barang": "Dissecting Board"
+}, {
+    "Kode": "3090204052",
+    "Barang": "Erlenmeyer"
+}, {
+    "Kode": "3090204053",
+    "Barang": "Haemocytemeter Improved Nebaver  Pattern"
+}, {
+    "Kode": "3090204054",
+    "Barang": "Heamometer"
+}, {
+    "Kode": "3090204055",
+    "Barang": "Kotak Preparat"
+}, {
+    "Kode": "3090204056",
+    "Barang": "Live Cell For 35 Mm Projector"
+}, {
+    "Kode": "3090204057",
+    "Barang": "Live Cell For Projection Microscope"
+}, {
+    "Kode": "3090204058",
+    "Barang": "Medical Dissecting Set"
+}, {
+    "Kode": "3090204059",
+    "Barang": "Sedgewick Rafter"
+}, {
+    "Kode": "3090204060",
+    "Barang": "Tubing For Blood Dilutting Pipet"
+}, {
+    "Kode": "3090204061",
+    "Barang": "Ultra Violet Viewing Box and Lampu Ultraviolet"
+}, {
+    "Kode": "3090204062",
+    "Barang": "Faces  Field Fischer"
+}, {
+    "Kode": "3090204063",
+    "Barang": "Masker 5000  Series Dual Catridge Respirator"
+}, {
+    "Kode": "3090204064",
+    "Barang": "Alat Destilasi'"
+}, {
+    "Kode": "3090204065",
+    "Barang": "Atomic Absortion Spectro  Photometer"
+}, {
+    "Kode": "3090204070",
+    "Barang": "Buret Biasa"
+}, {
+    "Kode": "3090204072",
+    "Barang": "Calcium Chloride Tower"
+}, {
+    "Kode": "3090204073",
+    "Barang": "Filter Funnel"
+}, {
+    "Kode": "3090204074",
+    "Barang": "Gas Chormatography"
+}, {
+    "Kode": "3090204077",
+    "Barang": "Infra Red Spectometer"
+}, {
+    "Kode": "3090204078",
+    "Barang": "Krus Porcelain"
+}, {
+    "Kode": "3090204079",
+    "Barang": "Liquid Chormatography"
+}, {
+    "Kode": "3090204080",
+    "Barang": "Mortas and  Fistle Porcelain"
+}, {
+    "Kode": "3090204081",
+    "Barang": "Neraca  Analitis"
+}, {
+    "Kode": "3090204082",
+    "Barang": "Penjepit Krus"
+}, {
+    "Kode": "3090204083",
+    "Barang": "Specifionografity Bottle As Justed"
+}, {
+    "Kode": "3090204084",
+    "Barang": "Spectronic 20"
+}, {
+    "Kode": "3090204085",
+    "Barang": "Statif and Clemp"
+}, {
+    "Kode": "3090204086",
+    "Barang": "Tubidimeter Hach"
+}, {
+    "Kode": "3090204087",
+    "Barang": "Ultrasonic Cleaner (Alat Nuklir, Biologi Dan Kimia)"
+}, {
+    "Kode": "3090204088",
+    "Barang": "UV-VIS Spestrohotometer"
+}, {
+    "Kode": "3090204089",
+    "Barang": "Vacuum Filter Flask"
+}, {
+    "Kode": "3090408003",
+    "Barang": "Forensic Light Source"
+}, {
+    "Kode": "3090408004",
+    "Barang": "Fp. Ink Roller"
+}, {
+    "Kode": "3090408005",
+    "Barang": "Pocket  Size Magnifying Lens/Ps.600"
+}, {
+    "Kode": "3090408006",
+    "Barang": "Portable Ultra Violet Rays Lamp"
+}, {
+    "Kode": "3090408007",
+    "Barang": "Type Electric Iodine Fumer  Kit/Ps.46"
+}, {
+    "Kode": "3090408008",
+    "Barang": "Steel Classifying Table/Ps.148"
+}, {
+    "Kode": "3090408009",
+    "Barang": "Wide Magnetic & Duster/Ps.113"
+}, {
+    "Kode": "3090408010",
+    "Barang": "Laboratory Type Fuming Cabinet"
+}, {
+    "Kode": "3090408011",
+    "Barang": "Evidence Camera"
+}, {
+    "Kode": "3090408012",
+    "Barang": "Fingerprint Magnifier/Henry Disk"
+}, {
+    "Kode": "3090408013",
+    "Barang": "Traffic Identification Kit/Ps.511"
+}, {
+    "Kode": "3090408014",
+    "Barang": "Fingerprint Sprayer  Gun Kit/Ps.135"
+}, {
+    "Kode": "3090408015",
+    "Barang": "Anti Petrefacton Mask"
+}, {
+    "Kode": "3090408016",
+    "Barang": "Regular Magnetic Latent Print Kit"
+}, {
+    "Kode": "3090408017",
+    "Barang": "Retrac  Table Maxi Latent Print Brush"
+}, {
+    "Kode": "3090408018",
+    "Barang": "Comparator Cat PC-28"
+}, {
+    "Kode": "3090408019",
+    "Barang": "Latent Print Spesialis Kit Cat-303"
+}, {
+    "Kode": "3090408020",
+    "Barang": "Iodine Print Eshenter Cat-Dca 1-6"
+}, {
+    "Kode": "3090408021",
+    "Barang": "Bulgary Squad  Kit/Ps.117"
+}, {
+    "Kode": "3090408022",
+    "Barang": "Latent Print Kit Cat LP 304"
+}, {
+    "Kode": "3090408023",
+    "Barang": "Ransel Kit"
+}, {
+    "Kode": "3090408024",
+    "Barang": "Profesional Fingerprint Magnifer/Loop"
+}, {
+    "Kode": "3090408025",
+    "Barang": "Compact  Folding Fp. Kit/CFP 600"
+}, {
+    "Kode": "3090408026",
+    "Barang": "Wide Magnetic Brush"
+}, {
+    "Kode": "3090408027",
+    "Barang": "Fp Field Kit"
+}, {
+    "Kode": "3090408028",
+    "Barang": "Magnetic Latent Print Kit"
+}, {
+    "Kode": "3090408029",
+    "Barang": "Poly View"
+}, {
+    "Kode": "3090408030",
+    "Barang": "Polylight"
+}, {
+    "Kode": "3090408031",
+    "Barang": "Laser Print Finger Detector"
+}, {
+    "Kode": "3090408032",
+    "Barang": "Finger Print Laboratories"
+}, {
+    "Kode": "3090408033",
+    "Barang": "AC Purpose Fuming Cabinet"
+}, {
+    "Kode": "3090408034",
+    "Barang": "Forensik Optical Comperator"
+}, {
+    "Kode": "3090408035",
+    "Barang": "Patroid Compositor"
+}, {
+    "Kode": "3090408036",
+    "Barang": "FP Development Station"
+}, {
+    "Kode": "3090408999",
+    "Barang": "Alsus Daktiloskopi Lainnya"
+}, {
+    "Kode": "3090409001",
+    "Barang": "Gas Cromatography (GC)"
+}, {
+    "Kode": "3090409002",
+    "Barang": "Ion Cromatography"
+}, {
+    "Kode": "3090409003",
+    "Barang": "FTIR"
+}, {
+    "Kode": "3090409004",
+    "Barang": "UV-VIS Spectrometer"
+}, {
+    "Kode": "3090409005",
+    "Barang": "GC MS"
+}, {
+    "Kode": "3090409006",
+    "Barang": "GC-IRD MS"
+}, {
+    "Kode": "3090409007",
+    "Barang": "Elementer Analizer"
+}, {
+    "Kode": "3090409008",
+    "Barang": "Emit Solaris"
+}, {
+    "Kode": "3090409009",
+    "Barang": "Vioce Analizer"
+}, {
+    "Kode": "3090409010",
+    "Barang": "Universal Testing"
+}, {
+    "Kode": "3090409011",
+    "Barang": "DNA Analizer"
+}, {
+    "Kode": "3090409012",
+    "Barang": "UV-VIS Scanning Spectrometer"
+}, {
+    "Kode": "3090409013",
+    "Barang": "Solaris Automatic Analyser"
+}, {
+    "Kode": "3090409014",
+    "Barang": "Microdigest"
+}, {
+    "Kode": "3090409015",
+    "Barang": "Video Spectral Comparator (VSC)"
+}, {
+    "Kode": "3090409016",
+    "Barang": "Lab X-300"
+}, {
+    "Kode": "3090409017",
+    "Barang": "Ion Scan"
+}, {
+    "Kode": "3090409018",
+    "Barang": "Sabre  2000"
+}, {
+    "Kode": "3090409019",
+    "Barang": "Gas Detector"
+}, {
+    "Kode": "3090409020",
+    "Barang": "Lie Detector"
+}, {
+    "Kode": "3090409021",
+    "Barang": "ESDA"
+}, {
+    "Kode": "3090409022",
+    "Barang": "Gas Emission Analyser"
+}, {
+    "Kode": "3090409023",
+    "Barang": "Explosive Vapour Detector"
+}, {
+    "Kode": "3090409024",
+    "Barang": "Gas Detection Instruments Hand Held Detectors"
+}, {
+    "Kode": "3090409025",
+    "Barang": "Gas Combustible Detector"
+}, {
+    "Kode": "3090409026",
+    "Barang": "Flas Point Tester"
+}, {
+    "Kode": "3090409027",
+    "Barang": "Radiation Checker"
+}, {
+    "Kode": "3090409028",
+    "Barang": "Ultraviolet Box"
+}, {
+    "Kode": "3090409029",
+    "Barang": "Bank Note Checker"
+}, {
+    "Kode": "3090409030",
+    "Barang": "Hand Held Gas Detection Instruments"
+}, {
+    "Kode": "3090409031",
+    "Barang": "Auto Flash Point Apparatus"
+}, {
+    "Kode": "3090409032",
+    "Barang": "Melting Point Apparatus"
+}, {
+    "Kode": "3090409033",
+    "Barang": "Ph Meter Bench"
+}, {
+    "Kode": "3090409034",
+    "Barang": "Ph Meter Corning Delta"
+}, {
+    "Kode": "3090409035",
+    "Barang": "Tinto Meter"
+}, {
+    "Kode": "3090409036",
+    "Barang": "Emission Analyzer"
+}, {
+    "Kode": "3090409037",
+    "Barang": "Computing Noise Doosimeter"
+}, {
+    "Kode": "3090409038",
+    "Barang": "Organic Gas Sampling Kit (SKC)"
+}, {
+    "Kode": "3090409039",
+    "Barang": "Laminar Air Low"
+}, {
+    "Kode": "3090409040",
+    "Barang": "Digital Multimeter (Fluke 97)"
+}, {
+    "Kode": "3090409041",
+    "Barang": "The Russel Comparator"
+}, {
+    "Kode": "3090409042",
+    "Barang": "Fofessional Trimmer"
+}, {
+    "Kode": "3090409043",
+    "Barang": "Flow Meter Water"
+}, {
+    "Kode": "3090409044",
+    "Barang": "Flow Meter Gas"
+}, {
+    "Kode": "3090409045",
+    "Barang": "Mettler AT 201 Analytical Balance"
+}, {
+    "Kode": "3090409046",
+    "Barang": "Density Balance For Liquids"
+}, {
+    "Kode": "3090409047",
+    "Barang": "Viscometer Portable"
+}, {
+    "Kode": "3090409048",
+    "Barang": "Micrometer and Capiler"
+}, {
+    "Kode": "3090409049",
+    "Barang": "PH Meter Digital Portable"
+}, {
+    "Kode": "3090409050",
+    "Barang": "Conductivity Meter Portable"
+}, {
+    "Kode": "3090409051",
+    "Barang": "Conductivity Meter Bench"
+}, {
+    "Kode": "3090409052",
+    "Barang": "Thermometer Digital Portable"
+}, {
+    "Kode": "3090409053",
+    "Barang": "Kinetic Viscosity Bath"
+}, {
+    "Kode": "3090409054",
+    "Barang": "Multi Role Metal Detection Equipment"
+}, {
+    "Kode": "3090409055",
+    "Barang": "Light Meter"
+}, {
+    "Kode": "3090409056",
+    "Barang": "Dissolved Oxygen Meter Portable"
+}, {
+    "Kode": "3090409057",
+    "Barang": "Determination of Vapour Pressure"
+}, {
+    "Kode": "3090409058",
+    "Barang": "Determination of Freezing Poin"
+}, {
+    "Kode": "3090409059",
+    "Barang": "Clorine and Sulphur Determination"
+}, {
+    "Kode": "3090409060",
+    "Barang": "Determination of Hydrocarbon Types"
+}, {
+    "Kode": "3090409061",
+    "Barang": "Determination of Insolube Matters"
+}, {
+    "Kode": "3090409062",
+    "Barang": "Determination of Free Acidic"
+}, {
+    "Kode": "3090409063",
+    "Barang": "Determination of Smoke Point"
+}, {
+    "Kode": "3090409064",
+    "Barang": "Detection of Copper Corrosion"
+}, {
+    "Kode": "3090409065",
+    "Barang": "Determination of Coud and Pour Point"
+}, {
+    "Kode": "3090409066",
+    "Barang": "Digital Hygrometer/Thermometer"
+}, {
+    "Kode": "3090409067",
+    "Barang": "Ultrasonic Thickness Gauge"
+}, {
+    "Kode": "3090409068",
+    "Barang": "Friction Tester"
+}, {
+    "Kode": "3090409069",
+    "Barang": "Coat Thickness Measurement"
+}, {
+    "Kode": "3090409070",
+    "Barang": "Questioned Document Plate Set"
+}, {
+    "Kode": "3090409071",
+    "Barang": "Scopemen"
+}, {
+    "Kode": "3090409072",
+    "Barang": "Mikroskop Metalogri"
+}, {
+    "Kode": "3090409073",
+    "Barang": "Comparison Microscope"
+}, {
+    "Kode": "3090409074",
+    "Barang": "Trinoc Microscope Fluorescence"
+}, {
+    "Kode": "3090409075",
+    "Barang": "Through  Light Box"
+}, {
+    "Kode": "3090409076",
+    "Barang": "Illuminated Magnifier"
+}, {
+    "Kode": "3090409077",
+    "Barang": "Refractometer Abbe Mark II Plus"
+}, {
+    "Kode": "3090409078",
+    "Barang": "Thermal Analysis System"
+}, {
+    "Kode": "3090409079",
+    "Barang": "Fisher Micromaster"
+}, {
+    "Kode": "3090409080",
+    "Barang": "X-Ray Fluorences Spectrometry (XRF)"
+}, {
+    "Kode": "3090409081",
+    "Barang": "X-Ray Diffractometry (XRD)"
+}, {
+    "Kode": "3090409082",
+    "Barang": "Leica Vector IV"
+}, {
+    "Kode": "3090409083",
+    "Barang": "Draeger Multi Gas Detector"
+}, {
+    "Kode": "3090409084",
+    "Barang": "Furnace  Neytech"
+}, {
+    "Kode": "3090409085",
+    "Barang": "X-Met 3000  TX & Portable X-Ray"
+}, {
+    "Kode": "3090409086",
+    "Barang": "Hot Plate With Stirrer"
+}, {
+    "Kode": "3090409087",
+    "Barang": "Micro Distilation Oven"
+}, {
+    "Kode": "3090409088",
+    "Barang": "Reprostar"
+}, {
+    "Kode": "3090409089",
+    "Barang": "Magnifier"
+}, {
+    "Kode": "3090409090",
+    "Barang": "Resin Coated  Paper  Dryer"
+}, {
+    "Kode": "3090409091",
+    "Barang": "Vortex Genie"
+}, {
+    "Kode": "3090409092",
+    "Barang": "Refrigerator Laboratory Spark Free"
+}, {
+    "Kode": "3090409093",
+    "Barang": "Lab Start  Up Plus Chemicals"
+}, {
+    "Kode": "3090409094",
+    "Barang": "High Speed  Centrifuge"
+}, {
+    "Kode": "3090409095",
+    "Barang": "Microcentaur"
+}, {
+    "Kode": "3090409096",
+    "Barang": "Eppendort Thermomixer"
+}, {
+    "Kode": "3090409097",
+    "Barang": "Russel Comparator"
+}, {
+    "Kode": "3090409098",
+    "Barang": "Stavol"
+}, {
+    "Kode": "3090409099",
+    "Barang": "Exploranium Gamma  Neutron  Ray Spectrometer"
+}, {
+    "Kode": "3090409100",
+    "Barang": "Exploranium Radiation Detection Pager  Unit"
+}, {
+    "Kode": "3090409101",
+    "Barang": "Electrik Executive"
+}, {
+    "Kode": "3090409102",
+    "Barang": "Fisher Oven"
+}, {
+    "Kode": "3090409103",
+    "Barang": "Automatic Titrator For TBN Determination"
+}, {
+    "Kode": "3090409104",
+    "Barang": "Pensky  Marten Closed Up Flash Point"
+}, {
+    "Kode": "3090409105",
+    "Barang": "Polaroghapy/Voltammetry"
+}, {
+    "Kode": "3090409106",
+    "Barang": "Fisher Refrigerator Circulator"
+}, {
+    "Kode": "3090409107",
+    "Barang": "Personal Dust Sampler"
+}, {
+    "Kode": "3090409108",
+    "Barang": "Mistral 6000  Refrigerated Centrifuge"
+}, {
+    "Kode": "3090409109",
+    "Barang": "Heating Mantle With Stirrer"
+}, {
+    "Kode": "3090409110",
+    "Barang": "Vortex Genie Mixer"
+}, {
+    "Kode": "3090409111",
+    "Barang": "Shooting Box Normal"
+}, {
+    "Kode": "3090409112",
+    "Barang": "Autoclave, Omega  Sterilising System"
+}, {
+    "Kode": "3090409113",
+    "Barang": "Horizontal Agarore Electrophoresis"
+}, {
+    "Kode": "3090409114",
+    "Barang": "Isco Automatic Waste  Water  Sampler"
+}, {
+    "Kode": "3090409115",
+    "Barang": "Genarator"
+}, {
+    "Kode": "3090409116",
+    "Barang": "Digital Flow Detector"
+}, {
+    "Kode": "3090409117",
+    "Barang": "Adhesion Tester"
+}, {
+    "Kode": "3090409118",
+    "Barang": "Eppendorf  Thermonis"
+}, {
+    "Kode": "3090409119",
+    "Barang": "Ultrasonic Bath"
+}, {
+    "Kode": "3090409120",
+    "Barang": "Copy Stand  and Lights"
+}, {
+    "Kode": "3090409121",
+    "Barang": "Quarterly Gradient Semi Preparative"
+}, {
+    "Kode": "3090409122",
+    "Barang": "DNA System  on Forensic"
+}, {
+    "Kode": "3090409123",
+    "Barang": "Automatic Cleveland Open Cup Flash"
+}, {
+    "Kode": "3090409124",
+    "Barang": "Baths Ultrasonic"
+}, {
+    "Kode": "3090409125",
+    "Barang": "Arson Collection Tool Kit"
+}, {
+    "Kode": "3090409126",
+    "Barang": "Chest  Freezer"
+}, {
+    "Kode": "3090409127",
+    "Barang": "Hot Box Oven"
+}, {
+    "Kode": "3090409128",
+    "Barang": "Colour Film Processing Mini Lab"
+}, {
+    "Kode": "3090409129",
+    "Barang": "Auto Slide Projector"
+}, {
+    "Kode": "3090409130",
+    "Barang": "Combustible Gas Detector"
+}, {
+    "Kode": "3090409131",
+    "Barang": "CSL Computerized Snech  Workstation"
+}, {
+    "Kode": "3090409132",
+    "Barang": "Drugs Standards"
+}, {
+    "Kode": "3090409133",
+    "Barang": "Velocity Measuring Device"
+}, {
+    "Kode": "3090409134",
+    "Barang": "Photographic Enlarger With Colour Analyzer"
+}, {
+    "Kode": "3090409135",
+    "Barang": "Set of Studio Lights"
+}, {
+    "Kode": "3090409136",
+    "Barang": "Mettler Delta 320"
+}, {
+    "Kode": "3090409137",
+    "Barang": "Colour Film Processing System"
+}, {
+    "Kode": "3090409138",
+    "Barang": "Cod Apparatus"
+}, {
+    "Kode": "3100101005",
+    "Barang": "Komputer Wedis"
+}, {
+    "Kode": "3100101006",
+    "Barang": "Komputer Synergie"
+}, {
+    "Kode": "3100101007",
+    "Barang": "PC Workstation"
+}, {
+    "Kode": "3100101999",
+    "Barang": "Komputer Jaringan Lainnya"
+}, {
+    "Kode": "3100102001",
+    "Barang": "P.C Unit"
+}, {
+    "Kode": "3100102002",
+    "Barang": "Lap Top"
+}, {
+    "Kode": "3100102003",
+    "Barang": "Note Book"
+}, {
+    "Kode": "3100102004",
+    "Barang": "Palm Top"
+}, {
+    "Kode": "3100102005",
+    "Barang": "Code Breaker  Super  Komputer"
+}, {
+    "Kode": "3100102006",
+    "Barang": "Thinclient"
+}, {
+    "Kode": "3100102007",
+    "Barang": "Net Book"
+}, {
+    "Kode": "3100102008",
+    "Barang": "Ultra Mobile P.C."
+}, {
+    "Kode": "3100102009",
+    "Barang": "Tablet PC"
+}, {
+    "Kode": "3100102010",
+    "Barang": "Ipod"
+}, {
+    "Kode": "3100102999",
+    "Barang": "Personal Komputer Lainnya"
+}, {
+    "Kode": "3100199999",
+    "Barang": "Komputer Unit Lainnya"
+}, {
+    "Kode": "31002",
+    "Barang": "PERALATAN KOMPUTER"
+}, {
+    "Kode": "3100201001",
+    "Barang": "Card Reader  (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201002",
+    "Barang": "Magnetic Tape Unit (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201003",
+    "Barang": "Floppy Disk Unit (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201004",
+    "Barang": "Storage Modul Disk (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201005",
+    "Barang": "Console Unit (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201006",
+    "Barang": "CPU (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201007",
+    "Barang": "Disk Pack (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201008",
+    "Barang": "Hard Copy Console"
+}, {
+    "Kode": "3100201009",
+    "Barang": "Serial Printer"
+}, {
+    "Kode": "3100201010",
+    "Barang": "Line Printer"
+}, {
+    "Kode": "3100201011",
+    "Barang": "Plotter (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201012",
+    "Barang": "Hard Disk"
+}, {
+    "Kode": "3100201013",
+    "Barang": "Keyboard (Peralatan Mainframe)"
+}, {
+    "Kode": "3100201014",
+    "Barang": "Steamer"
+}, {
+    "Kode": "3100201015",
+    "Barang": "Data Patch  Panel"
+}, {
+    "Kode": "3100201016",
+    "Barang": "Paper  Tape  Reader"
+}, {
+    "Kode": "3100201017",
+    "Barang": "Panaboard"
+}, {
+    "Kode": "3100201999",
+    "Barang": "Peralatan Mainframe Lainnya"
+}, {
+    "Kode": "3100202001",
+    "Barang": "Card Reader  (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202002",
+    "Barang": "Magnetic Tape Unit (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202003",
+    "Barang": "Floppy Disk Unit (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202004",
+    "Barang": "Storage Modul Disk (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202005",
+    "Barang": "Console Unit (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202006",
+    "Barang": "CPU (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202007",
+    "Barang": "Disk Pack (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202009",
+    "Barang": "Plotter (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202010",
+    "Barang": "Scanner (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202011",
+    "Barang": "Computer Compatible"
+}, {
+    "Kode": "3100202012",
+    "Barang": "Viewer (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202013",
+    "Barang": "Digitizer (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202014",
+    "Barang": "Keyboard (Peralatan Mini Komputer)"
+}, {
+    "Kode": "3100202015",
+    "Barang": "Auto Switch/Data Switch"
+}, {
+    "Kode": "3100202016",
+    "Barang": "Cut Sheet  Feeder"
+}, {
+    "Kode": "3100202017",
+    "Barang": "Speaker Komputer"
+}, {
+    "Kode": "3100202999",
+    "Barang": "Peralatan Mini Komputer Lainnya"
+}, {
+    "Kode": "3140202002",
+    "Barang": "Bottom Holesimpler"
+}, {
+    "Kode": "3140202003",
+    "Barang": "Coring Unit"
+}, {
+    "Kode": "3140202999",
+    "Barang": "Test Unit lainnya"
+}, {
+    "Kode": "3140299999",
+    "Barang": "Alat Bantu Produksi Lainnya"
+}, {
+    "Kode": "315",
+    "Barang": "ALAT KESELAMATAN KERJA"
+}, {
+    "Kode": "31501",
+    "Barang": "ALAT DETEKSI"
+}, {
+    "Kode": "3150101001",
+    "Barang": "Radiasi Panas"
+}, {
+    "Kode": "3150101002",
+    "Barang": "Stack Monitor Radioaktif"
+}, {
+    "Kode": "3150101003",
+    "Barang": "Radiasi Medan Magnit"
+}, {
+    "Kode": "3150101999",
+    "Barang": "Radiasi Lainnya"
+}, {
+    "Kode": "3150102001",
+    "Barang": "Penutup Telinga"
+}, {
+    "Kode": "3150102999",
+    "Barang": "Suara  Lainnya"
+}, {
+    "Kode": "3150199999",
+    "Barang": "Alat Deteksi Lainnya"
+}, {
+    "Kode": "31502",
+    "Barang": "ALAT PELINDUNG"
+}, {
+    "Kode": "3150201001",
+    "Barang": "Baju Anti Panas"
+}, {
+    "Kode": "3150201002",
+    "Barang": "Baju Anti Radiasi"
+}, {
+    "Kode": "3150201999",
+    "Barang": "Baju Pengaman Lainnya"
+}, {
+    "Kode": "3150202001",
+    "Barang": "Masker Gas"
+}, {
+    "Kode": "3150202002",
+    "Barang": "Masker Debu"
+}, {
+    "Kode": "3150202003",
+    "Barang": "Masker Cahaya"
+}, {
+    "Kode": "3150202999",
+    "Barang": "Masker Lainnya"
+}, {
+    "Kode": "3150203001",
+    "Barang": "Tambang Dalam"
+}, {
+    "Kode": "3150203002",
+    "Barang": "Tambang Terbuka"
+}, {
+    "Kode": "3150203003",
+    "Barang": "Sipil"
+}, {
+    "Kode": "3150203004",
+    "Barang": "Helmet"
+}, {
+    "Kode": "3150203999",
+    "Barang": "Topi Kerja Lainnya"
+}, {
+    "Kode": "3150204001",
+    "Barang": "Duduk"
+}, {
+    "Kode": "3150204002",
+    "Barang": "Memanjat"
+}, {
+    "Kode": "3150204999",
+    "Barang": "Sabuk Pengaman Lainnya"
+}, {
+    "Kode": "3150205001",
+    "Barang": "Sepatu Lumpur"
+}, {
+    "Kode": "3150205002",
+    "Barang": "Sepatu Tahan  Tekanan"
+}, {
+    "Kode": "3150205003",
+    "Barang": "Sepatu Anti Arus Listrik"
+}, {
+    "Kode": "3150205004",
+    "Barang": "Sepatu Anti Licin"
+}, {
+    "Kode": "3150205005",
+    "Barang": "Sepatu Boot"
+}, {
+    "Kode": "3150205999",
+    "Barang": "Sepatu Lapangan Lainnya"
+}, {
+    "Kode": "3150299999",
+    "Barang": "Alat Pelindung Lainnya"
+}, {
+    "Kode": "31503",
+    "Barang": "ALAT SAR"
+}, {
+    "Kode": "3150301001",
+    "Barang": "Rescue  Seat/Winch"
+}, {
+    "Kode": "3150301002",
+    "Barang": "Rescue  Jaring?harnes"
+}, {
+    "Kode": "3150301003",
+    "Barang": "Parachute Barang"
+}, {
+    "Kode": "3150301004",
+    "Barang": "Life Jacket"
+}, {
+    "Kode": "3150301005",
+    "Barang": "Lifebuoy"
+}, {
+    "Kode": "3150301006",
+    "Barang": "Inflatable Life Craft"
+}, {
+    "Kode": "3150301007",
+    "Barang": "Sea Resque  Kit"
+}, {
+    "Kode": "3150301008",
+    "Barang": "Tree escape"
+}];

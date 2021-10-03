@@ -17,12 +17,12 @@
                     <div class="page-title">
                         <div class="row">
                             <div class="col-sm-6">
-                                <h4 class="mb-0"> Data Barang </h4>
+                                <h4 class="mb-0"> Daftar Barang </h4>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
-                                    <a href="{{route('Barang.create')}}" class="btn btn-primary">Tambah Barang</a>
                                     <a href="{{route('Scan')}}" class="btn btn-primary">Scan Barang</a>
+                                    <a href="{{route('Barang.create')}}" class="btn btn-primary">Tambah Barang</a>
                                 </ol>
                             </div>
                         </div>
@@ -65,12 +65,19 @@
                                                     <td>{{ $itemdetail->nup }}</td>
                                                     <td>{{ $itemdetail->ruangan }}</td>
                                                     <td>{{ $itemdetail->Lantai }}</td>
-                                                    <td class="badge badge-success mb-auto">
-                                                        @if ($itemdetail->Req == "Y")
-                                                            Request Pindah
+                                                    <td> <h5>
+                                                        @if ($itemdetail->IdKondisi == 5)
+                                                            <span class="badge badge-warning mb-auto">Request Pindah
+                                                        @elseif ($itemdetail->IdKondisi == 8)
+                                                            <span class="badge badge-danger mb-auto">Ditolak
+                                                        @elseif ($itemdetail->IdKondisi == 2)
+                                                            <span class="badge badge-primary mb-auto">Sedang Diperbaiki
+                                                        @elseif ($itemdetail->IdKondisi == 3)
+                                                            <span class="badge badge-danger mb-auto">Lapor Rusak Ringan
                                                         @else
-                                                        {{ $itemdetail->status }}</td>
+                                                            <span class="badge badge-success mb-auto">{{ $itemdetail->status }}
                                                         @endif
+                                                        </h5></span></td>
                                                     <td>{{ $itemdetail->Remark }}</td>
                                                     {{-- @if (Auth::role() != 'admin') --}}
                                                     <td class="text-center">

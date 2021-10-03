@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
-                                    <a href="{{route('Ruangan.create')}}" class="btn btn-primary" disabled>Tambah Barang</a>
+                                    <a href="{{route('Ruangan.create')}}" class="btn btn-primary" disabled>Tambah Ruangan</a>
                                 </ol>
                             </div>
                         </div>

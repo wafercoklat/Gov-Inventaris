@@ -24,9 +24,14 @@ class CreateTransaksiDetail extends Migration
             $table->enum('Req', ['Y', 'N'])->default('N');
             $table->string('ReqBy',25)->nullable()->default(NULL);
             $table->timestamp('ReqTime')->nullable();
+            $table->enum('Checked', ['Y', 'N'])->default('N');
+            $table->string('CheckBy',25)->nullable()->default(NULL);
+            $table->timestamp('CheckTime')->nullable();
             $table->enum('Verified', ['Y', 'N'])->default('N');
             $table->string('VerifyBy',25)->nullable()->default(NULL);
             $table->timestamp('VerifedTime')->nullable();
+            $table->enum('Done', ['Y','R', 'N'])->default('N');
+            $table->timestamp('DoneTime')->nullable();
             $table->timestamps();
         });
     }

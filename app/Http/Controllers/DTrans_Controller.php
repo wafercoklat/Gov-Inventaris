@@ -23,7 +23,7 @@ class DTrans_Controller extends Controller
     public function index()
     {
         $clause = $this->Checkrole();
-
+     
         $trans = DB::select("SELECT distinct trd.Req, tr.IdTrans, tr.trans transaksi, tr.created_at tanggal, trd.ReqBy User FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = trd.IdRuangan LEFT JOIN ruangan ru2 ON ru2.IdRuangan = trd.IdRuangan2 LEFT JOIN ruangandetail rud ON rud.idRuangan = ru2.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause order by tr.created_at DESC");
 
         return view('Pages.Pindah.Show',compact('trans'))-> with ('i', (request()->input('page', 1) - 1) * 100);
@@ -53,9 +53,12 @@ class DTrans_Controller extends Controller
         $check = TransaksiUpdate::latest('Counter')->where('Type', 0)->first();
         $lastid = (empty($check)) ? 1 : ($check->Counter)+1 ;
 
+        $date = Carbon::today()->format('ym');
+        $final = $date.str_pad($lastid, 4, '0', STR_PAD_LEFT);
+
         $trans = new TransaksiUpdate();
         $trans -> Type = 0;
-        $trans -> Trans = "TR-" .$lastid;
+        $trans -> Trans = "LPB-".$final;
         $trans -> Counter = $lastid;
         $trans -> save();
         $idtrans = TransaksiUpdate::latest('IdTrans')->first()->IdTrans;
@@ -72,13 +75,13 @@ class DTrans_Controller extends Controller
             $trandet -> IdBarang = $Req['IdBarang'][$i];
             $trandet -> IdRuangan = $update->IdRuangan;
             $trandet -> IdRuangan2 = $Req['IdRuangan'][$i];
-            $trandet -> Remark = "Pindah";
+            $trandet -> Remark = $Req['Keterangan'][$i];
             $trandet -> save();
 
             DB::table('gatebk')->where('IdBarang', $Req['IdBarang'][$i])->update(['IdKondisi'=> 5]);
         }
         
-        return redirect()->route('Trans')
+        return redirect()->route('Trans.index')
                         ->with('success','Barang sedang di Request untuk Pindah');
     }
  
@@ -92,7 +95,7 @@ class DTrans_Controller extends Controller
     {
         $clause = $this->Checkrole2();
 
-        $trans = DB::select("SELECT trd.Req, tr.IdTrans, trd.DetailID, tr.trans transaksi, br.IdBarang, br.Code, br.NUP, br.Name barang, ru.Code codeRuangan, ru.Name ruangan, ru2.Code codeRuangan2, ru2.IdRuangan, ru2.Name ruangan2, lt.Name Lantai, tr.created_at tanggal, trd.ReqBy User, trd.Remark FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = trd.IdRuangan LEFT JOIN ruangan ru2 ON ru2.IdRuangan = trd.IdRuangan2 LEFT JOIN ruangandetail rud ON rud.idRuangan = ru2.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause (trd.IdTrans = $id)");
+        $trans = DB::select("SELECT trd.Req, trd.Checked, tr.IdTrans, trd.DetailID, tr.trans transaksi, br.IdBarang, br.Code, br.NUP, br.Name barang, ru.Code codeRuangan, ru.Name ruangan, ru2.Code codeRuangan2, ru2.IdRuangan, ru2.Name ruangan2, lt.Name Lantai, tr.created_at tanggal, trd.ReqBy User, trd.Remark, trd.Done FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = trd.IdRuangan LEFT JOIN ruangan ru2 ON ru2.IdRuangan = trd.IdRuangan2 LEFT JOIN ruangandetail rud ON rud.idRuangan = ru2.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause (trd.IdTrans = $id)");
 
         return view('Pages.Pindah.Detail',compact('trans'))-> with ('i', (request()->input('page', 1) - 1) * 100);      
     }
@@ -117,15 +120,14 @@ class DTrans_Controller extends Controller
      */
     public function update($detailID, $IdBarang, $IdRuangan)
     {   
-        // $this->store($request, $IdBarang);
-        $barang->IdRuangan = $IdRuangan;
-        $barang->save();
+        barang::where('IdBarang', $IdBarang)->update(['IdRuangan' => $IdRuangan]);
 
-        $trans = TransaksiUpdate::where('IdTrans', $detailID);
+        $trans = TransaksiUpdateDetail::where('detailID', $detailID)->first();
         $trans->Req = 'N';
         $trans->Verified = 'Y';
+        $trans->Status = 6;
         $trans->VerifedTime = now();
-        $trans->save();
+        $trans->save(); 
 
         return redirect()->route('Barang.index')
                         ->with('success','Post updated successfully');
@@ -139,10 +141,10 @@ class DTrans_Controller extends Controller
      */
     public function destroy($item)
     {
-        $del = TransaksiUpdate::where('IdTrans',$item)->first();
-  
+        $d = TransaksiUpdateDetail::where('DetailID',$item)->first();
         if ($item != null) {
-            $del->delete();
+            $del = TransaksiUpdateDetail::where('DetailID',$item)->update(['Done' => 'R', 'Req' => 'N', 'Verified' => 'N']);
+            DB::table('gatebk')->where('IdBarang', $d->IdBarang)->update(['IdKondisi'=> 8]);
             return redirect()->route('Trans.index')->with('success','Barang berhasil di hapus');
         }
         return redirect()->route('Trans.index')->with('success','Gagal');
@@ -180,18 +182,25 @@ class DTrans_Controller extends Controller
         }
         return (empty($clause)) ? "" : "where ($clause) and";
     }
-
-    public function updateDate($detailID, $IdBarang, $IdRuangan, $IdTrans){
-        barang::where('IdBarang', $IdBarang)->update(['IdRuangan' => $IdRuangan]);
+    
+    public function Checked($detailID, $IdBarang, $IdRuangan, $IdTrans){
         TransaksiUpdateDetail::where('DetailID', $detailID)
-        ->update(['Req' => 'N', 'Verified' => 'Y','Status' => 0, 'VerifedTime' => now(), 'VerifyBy' => Auth::user()->name]);
-
-        DB::table('gatebk')->where('IdBarang', $IdBarang)->update(['IdKondisi'=> 1]);
+        ->update(['Req' => 'N', 'Checked' => 'Y', 'CheckTime' => now(), 'CheckBy' => Auth::user()->name]);
 
         return redirect()->route('Trans.show',$IdTrans)
                         ->with('success','Post updated successfully');
     }
 
+    public function updateDate($detailID, $IdBarang, $IdRuangan, $IdTrans){
+        TransaksiUpdateDetail::where('DetailID', $detailID)
+        ->update(['Req' => 'N', 'Verified' => 'Y', 'VerifedTime' => now(), 'VerifyBy' => Auth::user()->name, 'Done' => 'Y']);
+
+        DB::table('gatebk')->where('IdBarang', $IdBarang)->update(['IdKondisi'=> 6, 'IdRuangan'=> $IdRuangan]);
+
+        return redirect()->route('Trans.show',$IdTrans)
+                        ->with('success','Post updated successfully');
+    }
+ 
     public function scanTrans()
     {
         $clause = $this->Checkrole();
@@ -201,15 +210,6 @@ class DTrans_Controller extends Controller
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
 
         return view('Pages.Pindah.Scan',compact('data', 'Ruangan'))-> with ('i', (request()->input('page', 1) - 1) * 100);
-    }
-
-    public function pindah(){
-        $clause2 = $this->Checkrole2();
-        
-        $data = DB::select("SELECT br.IdBarang, br.Name, br.IdRuangan FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN (SELECT trd.IdBarang, trd.Req FROM transaksidetail trd LEFT JOIN transaksi tr ON trd.IdTrans = tr.IdTrans ORDER BY tr.counter DESC) tr ON tr.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan $clause2 (brd.IdBarangDetail is null or brd.Status = 3) and (tr.Req = 'N' OR tr.Req IS NULL)");
-
-        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
-        return view('Pages.Pindah.Scan',compact('data', 'Ruangan'));
     }
 
     public function print($id){

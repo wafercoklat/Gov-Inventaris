@@ -5,10 +5,10 @@
 <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
 <meta name="author" content="potenzaglobalsolutions.com" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template</title>
+<title>Siperiang - Sistem Informasi Perpindahan dan Inventarisir Barang</title>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{asset ('vendors/images/favicon.ico')}}" />
+<link rel="shortcut icon" href="{{asset ('vendors/images/favicon.png')}}" />
 
 <!-- Font -->
 <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900">

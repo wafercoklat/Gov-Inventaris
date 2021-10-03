@@ -27551,7 +27551,7 @@ ul.list-unstyled li {
 }
 
 .side-menu-fixed .side-menu li.active>a {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(64, 66, 140, 0.91);
     color: #ffffff;
 }
 
@@ -30891,4 +30891,8 @@ div.style-customizer .content-chooser input[type=radio]:checked~label {
     overflow: hidden;
     padding-top: 56.25%;
     /* 16:9 Aspect Ratio */
+}
+
+.wrappers {
+    background-color: #282a39;
 }

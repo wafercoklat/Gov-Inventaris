@@ -9,12 +9,12 @@
         @media print
         {
            @page {
-             margin-top: 0;
+             margin-top: 0px;
              margin-bottom: 0;
+             padding:20px;
            }
-           body  {
-             padding-top: 20px;
-             padding-bottom: 20px ;
+           .WordSection1  {
+             padding:10px;
            }
         } 
   </style>
@@ -203,19 +203,11 @@
         }
         /* Page Definitions */
         
-        @page {
-            mso-footnote-separator: url("print-L_files/header.htm") fs;
-            mso-footnote-continuation-separator: url("print-L_files/header.htm") fcs;
-            mso-endnote-separator: url("print-L_files/header.htm") es;
-            mso-endnote-continuation-separator: url("print-L_files/header.htm") ecs;
-        }
-        
         @page WordSection1 {
             size: 612.0pt 792.0pt;
-            margin: 72.0pt 72.0pt 72.0pt 72.0pt;
-            mso-header-margin: 36.0pt;
+            margin: 72.0pt 72.0pt 72.0pt 120.0pt;
+            mso-header-margin: 361.0pt;
             mso-footer-margin: 36.0pt;
-            mso-header: url("print-L_files/header.htm") h1;
             mso-paper-source: 0;
         }
         
@@ -280,12 +272,8 @@
 <body lang=EN-US link=blue vlink=purple style='width:550pt' id="printpage">
     <div style="position: relative;width: 100%;overflow: hidden;">
 
-        <div>
-            <img src="{{asset('/vendors/images/header.png')}}" style="width: 700px; margin-bottom: 20px;">
-        </div>
-
     <div class=WordSection1>
-
+        <img src="{{asset('/vendors/images/header.png')}}" style="width: 700px; margin-bottom: 20px;">
         <p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
 normal'><span style='font-size:16.0pt;line-height:115%;mso-bidi-font-family:
 Calibri;mso-bidi-theme-font:minor-latin'>USULAN LAPORAN KONDISI BARANG <o:p></o:p></span></b></p>
@@ -414,8 +402,8 @@ mso-border-alt:solid windowtext .5pt;mso-yfti-tbllook:1184;mso-padding-alt:
     <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>{{$item->NUP}}</span></b></p></td>
     <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>{{$item->codeRuangan}}</span></b></p></td>
     <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>{{$item->ruangan}}</span></b></p></td>
-    <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>@if ($item->Kondisi == 'Rusak Ringan')Y @endif</span></b></p></td>
-    <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>@if ($item->Kondisi == 'Rusak Berat')Y @endif</span></b></p></td>
+    <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>@if ($item->stat == '3' and $item->Verified == 'Y')Y @endif</span></b></p></td>
+    <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>@if ($item->stat == '4' and $item->Verified == 'Y')Y @endif</span></b></p></td>
     <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>{{$item->Remark}}</span></b></p></td>
 </tr>
 @endforeach

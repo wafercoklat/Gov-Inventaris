@@ -60,30 +60,67 @@
                                                     <td>{{$item->Kondisi}}</td>
                                                     <td>{{$item->Remark}}</td>
                                                     <td>{{$item->tanggal}}</td>
-                                                    @if ($item->Verified == 'Y')
-                                                        <td>
-                                                            <form action="{{route('UpdateLaporan', [$item->DetailID, $item->IdTrans, 'Fin', $item->IdBarang])}}" method="POST">
-                                                            @csrf
-                                                            @method('POST')
-                                                            <button type="button " class="btn btn-success btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin ingin menghapus data ini?') ">Selesai</button>
-                                                            </form>
-                                                        </td>
-                                                    @elseif ($item->Req == 'Y')
-                                                    <td>
-                                                    <form action="{{route('UpdateLaporan', [$item->DetailID, $item->IdTrans, 'Fin', $item->IdBarang])}}" method="POST">
-                                                        @csrf
-                                                        @method('POST')
-                                                        <button type="button " class="btn btn-success btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin ingin menghapus data ini?') ">Approve</button>
-                                                        </form>
-                                                        
-                                                        <form action="{{ route( 'Trans.destroy', $item->DetailID) }}" method="POST"> @csrf @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Reject</button>
-                                                        </form>
-                                                    </td>
-                                                    @else
-                                                        <td class="badge badge-success mb-auto">Approved </td>
-                                                    @endif
-                                                </tr>
+                                                        @if ($item->Req == 'Y' and $item->Checked == 'N')
+                                                            @if (Auth::User()->role == 'validator' or Auth::User()->role == 'admin')
+                                                            <td>
+                                                                <form action="{{route('Selesai', [$item->DetailID, $item->IdTrans, 'Req', $item->IdBarang])}}" method="POST">
+                                                                    @csrf
+                                                                    @method('POST')
+                                                                    <button type="button " class="btn btn-info btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin ingin memeriksa barang ini?') ">Periksa</button>
+                                                                </form>
+                                                                    
+                                                                <form action="{{ route( 'Kondisi.destroy', $item->DetailID) }}" method="POST"> @csrf @method('DELETE')
+                                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menolak barang ini?')">Menolak</button>
+                                                                </form>
+                                                            </td>
+                                                            @else
+                                                                <td> <h5><span class="badge badge-info mb-auto">Sedang Direquest </span></h5> </td>
+                                                            @endif
+                                                        @elseif ($item->Checked == 'Y' and $item->Verified == 'N')
+                                                            @if (Auth::User()->role == 'validator' or Auth::User()->role == 'admin')
+                                                            <td>
+                                                                <form action="{{route('Selesai', [$item->DetailID, $item->IdTrans, 'Che', $item->IdBarang])}}" method="POST">
+                                                                    @csrf
+                                                                    @method('POST')
+                                                                    <button type="button " class="btn btn-success btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin ingin menyetujui barang ini?') ">Setuju</button>
+                                                                </form>
+
+                                                                <form action="{{ route( 'Kondisi.destroy', $item->DetailID) }}" method="POST"> @csrf @method('DELETE')
+                                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menolak laporan ini?')">Menolak</button>
+                                                                </form>
+                                                            </td>
+                                                            @else
+                                                            <td> <h5><span class="badge badge-info mb-auto">Menunggu Persetujuan</span></h5> </td>
+                                                            @endif
+                                                        @elseif ($item->Verified == 'Y' and $item->Done == 'N')
+                                                            @if (Auth::User()->role == 'validator' or Auth::User()->role == 'admin')
+                                                            <td>
+                                                                <form action="{{route('Selesai', [$item->DetailID, $item->IdTrans, 'Fin', $item->IdBarang])}}" method="POST">
+                                                                    @csrf
+                                                                    @method('POST')
+                                                                    <button type="button " class="btn btn-success btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin barang ini selesai diperbaiki?') ">Selesai</button>
+                                                                </form>
+                                                                    
+                                                                <form action="{{route('RusakBerat', [$item->DetailID, $item->IdTrans, 'Bad', $item->IdBarang])}}" method="POST">
+                                                                    @csrf
+                                                                    @method('POST')
+                                                                    <button type="button " class="btn btn-warning btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin bahwa barang ini rusak berat?') ">Rusak Berat</button>
+                                                                </form>
+
+                                                                <form action="{{ route( 'Kondisi.destroy', $item->DetailID) }}" method="POST"> @csrf @method('DELETE')
+                                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menolak laporan ini?')">Menolak</button>
+                                                                </form>
+                                                            </td>
+                                                            @else
+                                                            <td> <h5><span class="badge badge-info mb-auto">Sedang Diperbaiki</span></h5> </td>
+                                                            @endif
+                                                        @elseif ($item->stat == '4' and $item->Done == 'Y')
+                                                            <td> <h5><span class="badge badge-success mb-auto">Rusak Berat</span></h5> </td>
+                                                        @elseif ($item->Done == 'Y' and $item->stat != '4')
+                                                            <td> <h5><span class="badge badge-success mb-auto">Selesai Diperbaiki</span></h5> </td>
+                                                        @else
+                                                            <td> <h5><span class="badge badge-danger mb-auto">Ditolak</span></h5> </td>
+                                                        @endif
                                                 @endforeach
                                             </tbody>
                                         </table>

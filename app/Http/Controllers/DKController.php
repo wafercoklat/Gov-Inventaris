@@ -25,7 +25,7 @@ class DKController extends Controller
     {
         $clause = $this->Checkrole();
 
-        $data = DB::select("SELECT distinct trd.Req, tr.IdTrans, tr.trans transaksi, tr.created_at tanggal, trd.ReqBy User FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause and (tr.Type = 1) order by tr.created_at DESC");
+        $data = DB::select("SELECT distinct tr.IdTrans, tr.trans transaksi, tr.created_at tanggal, trd.ReqBy User FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause and (tr.Type = 1) order by tr.created_at DESC");
 
         return view('Pages.Lapor.Show',compact('data'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
@@ -53,10 +53,13 @@ class DKController extends Controller
     {
         $check = TransaksiUpdate::latest('Counter')->where('Type', 1)->first();
         $lastid = (empty($check)) ? 1 : ($check->Counter)+1 ;
+        
+        $date = Carbon::today()->format('ym');
+        $final = $date.str_pad($lastid, 4, '0', STR_PAD_LEFT);
 
         $trans = new TransaksiUpdate();
         $trans -> Type = 1;
-        $trans -> Trans = "LA-" .$lastid;
+        $trans -> Trans = "LKB-" .$final;
         $trans -> Counter = $lastid;
         $trans -> save();
         $idTrans = TransaksiUpdate::latest('IdTrans')->first()->IdTrans;
@@ -75,7 +78,7 @@ class DKController extends Controller
             DB::table('gatebk')->where('IdBarang', $Req['IdBarang'][$i])->update(['IdKondisi'=> $Req['Kondisi'][$i]]);
         }
         
-        return redirect()->route('Lapor')
+        return redirect()->route('Kondisi.index')
                         ->with('success','Barang sedang di Request untuk Lapor');
     }
 
@@ -89,7 +92,7 @@ class DKController extends Controller
     {
         $clause = $this->Checkrole();
 
-        $trans = DB::select("SELECT trd.Verified, trd.Req, tr.IdTrans, trd.DetailID, tr.trans transaksi, br.IdBarang, br.Code, br.NUP, br.Name barang, ru.Code codeRuangan, ru.Name ruangan, lt.Name Lantai, tr.created_at tanggal, trd.ReqBy User, trd.Remark, bs.`status`Kondisi FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barangstatus bs ON bs.id = trd.`Status` LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause and (trd.IdTrans = $id)");
+        $trans = DB::select("SELECT trd.Verified, trd.Done, trd.Status stat, trd.Req, tr.IdTrans, trd.DetailID, trd.Checked, tr.trans transaksi, br.IdBarang, br.Code, br.NUP, br.Name barang, ru.Code codeRuangan, ru.Name ruangan, lt.Name Lantai, tr.created_at tanggal, trd.ReqBy User, trd.Remark, bs.`status`Kondisi FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barangstatus bs ON bs.id = trd.Status LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause and (trd.IdTrans = $id)");
 
         return view('Pages.Lapor.Detail',compact('trans'))-> with ('i', (request()->input('page', 1) - 1) * 100);      
     }
@@ -112,8 +115,10 @@ class DKController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($detailID, $IdTrans, $flag)
+    public function update($detailID, $IdTrans, $flag, $IdBarang)
     {   
+        // dd($flag);
+        // $this->updateDate($detailID, $IdTrans, $flag, $IdBarang);
     }
 
     /**
@@ -124,13 +129,13 @@ class DKController extends Controller
      */
     public function destroy($item)
     {
-        $del = TransaksiUpdate::where('IdTrans',$item)->first();
-  
+        $d = TransaksiUpdateDetail::where('DetailID',$item)->first();
         if ($item != null) {
-            $del->delete();
-            return redirect()->route('Trans.index')->with('success','Barang berhasil di hapus');
+            $del = TransaksiUpdateDetail::where('DetailID',$item)->update(['Done' => 'R', 'Req' => 'N', 'Verified' => 'N']);
+            DB::table('gatebk')->where('IdBarang', $d->IdBarang)->update(['IdKondisi'=> 8]);
+            return redirect()->route('Kondisi.show', $d->IdTrans)->with('success','Barang berhasil di hapus');
         }
-        return redirect()->route('Trans.index')->with('success','Gagal');
+        return redirect()->routeroute('Kondisi.show', $d->IdTrans)->with('success','Gagal');
     }
 
     public function Checkrole(){
@@ -167,12 +172,21 @@ class DKController extends Controller
     }
 
     public function updateDate($detailID, $IdTrans, $flag, $IdBarang){
-        if ($flag == 'Req') {$v = 'Y'; $s = 2; } else {$v = 'N';$s = 1;}
-        TransaksiUpdateDetail::where('DetailID', $detailID)
-        ->update(['Req' => 'N', 'Verified' => $v,'Status' => $s, 'VerifedTime' => now(), 'VerifyBy' => Auth::user()->name]);
-
-        DB::table('gatebk')->where('IdBarang', $IdBarang)->update(['IdKondisi'=> $s]);
-
+        $d = 'N';
+         if ($flag == 'Req') {
+            TransaksiUpdateDetail::where('DetailID', $detailID)->update(['Req' => 'Y', 'Checked' => 'Y', 'CheckTime' => now(), 'CheckBy' => Auth::user()->name]);
+        } elseif ($flag == 'Che') {
+            DB::table('gatebk')->where('IdBarang', $IdBarang)->update(['IdKondisi'=> 2]);
+            TransaksiUpdateDetail::where('DetailID', $detailID)->update(['Verified' => 'Y', 'VerifedTime' => now(), 'VerifyBy' => Auth::user()->name]);
+        } elseif ($flag == 'Bad') {
+            DB::table('gatebk')->where('IdBarang', $IdBarang)->update(['IdKondisi'=> 4]);
+            TransaksiUpdateDetail::where('DetailID', $detailID)->update(['Done' => 'Y', 'Status' => 4, 'DoneTime' => now()]); 
+        } else {
+            $v = 'Y'; $c = 'Y'; $s = 7; $d = 'Y';
+            DB::table('gatebk')->where('IdBarang', $IdBarang)->update(['IdKondisi'=> 7]);
+            TransaksiUpdateDetail::where('DetailID', $detailID)->update(['Done' => 'Y', 'DoneTime' => now()]); 
+        }
+        
         return redirect()->route('Kondisi.show', $IdTrans)
                         ->with('success','Post updated successfully');
 
@@ -189,50 +203,21 @@ class DKController extends Controller
         return view('Pages.Lapor.Scan',compact('data', 'Kondisi'))-> with ('i', (request()->input('page', 1) - 1) * 100);
     }
 
-    public function storeScan(Request $Req)
-    {
-        for ($i=0; $i < count($Req->IdBarang) ; $i++) {   
-            if(empty(TransaksiUpdate::latest('Counter')->where('IdBarang', $Req->IdBarang[$i])->first())){
-                $lastid = 1;
-            } else {
-                $lastid = (TransaksiUpdate::latest('Counter')->where('IdBarang', $Req->IdBarang[$i])->first()->Counter)+1;
-            }
 
-            $No = (empty(TransaksiUpdate::latest()->first()->IdTrans)) ? 1 : TransaksiUpdate::latest()->first()->IdTrans + 1;
-            $update = barang::where('IdBarang', $Req->IdBarang[$i])->first();
-
-            $item = new TransaksiUpdate();
-            $item -> IdBarang = $Req->IdBarang[$i]; 
-            $item -> Type = 1;
-            $item -> IdRuangan = $update->IdRuangan;
-            $item -> IdRuangan2 = $Req ->IdRuangan[$i]; 
-            $item -> Trans = "TR-" .$No;
-            $item -> Counter = $lastid;
-            $item -> Remark = "Lapor";
-            $item -> Req = 'Y';
-            $item -> ReqTime = now();
-            $item -> ReqBy = Auth::user()->name;
-            $item -> save();
-        }
+    // public function Lapor(){
+    //     $clause2 = $this->Checkrole2();
         
-        return redirect()->route('Trans.index')
-                        ->with('success','Barang sedang di Request untuk Lapor');
-    }
+    //     $data = DB::select("SELECT br.IdBarang, br.Name, br.IdRuangan FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN (SELECT trd.IdBarang, trd.Req FROM transaksidetail trd LEFT JOIN transaksi tr ON trd.IdTrans = tr.IdTrans ORDER BY tr.counter DESC) tr ON tr.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan $clause2 (brd.IdBarangDetail is null or brd.Status = 3) and (tr.Req = 'N' OR tr.Req IS NULL)");
 
-    public function Lapor(){
-        $clause2 = $this->Checkrole2();
-        
-        $data = DB::select("SELECT br.IdBarang, br.Name, br.IdRuangan FROM gatebk g LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN barangdetail brd ON brd.IdBarangDetail = g.IdKondisi AND brd.IdBarang = g.IdBarang LEFT JOIN (SELECT trd.IdBarang, trd.Req FROM transaksidetail trd LEFT JOIN transaksi tr ON trd.IdTrans = tr.IdTrans ORDER BY tr.counter DESC) tr ON tr.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan $clause2 (brd.IdBarangDetail is null or brd.Status = 3) and (tr.Req = 'N' OR tr.Req IS NULL)");
-
-        $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
-        return view('Pages.Lapor.Scan',compact('data', 'Ruangan'));
-    }
+    //     $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
+    //     return view('Pages.Lapor.Scan',compact('data', 'Ruangan'));
+    // }
 
     public function print($id){
     
         $clause = $this->Checkrole();
 
-        $trans = DB::select("SELECT trd.Verified, trd.Req, tr.IdTrans, trd.DetailID, tr.trans transaksi, br.IdBarang, br.Code, br.NUP, br.Name barang, ru.Code codeRuangan, ru.Name ruangan, lt.Name Lantai, tr.created_at tanggal, trd.ReqBy User, trd.Remark, bs.`status` Kondisi, trd.Status FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barangstatus bs ON bs.id = trd.`Status` LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause and (trd.IdTrans = $id)");
+        $trans = DB::select("SELECT trd.Verified, trd.Req, trd.Status stat, tr.IdTrans, trd.DetailID, tr.trans transaksi, br.IdBarang, br.Code, br.NUP, br.Name barang, ru.Code codeRuangan, ru.Name ruangan, lt.Name Lantai, tr.created_at tanggal, trd.ReqBy User, trd.Remark, bs.`status` Kondisi, trd.Status FROM transaksi tr LEFT JOIN transaksidetail trd ON trd.IdTrans = tr.IdTrans LEFT JOIN barangstatus bs ON bs.id = trd.`Status` LEFT JOIN barang br ON br.IdBarang = trd.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause and (trd.IdTrans = $id) and (trd.Done != 'R')");
 
         setlocale(LC_TIME, 'id_ID');
         $date = Carbon::now()->isoFormat('D MMMM Y');
