@@ -37,7 +37,7 @@ class DRController extends Controller
     public function create()
     {
         $Lantai = Lantai::Pluck('Name', 'IdLokasi');
-        return view('Pages.Ruangan.Redit',compact('Lantai'));
+        return view('Pages.Ruangan.Radd',compact('Lantai'));
     }
 
     /**
@@ -66,7 +66,7 @@ class DRController extends Controller
         $item -> IdLokasi = $request->IdLokasi;
         $item -> save();
 
-        return redirect()->route('Ruangan')
+        return redirect()->route('Ruangan.index')
                         ->with('success','Post created successfully.');         
     }
 
@@ -116,7 +116,7 @@ class DRController extends Controller
             ]
         );
 
-        return redirect()->route('Ruangan')
+        return redirect()->route('Ruangan.index')
                         ->with('success','Post updated successfully');
     }
 

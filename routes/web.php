@@ -20,6 +20,7 @@ use App\Http\Controllers\DRController;
 use App\Http\Controllers\DLController;
 use App\Http\Controllers\DKController;
 use App\Http\Controllers\BarangRusak;
+use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\DKondisiController;
 use App\Http\Controllers\DTrans_Controller;
 use App\Http\Controllers\UserController;
@@ -39,15 +40,21 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/Kondisi', DKController::class);
     Route::resource('/Daftar-Barang-Rusak', BarangRusak::class);
     Route::get('/Pindah', [DTrans_Controller::class, 'pindah'])->name('pindah');
+    Route::post('/PindahBarang/Approve/{detailID}/{IdBarang}/{IdRuangan}/{IdTrans}', [DTrans_Controller::class,'updateDate'])->name('Approve');
+    Route::post('/PindahBarang/Check/{detailID}/{IdBarang}/{IdRuangan}/{IdTrans}', [DTrans_Controller::class,'Checked'])->name('Check');
+   
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/Error', [HomeController::class, 'error'])->name('error'); 
     Route::get('/TambahBarang/Scan', [DBController::class, 'scan'])->name('Scan');
     Route::post('/ScanStore', [DBController::class, 'storeBR'])->name('AddScan');    
     Route::get('/ScanTrans', [DTrans_Controller::class, 'scanTrans'])->name('TransScan');
     Route::get('/Scan-LaporBarang', [DKController::class, 'scanTrans'])->name('LaporScan');
-    Route::post('/Lapor/Update/{detailID}/{IdTrans}/{flag}/{IdBarang}', [DKController::class,'updateDate'])->name('UpdateLaporan');
+    Route::post('/Kondisi/Diperbaiki/{detailID}/{IdTrans}/{flag}/{IdBarang}', [DKController::class,'updateDate'])->name('Selesai');
+    Route::post('/Kondisi/RusakBerat/{detailID}/{IdTrans}/{flag}/{IdBarang}', [DKController::class,'updateDate'])->name('RusakBerat');
     Route::get('/PrintLapor/{var}', [DKController::class,'print'])->name('PrintLaporan');
     Route::get('/PrintPindah/{var}', [DTrans_Controller::class,'print'])->name('PrintPindah');
+    Route::resource('/Dashboard', Dashboard::class);
+    Route::get('/myProfile',[UserController::class, 'profile'])->name('Userprofile');
     
     Route::group(['middleware' => 'checkRole:admin'], function(){
         Route::resource('/User', UserController::class);

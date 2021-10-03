@@ -214,7 +214,7 @@
         
         @page WordSection1 {
             size: 21.0cm 841.95pt;
-            margin: 42.75pt 72.0pt 54.0pt 72.0pt;
+            margin: 72.75pt 72.0pt 72.0pt 72.0pt;
             mso-header-margin: 36.0pt;
             mso-footer-margin: 9.0pt;
             mso-footer: url("Prints_files/header.htm") f1;
@@ -281,12 +281,8 @@
 <body lang=EN-US link=blue vlink=purple style='width:517pt' id="printpage">
     <div style="position: relative;width: 100%;overflow: hidden;">
 
-        <div>
-            <img src="{{asset('/vendors/images/header.png')}}" style="width: 700px; margin-bottom: 20px;">
-        </div>
-
         <div class=WordSection1>
-
+            <img src="{{asset('/vendors/images/header.png')}}" style="width: 700px; margin-bottom: 20px;">
             <p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
 normal'><span style='font-size:16.0pt;line-height:115%;mso-bidi-font-family:
 Calibri;mso-bidi-theme-font:minor-latin'>USULAN PERPINDAHAN BARANG RUANGAN<o:p></o:p></span></b></p>
@@ -408,7 +404,7 @@ minor-latin'><o:p>&nbsp;</o:p></span></b></p>
                     </td>
                     <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>{{$item->codeRuangan2}}</span></b></p>
                     </td>
-                    <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>{{$item->codeRuangan}}</span></b></p>
+                    <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>{{$item->ruangan2}}</span></b></p>
                     </td>
                     <td style='padding:5pt 5pt; border:solid; border-width:1pt;text-align:center'><b style='mso-bidi-font-weight:normal'><span style='font-size:10.0pt'>{{$item->Remark}}</span></b></p>
                     </td>

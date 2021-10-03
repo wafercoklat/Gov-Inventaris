@@ -7,6 +7,7 @@ use DB;
 use App\Models\userRole;
 use App\Models\User;
 use App\Models\Ruangan;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -17,8 +18,9 @@ class UserController extends Controller
      */
     public function index()
     {
-       $data = DB::Select("Select id, name, NA, role from users"); 
-       return view('Pages.User.Show',compact('data'))
+       $data = DB::Select("Select id, name, NA, username, role from users"); 
+       
+       return view('Pages.User.Uview',compact('data'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -69,7 +71,7 @@ class UserController extends Controller
         $role = userRole::where('userId', $id);
         $ruangan = DB::select("SELECT a.IdRuangan, a.Name, b.userId  FROM ruangan a LEFT JOIN userrole b ON a.IdRuangan = b.IdRuangan AND b.userId = ".$id." ORDER BY IdRuangan ASC");
 
-        return view('Pages.User.Set',compact('role', 'ruangan', 'id', 'user')) ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('Pages.User.USet',compact('role', 'ruangan', 'id', 'user')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -141,5 +143,12 @@ class UserController extends Controller
         User::create($request->all());
 
         return redirect()->route('User')->with('success','Post updated successfully');
+    }
+
+    public function profile(){
+        $id = Auth::User()->id;
+        $data = DB::Select("Select name, NA, username, role, email from users where id = $id"); 
+
+        return view('Pages.User.UProfil', compact('data'));
     }
 }

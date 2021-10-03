@@ -11,12 +11,12 @@
             <img src="images/pre-loader/loader-01.svg" alt="">
         </div>
 
-        <section class="height-100vh d-flex align-items-center page-section-ptb login" style="background-image: url(images/login-bg.jpg);">
+        <section class="height-100vh d-flex align-items-center page-section-ptb login" style="background-image: url({{asset('/vendors/images/login-bg.jpg')}}); background-position: center; background-repeat: no-repeat; background-size: cover;">
             <div class="container">
                 <div class="row justify-content-center no-gutters vertical-align">
-                    <div class="col-lg-4 col-md-6 login-fancy-bg bg" style="background-image: url(images/login-inner-bg.jpg);">
+                    <div class="col-lg-4 col-md-6 login-fancy-bg bg" style="background-image: url({{asset('vendors/images/login-inner-bg.png')}});">
                         <div class="login-fancy">
-                            <h2 class="text-white mb-20">Siperiang App</h2>
+                            <h3 class="text-white mb-20">SIPERIANG</h3>
                             <p class="mb-20 text-white">Sistem Informasi Perpindahan dan Inventarisir Barang</p>
                             <ul class="list-unstyled  pos-bot pb-30">
                                 <li class="list-inline-item"><a class="text-white" href="#"> Terms of Use</a> </li>

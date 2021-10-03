@@ -68,8 +68,8 @@
                                                                     <td>{{ $itemdetail->ruangan }}</td>
                                                                     <td></td>
                                                                     <td>{{ $itemdetail->Remark }}</td>
-                                                                    <td>{{ $itemdetail->Status}}</td>
-                                                                    <td><a class="btn btn-outline-secondary btn-sm" href="{{route('Daftar-Barang-Rusak.edit', $itemdetail->IdBarang)}}">Hapus</a>
+                                                                    <td>{{ $itemdetail->Kondisi}}</td>
+                                                                    <td><a class="btn btn-outline-secondary btn-sm" href="">Hapus</a>
                                                                 </tr>
                                                                 @endforeach
                                                             </tbody>
@@ -102,8 +102,8 @@
                                                                     <td>{{ $itemdetail->ruangan }}</td>
                                                                     <td></td>
                                                                     <td>{{ $itemdetail->Remark }}</td>
-                                                                    <td>{{ $itemdetail->Status}}</td>
-                                                                    <td><a class="btn btn-outline-secondary btn-sm" href="{{route('Daftar-Barang-Rusak.edit', $itemdetail->IdBarang)}}">Hapus</a>
+                                                                    <td>{{ $itemdetail->Kondisi}}</td>
+                                                                    <td><a class="btn btn-outline-secondary btn-sm" href="">Hapus</a>
                                                                 </tr>
                                                                 @endforeach
                                                             </tbody>

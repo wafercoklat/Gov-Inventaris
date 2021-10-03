@@ -19,9 +19,9 @@ class AuthController extends Controller
     {
         if (Auth::check()) { 
             //Login Success
-            return redirect()->route('Trans.index');
+            return redirect()->route('Dashboard.index');
         }
-        return view('pages/login');
+        return view('Pages.login');
     }
   
     public function login(Request $request)
@@ -55,7 +55,7 @@ class AuthController extends Controller
         Auth::attempt($data);
         if (Auth::check()) { // true sekalian session field di users nanti bisa dipanggil via Auth
             //Login Success
-            return redirect()->route('Barang.index');
+            return redirect()->route('Dashboard.index');
   
         } else { // false
   
@@ -75,6 +75,7 @@ class AuthController extends Controller
     {
         $rules = [
             'name'                  => 'required|min:3|max:35',
+            'nip'                  => 'required|min:3|max:35',
             'email'                 => 'required|email|unique:users,email',
             'password'              => 'required'
         ];
@@ -84,6 +85,9 @@ class AuthController extends Controller
             'name.required'         => 'Nama Lengkap wajib diisi',
             'name.min'              => 'Nama lengkap minimal 3 karakter',
             'name.max'              => 'Nama lengkap maksimal 35 karakter',
+            'nip.required'         => 'Nip Lengkap wajib diisi',
+            'nip.min'              => 'Nip lengkap minimal 3 karakter',
+            'nip.max'              => 'Nip lengkap maksimal 35 karakter',
             'email.required'        => 'Email wajib diisi',
             'email.email'           => 'Email tidak valid',
             'email.unique'          => 'Email sudah terdaftar',
@@ -101,7 +105,8 @@ class AuthController extends Controller
         $user = new User;
         $user->name = ucwords(strtolower($request->name));
         $user->email = strtolower($request->email);
-        $user->username = strtolower($request->name);
+        $user->username = strtolower($request->nip);
+        $user->role = $request->role;
         $user->password = Hash::make($request->password);
         $user->email_verified_at = \Carbon\Carbon::now();
         $simpan = $user->save();

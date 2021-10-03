@@ -61,18 +61,45 @@
                                                     <td>{{$item->ruangan2}}</td>
                                                     <td>{{$item->Remark}}</td>
                                                     @if ($item->Req == 'Y')
-                                                        <td>
-                                                            <form action="{{route('Trans.update', $item->DetailID, $item->IdBarang, $item->IdRuangan)}}" method="POST">
-                                                            @method('PUT')
-                                                            <button type="button " class="btn btn-success btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin ingin menghapus data ini?') ">Approve</button>
-                                                            </form>
-                                                            
-                                                            <form action="{{ route( 'Trans.destroy', $item->DetailID) }}" method="POST"> @csrf @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Reject</button>
-                                                            </form>
-                                                        </td>
+                                                        @if (Auth::User()->role == 'validator' or Auth::User()->role == 'admin')
+                                                            <td>
+                                                                <form action="{{route('Check',[$item->DetailID, $item->IdBarang, $item->IdRuangan, $item->IdTrans])}}" method="POST">
+                                                                @csrf 
+                                                                @method('POST')
+                                                                <button type="button " class="btn btn-primary btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin menyetujui barang ini dipindahkan?') ">Check</button>
+                                                                </form>
+                                                                
+                                                                <form action="{{ route( 'Trans.destroy', $item->DetailID) }}" method="POST"> 
+                                                                @csrf 
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menolak barang ini dipindahkan?')">Reject</button>
+                                                                </form>
+                                                            </td>
+                                                        @else
+                                                            <td> <h5><span class="badge badge-info mb-auto">Sedang Direquest</span></h5> </td>
+                                                        @endif
+                                                    @elseif ($item->Checked == 'Y' and $item->Done == 'N')
+                                                        @if (Auth::User()->role == 'approver' or Auth::User()->role == 'admin')
+                                                            <td>
+                                                                <form action="{{route('Approve',[$item->DetailID, $item->IdBarang, $item->IdRuangan, $item->IdTrans])}}" method="POST">
+                                                                @csrf 
+                                                                @method('POST')
+                                                                <button type="button " class="btn btn-success btn-sm mt-1 mb-1 " onclick="return confirm( 'Apakah Anda yakin menyetujui barang ini dipindahkan?') ">Approve</button>
+                                                                </form>
+                                                                
+                                                                <form action="{{ route( 'Trans.destroy', $item->DetailID) }}" method="POST"> 
+                                                                @csrf 
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menolak barang ini dipindahkan?')">Reject</button>
+                                                                </form>
+                                                            </td>
+                                                        @else
+                                                        <td> <h5><span class="badge badge-info mb-auto">Menunggu Approve</span></h5> </td>
+                                                        @endif
+                                                    @elseif ($item->Done == 'Y')
+                                                        <td> <h5><span class="badge badge-success mb-auto">Approved</span></h5> </td>
                                                     @else
-                                                        <td class="badge badge-success mb-auto">Approved </td>
+                                                        <td> <h5><span class="badge badge-danger mb-auto">Ditolak</span></h5></td>
                                                     @endif
                                                 </tr>
                                                 @endforeach
@@ -82,23 +109,6 @@
                                 </div>
                                 @include('components.footer')
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal fade" id="exampleModalCenter" role="dialog" aria-hidden="true" style="overflow:hidden;">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="modal-title">
-                                <div class="mb-10">
-                                    <h4>Apakah Anda Ingin Pindah Barang?</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-secondary" href="{{route('TransScan')}}">Scan</a>
-                            <a class="btn btn-secondary" href="{{route('pindah')}}">Pindah</a>
                         </div>
                     </div>
                 </div>

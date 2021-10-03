@@ -20,7 +20,7 @@ class DBController extends Controller
         
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
 
-        $item = DB::select('SELECT trd.Req, br.IdBarang, ru.IdRuangan, br.Code, br.Name barang, br.nup, ru.Name ruangan, lt.Name Lantai, bs.`status`, br.created_at, br.updated_at, trd.Remark FROM gatebk g LEFT JOIN barangstatus bs ON bs.id = g.IdKondisi LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN (SELECT Remark, Req, Verified, STATUS, IdBarang from transaksidetail ORDER BY DetailID DESC LIMIT 1) trd ON trd.IdBarang = br.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi '.$clause.' Order By br.IdBarang desc');
+        $item = DB::select("SELECT br.IdBarang, ru.IdRuangan, br.Code, br.Name barang, br.nup, ru.Name ruangan, lt.Name Lantai, bs.`status`, br.created_at, br.updated_at, if (g.IdKondisi = 6, 'Berhasil Pindah', IF (g.IdKondisi = 7,'Berhasil Diperbaiki','')) Remark, g.IdKondisi FROM gatebk g LEFT JOIN barangstatus bs ON bs.id = g.IdKondisi LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = g.IdRuangan LEFT JOIN ruangandetail rud ON rud.idRuangan = ru.IdRuangan LEFT JOIN lokasi lt ON lt.IdLokasi = rud.idLokasi $clause Order By br.IdBarang desc");
 
         return view('Pages.Barang.Show',compact('item', 'Ruangan'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -42,23 +42,15 @@ class DBController extends Controller
             'Code' => 'required',
             'IdRuangan' => 'required'
         ]);
+        
 
         $user = Auth::user()->username;
         $request->merge(["CreatedBy" => $user, "Kategori" => 2]);
         barang::create($request->all());
 
         $IdBarang = barang::latest('IdBarang')->first()->IdBarang;
-        // $lastid = AdditionalFunc::getLastId("", 'IdTrans');
-        // $item = new TransaksiUpdate();
-        // $item -> IdBarang = $IdBarang;
-        // $item -> IdRuangan = $request->IdRuangan;
-        // $item -> Trans = "TR-" .$lastid;
-        // $item -> Remark = "New";
-        // $item -> Counter = 1;
-        // $item -> ReqBy = $user;
-        // $item -> save();
 
-        DB::table('gateBK')->insert(['IdBarang'=>$IdBarang, 'IdKondisi'=> 0]);
+        DB::table('gateBK')->insert(['IdBarang'=>$IdBarang, 'IdKondisi'=> 0, 'IdRuangan'=> $request->IdRuangan]);
 
         /// redirect jika sukses menyimpan data
         return redirect()->route('Barang.index')
@@ -79,7 +71,7 @@ class DBController extends Controller
         /// berdasarkan id yang dipilih
         /// href="{{ route('item.edit',$item->id) }}
         $item = barang::where('IdBarang',$id)->first();
-        return view('Pages.bedit',compact('item'));
+        return view('Pages.Barang.Edit',compact('item'));
     }
 
     public function update(Request $request, $item)
@@ -111,12 +103,6 @@ class DBController extends Controller
         return redirect()->route('Barang.index')->with('success','Gagal');
     }
     
-    public function kondisi($var)
-    {
-        $data = DB::select('call view_Kondisi(?)', array($var));
-        return view('Pages.bdetail',compact('data'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
 
     public function Checkrole(){
         $userid = Auth::user()->id;
@@ -147,7 +133,8 @@ class DBController extends Controller
             $barang -> CreatedBy = Auth::user()->username;
             $barang -> save();
     
-            DB::table('gatebk')->insert(['IdBarang'=>$barang->IdBarang, 'IdKondisi'=> 1]);
+            DB::table('gatebk')->insert(['IdBarang'=>$barang->IdBarang, 'IdKondisi'=> 1, 'IdRuangan' => $req->IdRuangan[0]]);
+            
         }
         return redirect()->route('Barang.index')
                         ->with('success','Post created successfully.');
@@ -155,9 +142,11 @@ class DBController extends Controller
 
     public function scan()
     {
+        $clause = $this->Checkrole();
         $Ruangan = Ruangan::Pluck('Name', 'IdRuangan');
         $item = DB::select('Select Name, barcode from barang');
-        return view('Pages.Barang.Scan', compact('Ruangan', 'item'));
+        $data = DB::select("SELECT br.IdBarang, br.Name, br.IdRuangan, br.barcode, br.Code, br.NUP, g.IdKondisi, bs.`status` FROM gatebk g LEFT JOIN barangstatus bs ON bs.id = g.IdKondisi LEFT JOIN barang br ON br.IdBarang = g.IdBarang LEFT JOIN ruangan ru ON ru.IdRuangan = br.IdRuangan $clause");
+        return view('Pages.Barang.Scan', compact('Ruangan', 'item', 'data'));
     }
 }
 

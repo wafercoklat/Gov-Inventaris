@@ -68,8 +68,8 @@ class DLController extends Controller
      */
     public function edit($id)
     {
-        $data = Lantai::where('IdLokasi',$id)->first();
-        return view('Pages.Lantai.Ledit',compact('data'));
+        $item = Lantai::where('IdLokasi',$id)->first();
+        return view('Pages.Lantai.Ledit',compact('item'));
     }
 
     /**
@@ -88,7 +88,7 @@ class DLController extends Controller
         $update = Lantai::where('IdLokasi',$data)->first();
         $update->update($request->all());
          
-        return redirect()->route('Lantai')
+        return redirect()->route('Lantai.index')
                         ->with('success','Post updated successfully');
     }
 

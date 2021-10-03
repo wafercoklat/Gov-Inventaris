@@ -36,20 +36,32 @@
                                 <div class="modal-header">
                                     <div class="modal-title">
                                         <div class="mb-10">
-                                            <h5>TAMBAH USER</h5>
-                                            <h6>Description Here</h6>
+                                            <h5>Tambah User</h5>
                                         </div>
                                     </div>
                                 </div>
-                                <div>{!!DNS2D::getBarcodeHTML('335553', 'QRCODE')!!}</div>
                                 <div class="modal-body">
                                     <form action="{{route('register')}}" method="POST">
                                         @csrf 
                                         <div class="btn-group ml-10 mb-1">
                                             <div class="row">
                                                 <div class="section-field mb-20 col-sm-12">
-                                                    <label class="mb-10" for="">Name* </label>
-                                                    <input type="text" placeholder="Name*" id="email" class="form-control" name="name">
+                                                    <label class="mb-10" for="">Nama* </label>
+                                                    <input type="text" placeholder="Nama*" id="email" class="form-control" name="name">
+                                                </div>
+                                                <div class="section-field mb-20 col-sm-8">
+                                                    <label class="mb-10" for="">NIP* </label>
+                                                    <input type="text" placeholder="NIP*" id="email" class="form-control" name="nip">
+                                                </div>
+                                                <div class="section-field mb-20 col-sm-4">
+                                                    <label class="mb-10" for="">Jabatan* </label>
+                                                        <div class="box">
+                                                            <select name="role" class="fancyselect">
+                                                              <option value="operator">Operator</option>
+                                                              <option value="validator">Validator</option>
+                                                              <option value="approver">Approver</option>
+                                                            </select>
+                                                        </div>
                                                 </div>
                                                 <div class="section-field mb-20 col-sm-12">
                                                     <label class="mb-10" for="">Email* </label>
@@ -57,7 +69,7 @@
                                                 </div>
                                                 <div class="section-field mb-20 col-sm-12">
                                                     <label class="mb-10" for="">Password* </label>
-                                                    <input class="Password form-control" id="password" type="password" placeholder="Password" name="password">
+                                                    <input class="Password form-control" id="password" type="text" placeholder="Password" name="password">
                                                 </div>
                                             </div>
                                         </div>
@@ -80,39 +92,46 @@
                         <div class="col-xl-12 mb-30">
                             <div class="card card-statistics h-100">
                                 <div class="card-body">
-                                    <h5 class="card-title border-0 pb-0">Table hover</h5>
                                     <div class="table-responsive">
                                         <table id="datatable" class="mb-0 table table-hover">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>User</th>
+                                                    <th>Name</th>
+                                                    <th>NIP</th>
+                                                    <th>Jabatan</th>
+                                                    <th>Status</th>
                                                     <th>Non Aktif</th>
-                                                    <th>Role</th>
-                                                    <th>Delete</th>
+                                                    <th>Penyesuaian</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 
-                                                @foreach ($d as $detail)
+                                                @foreach ($data as $detail)
                                                 <tr>
                                                     <td>{{ ++$i }}</td>
                                                     <td>{{ $detail->name }}</td>
+                                                    <td>{{ $detail->username }}</td>
+                                                    <td>{{ $detail->role }}</td>
                                                     <td>@if ($detail->NA == 'Y') Tidak Aktif @else Aktif @endif</td>
                                                     <td>
-                                                        <a class="btn btn-primary btn-sm" href="{{ route('User.show',$detail->id) }}">Lihat Role</a>
                                                         @if ($detail->NA == 'Y')
                                                             <a class="btn btn-primary btn-sm" href="{{ route('Active',$detail->id)}}">Aktifkan</a> 
                                                         @else
                                                         <a class="btn btn-primary btn-sm" href="{{ route('NActive', $detail->id) }}">Non-Aktifkan</a>
                                                         @endif
                                                     </td>
-                                                    <td>
-                                                        <form action="{{ route('User.destroy', $detail->id) }}" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                                        </form>
+                                                    <td class="row">
+                                                            <div class="col-lg-2 col-md-2 col-sm-3 mr-10 mt-2">
+                                                                <a class="btn btn-primary btn-md" href="{{ route('User.show',$detail->id) }}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Sesuaikan Role User"><i class="fa fa-pencil"></i></a>
+                                                            </div>
+                                                            <div class="col-3 mt-2">
+                                                                <form action="{{ route('User.destroy', $detail->id) }}" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit" class="btn btn-danger btn-md" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hapus User"><i class="fa fa-trash-o"></i></button>
+                                                                </form>
+                                                            </div>
                                                     </td>
                                                 </tr>
                                                 @endforeach

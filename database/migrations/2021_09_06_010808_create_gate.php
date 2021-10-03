@@ -17,6 +17,7 @@ class CreateGate extends Migration
             $table->id('id');
             $table->integer('IdBarang');
             $table->integer('IdKondisi');
+            $table->integer('IdRuangan');
         });
     }
 

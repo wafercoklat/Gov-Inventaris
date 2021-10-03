@@ -20,8 +20,8 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
-                                    <a href="{{route('LaporScan')}}" class="btn btn-sm btn-neutral">Scan</a>
-                                    {{-- <a href="{{route('pindah')}}" class="btn btn-sm btn-neutral">Lapor</a> --}}
+                                    <a href="{{route('LaporScan')}}" class="btn btn-primary">Scan Lapor</a>
+                                    <a href="" class="btn btn-primary">Buat Lapor</a>
                                 </ol>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                                 @foreach ($data as $item)
                                                 <tr>
                                                     <td>{{++$i}}</td>
-                                                    <td><a href="{{route('Kondisi.show', $item->IdTrans)}}">{{$item->transaksi}}</a></td>
+                                                    <td class="badge badge-success"><a href="{{route('Kondisi.show', $item->IdTrans)}}">{{$item->transaksi}}</a></td>
                                                     <td>{{$item->tanggal}}</td>
                                                     <td>{{$item->User}}</td>
                                                 </tr>
